@@ -7,18 +7,97 @@
 //
 
 #import "AppDelegate.h"
+#import "CustomerRegisterVC.h"
+#import "CustomerLogInVC.h"
+#import "CollectionVC.h"
+#import "EmployeeLoginVC.h"
+#import "SplashScreen.h"
 
 @interface AppDelegate ()
+{
+    UIStoryboard *storyboard;
+}
 
 @end
 
 @implementation AppDelegate
+@synthesize window = _window;
+@synthesize wishListCount,cartListCount;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+  
+    
+    wishListCount = [[NSMutableArray alloc]init];
+    cartListCount = [[NSMutableArray alloc]init];
+    
+    
+    //[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"login"];
+    [self initializeScreen];
+   
+    
     return YES;
 }
+
+
+
+-(void)initializeScreen
+{
+   
+    BOOL login =[[NSUserDefaults  standardUserDefaults]boolForKey:@"emplogininfo"];
+    
+    if(!login){
+        
+        
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        
+        _employeeLoginVC = [storyBoard instantiateViewControllerWithIdentifier:@"EmployeeLoginVC"];
+        
+        self.window.rootViewController = _employeeLoginVC;
+    }
+    else{
+        
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] ;
+                ;
+                _collectionVC = [storyBoard instantiateViewControllerWithIdentifier:@"collectionvc"];
+                _navigationController =[[UINavigationController alloc]initWithRootViewController:_collectionVC];
+                _navigationController.navigationBarHidden=true;
+                self.window.rootViewController = _navigationController;
+        
+    }
+}
+
+//-(void)initializeScreen
+//{
+//    
+//    BOOL login =[[NSUserDefaults  standardUserDefaults]boolForKey:@"login"];
+//    
+//    if(!login){
+//        
+//        
+//        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//        
+//        _customLogin = [storyBoard instantiateViewControllerWithIdentifier:@"CustomerLogInVC"];
+//        
+//        self.window.rootViewController = _customLogin;
+//    }
+//    
+//    else{
+//        
+//        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] ;
+//        ;
+//        _collectionVC = [storyBoard instantiateViewControllerWithIdentifier:@"collectionvc"];
+//        _navigationController =[[UINavigationController alloc]initWithRootViewController:_collectionVC];
+//        _navigationController.navigationBarHidden=true;
+//        self.window.rootViewController = _navigationController;
+//    }
+//
+//}
+
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

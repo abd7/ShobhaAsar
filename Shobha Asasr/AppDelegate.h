@@ -7,11 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class CustomerLogInVC,CollectionVC,EmployeeLoginVC,SplashScreen;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) CustomerLogInVC *customLogin;
+@property (strong, nonatomic) CollectionVC *collectionVC;
+@property (strong, nonatomic) EmployeeLoginVC *employeeLoginVC;
+@property (strong,nonatomic) SplashScreen *splashScreen;
+
+@property (strong, nonatomic) NSMutableArray *wishListCount,*cartListCount;
+
+
+
+-(void)initializeScreen;
+-(void)clearSessionValue;
 
 @end
 
