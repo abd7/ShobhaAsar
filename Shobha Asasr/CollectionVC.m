@@ -17,6 +17,7 @@
     NSString *collTitleName;
     NSString *urlName;
     CategoryVC *categoryvc;
+    ViewController *listingPage;
     
 }
 
@@ -193,86 +194,88 @@ alpha:1.0]
 }
 -(void)getDataFromServer
 {
-// 
-//    NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
-//    if([[[defaults dictionaryRepresentation] allKeys] containsObject:@"productDetails"]){
-//        
-//        NSLog(@"mykey found");
-//    }
-//    else
-//    {
+    
+    //[self show_Loader];
+    
+    NSMutableString *postString;
+
+    _requesteAPI = nil;
+    _requesteAPI = [[WebServiceParsing alloc] getDataFromURLStringForPost:postString];
+    NSLog(@"-->%@",_requesteAPI);
+    _requesteAPI.requestDelegate = self;
+    
 
     
-    urlName=[BaseUrl stringByAppendingString:get_products];
-    
-    mutableReq = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:urlName]];
-    
-    self.urlSession=[NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    
-    _collectionDataTask=[self.urlSession dataTaskWithRequest:self.mutableReq completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
-                   {
-                       NSMutableArray *servArray=[[NSMutableArray alloc]init];
-                       
-                     servArray  =[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                    
-                       [[NSUserDefaults standardUserDefaults] setObject:servArray forKey:@"productDetails"];
-                     
-                       [[NSUserDefaults standardUserDefaults] synchronize];
-                       
-                               for (NSDictionary *appDic in servArray)
-                               {
-                       
-                                   [imageArr addObject:[appDic objectForKey:@"image1"]];
-                                   listingPage.arrayForimgs=imageArr;
-                       
-                                   NSLog(@"---- >%lu",(unsigned long)listingPage.arrayForimgs.count);
-                       
-                               }
-                               for (NSDictionary *appDic in servArray)
-                               {
-                                   [priceArr addObject:[appDic objectForKey:@"price"]];
-                                   listingPage.priceArray=priceArr;
-                                   
-                               }
-                               
-                               for (NSDictionary *appDic in servArray)
-                               {
-                                   
-                                  [style_id addObject:[appDic objectForKey:@"style_id"]];
-                                   listingPage.styleArray=style_id;
-                                   
-                               }
-                       
-                               for (NSDictionary *appDic in servArray)
-                               {
-                           
-                                   [product_idArray addObject:[appDic objectForKey:@"id"]];
-                                 listingPage.productID=product_idArray;
-                                }
-                       
-                       for (NSDictionary *appDic in servArray)
-                       {
-                           
-                           [product_idArray addObject:[appDic objectForKey:@"id"]];
-                           listingPage.productID=product_idArray;
-                       }
-                       
-                       for (NSDictionary *appDic in servArray)
-                       {
-                           
-                           [product_idArray addObject:[appDic objectForKey:@"id"]];
-                           listingPage.productID=product_idArray;
-                       }
-                       for (NSDictionary *appDic  in  servArray) {
-                           [_stockArr addObject:[appDic objectForKey:@"in_stock_status"]];
-                           listingPage.stockArray=_stockArr;
-                       }
-                       
-                           [listingPage.collectionviewimgs reloadData];
-                       
-                   }];
-    
-    [self.collectionDataTask resume];
+//    urlName=[BaseUrl stringByAppendingString:get_products];
+//    
+//    mutableReq = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:urlName]];
+//    
+//    self.urlSession=[NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+//    
+//    _collectionDataTask=[self.urlSession dataTaskWithRequest:self.mutableReq completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+//                   {
+//                       NSMutableArray *servArray=[[NSMutableArray alloc]init];
+//                       
+//                     servArray  =[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//                    
+//                       [[NSUserDefaults standardUserDefaults] setObject:servArray forKey:@"productDetails"];
+//                     
+//                       [[NSUserDefaults standardUserDefaults] synchronize];
+//                       
+//                               for (NSDictionary *appDic in servArray)
+//                               {
+//                       
+//                                   [imageArr addObject:[appDic objectForKey:@"image1"]];
+//                                   listingPage.arrayForimgs=imageArr;
+//                       
+//                                   NSLog(@"---- >%lu",(unsigned long)listingPage.arrayForimgs.count);
+//                       
+//                               }
+//                               for (NSDictionary *appDic in servArray)
+//                               {
+//                                   [priceArr addObject:[appDic objectForKey:@"price"]];
+//                                   listingPage.priceArray=priceArr;
+//                                   
+//                               }
+//                               
+//                               for (NSDictionary *appDic in servArray)
+//                               {
+//                                   
+//                                  [style_id addObject:[appDic objectForKey:@"style_id"]];
+//                                   listingPage.styleArray=style_id;
+//                                   
+//                               }
+//                       
+//                               for (NSDictionary *appDic in servArray)
+//                               {
+//                           
+//                                   [product_idArray addObject:[appDic objectForKey:@"id"]];
+//                                 listingPage.productID=product_idArray;
+//                                }
+//                       
+//                       for (NSDictionary *appDic in servArray)
+//                       {
+//                           
+//                           [product_idArray addObject:[appDic objectForKey:@"id"]];
+//                           listingPage.productID=product_idArray;
+//                       }
+//                       
+//                       for (NSDictionary *appDic in servArray)
+//                       {
+//                           
+//                           [product_idArray addObject:[appDic objectForKey:@"id"]];
+//                           listingPage.productID=product_idArray;
+//                       }
+//                       for (NSDictionary *appDic  in  servArray) {
+//                           [_stockArr addObject:[appDic objectForKey:@"in_stock_status"]];
+//                           listingPage.stockArray=_stockArr;
+//                       }
+//                       
+//                           [listingPage.collectionviewimgs reloadData];
+//                       
+//                   }];
+//    
+//    [self.collectionDataTask resume];
   
 }
 

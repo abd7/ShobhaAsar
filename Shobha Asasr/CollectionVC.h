@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WebServiceParsing.h"
+#import "ViewController.h"
 #import "Constant.h"
 @class AppDelegate;
 
-@interface CollectionVC : UIViewController
+@interface CollectionVC : UIViewController<WebServiceParsingDelegate>
 {
     AppDelegate *app;
-    ViewController *listingPage;
     UIButton *tab_Btn,*tab_Btn2;
     IBOutlet UIView *underLineView;
     
@@ -22,6 +23,11 @@
     IBOutlet UIButton *wishList_btn;
     IBOutlet UIButton *cart_btn;
 }
+
+@property (nonatomic, retain)  WebServiceParsing   * requesteAPI;
+
+
+
 @property (strong, nonatomic) IBOutlet UIButton *necklace_btn;
 @property (strong, nonatomic) IBOutlet UIButton *pendant_btn;
 

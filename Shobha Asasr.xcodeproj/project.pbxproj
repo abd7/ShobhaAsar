@@ -314,6 +314,7 @@
 		A1F634D71DAF6B4C004EC283 /* Shobha Asasr */ = {
 			isa = PBXGroup;
 			children = (
+				C264F63A1DD43F4A00AD8588 /* Indicator */,
 				C264F6361DD434A600AD8588 /* Reachability */,
 				C264F6321DD4345500AD8588 /* Webservices */,
 				C217072C1DD1F0E8002F3BFB /* SplasScreen */,
@@ -581,6 +582,13 @@
 				C264F6381DD434B800AD8588 /* Reachability.m */,
 			);
 			name = Reachability;
+			sourceTree = "<group>";
+		};
+		C264F63A1DD43F4A00AD8588 /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Indicator;
 			sourceTree = "<group>";
 		};
 		E97885D160B479E0F3FD5F4D /* Pods */ = {
