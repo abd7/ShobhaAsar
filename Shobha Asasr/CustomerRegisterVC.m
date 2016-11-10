@@ -7,10 +7,10 @@
 //
 
 #import "CustomerRegisterVC.h"
-#import "CustomerLogInVC.h"
 #import "Validation.h"
 #import "Constant.h"
 #import "AppDelegate.h"
+
 
 @interface CustomerRegisterVC ()
 {
@@ -28,6 +28,11 @@
     [super viewDidLoad];
     
     [self uiComponentsDesign];
+    
+    nameTF.delegate=self;
+    mobileNumberTF.delegate=self;
+    emailTF.delegate=self;
+    
     app=[[UIApplication sharedApplication] delegate];
     
     UITapGestureRecognizer *tapScreen = [[UITapGestureRecognizer alloc]
@@ -201,7 +206,8 @@
         [mutableReq setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
         [mutableReq setHTTPMethod:@"POST"];
         
-        NSString *post = [[NSString alloc] initWithFormat:@"mobile_no=%@&email=%@&name=%@",mobileNumberTF.text,emailTF,nameTF.text];
+        NSString *post = [[NSString alloc] initWithFormat:@"mobile_no=%@&email=%@&name=%@",mobileNumberTF.text,emailTF.text,nameTF.text];
+        NSLog(@"--registerinfo %@",post);
         
         NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
         
@@ -226,11 +232,7 @@
                     
                     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Successfully Registered" preferredStyle:UIAlertControllerStyleAlert];
                     
-                    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                        
-                        [app initializeScreen];
-                        
-                    }];
+                    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
                     
                     [alert addAction:ok];
                     
@@ -240,8 +242,7 @@
                     
                 });
                
-                
-              
+            
                 
             }
             
@@ -257,19 +258,13 @@
         
         
         
-        NSDictionary *dict = @{@"name":nameTF.text,@"mobile":mobileNumberTF.text,@"user_email":emailTF.text};
+        NSDictionary *dict = @{@"user_email":emailTF.text};
+      
+        [[NSUserDefaults standardUserDefaults] setObject:dict forKey:@"customerlogininfo"];
         
-        NSLog(@"%@",dict);
-        
-        
-        [[NSUserDefaults standardUserDefaults] setObject:dict forKey:@"login"];
-        
-        
-        [[NSUserDefaults standardUserDefaults]setBool:true forKey:@"login"];
-
-        
-        
-        
+       [[NSUserDefaults standardUserDefaults]setBool:true forKey:@"customerlogininfo"];
+      
+       [self.navigationController popViewControllerAnimated:YES];
     }
     
     
@@ -277,6 +272,7 @@
     
 }
 - (IBAction)onTapAlreadyCustomer:(id)sender {
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

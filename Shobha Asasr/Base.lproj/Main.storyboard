@@ -96,7 +96,6 @@
                                         </state>
                                         <connections>
                                             <action selector="onTapAlreadyCustomer:" destination="lCk-GU-fxX" eventType="touchUpInside" id="ah1-yY-QDw"/>
-                                            <segue destination="17W-wo-wyP" kind="show" id="fQj-je-2ps"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -187,7 +186,6 @@
                                         </state>
                                         <connections>
                                             <action selector="onTapnewUserButton:" destination="17W-wo-wyP" eventType="touchUpInside" id="5Jd-6O-Xtq"/>
-                                            <segue destination="lCk-GU-fxX" kind="show" id="liT-9F-ZDs"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Text_Underline.png" translatesAutoresizingMaskIntoConstraints="NO" id="xLS-gu-mIN">

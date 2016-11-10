@@ -8,9 +8,7 @@
 
 #import "CollectionVC.h"
 #import "Constant.h"
-#import "ViewController.h"
-#import "ProductDetailViewController.h"
-#import "CategoryVC.h"
+
 
 
 @interface CollectionVC ()
@@ -204,7 +202,9 @@ alpha:1.0]
 //    else
 //    {
 
-   
+    
+    urlName=[BaseUrl stringByAppendingString:get_products];
+    
     mutableReq = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:urlName]];
     
     self.urlSession=[NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];

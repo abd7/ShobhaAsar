@@ -18,12 +18,14 @@
 @property (strong, nonatomic) EmployeeLoginVC *employeeLoginVC;
 @property (strong,nonatomic) SplashScreen *splashScreen;
 
-@property (strong, nonatomic) NSMutableArray *wishListCount,*cartListCount;
+@property (strong, nonatomic) NSMutableArray *wishListCount,*cartListCount,*produstID,*productQuantity;
 
 
 
 -(void)initializeScreen;
--(void)clearSessionValue;
+-(void)customerLoginCheck;
+
+
 
 @end
 

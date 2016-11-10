@@ -18,6 +18,8 @@ NSString *  projectTitle = @"Shobha Asar";
 
 
 NSString * get_products=@"get_products";
+NSString *get_collections=@"get_collections";
+
 NSString * get_category=@"get_category";
 
 NSString *style_diamonds=@"style_diamonds";
@@ -29,7 +31,7 @@ NSString * addtocart=@"addtocart";
 NSString *removecart=@"removecart";
 NSString * updatecart=@"updatecart";
 
-NSString *get_collections=@"get_collections";
+
 
 NSString *employee=@"employees";
 

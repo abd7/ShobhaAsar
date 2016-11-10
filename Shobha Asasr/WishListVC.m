@@ -26,9 +26,34 @@
     
     appDel=[[UIApplication sharedApplication] delegate];
     
-    if([wishListvcArray count]>0)
+    
+    NSArray *copy = [appDel.wishListCount copy];
+    
+    NSInteger index = [copy count] - 1;
+    
+    for (id object in [copy reverseObjectEnumerator])
     {
-        wishList_btn.badgeValue=[NSString stringWithFormat:@"%lu", (unsigned long)wishListvcArray.count];
+        
+        if ([appDel.wishListCount indexOfObject:object inRange:NSMakeRange(0, index)] != NSNotFound)
+            
+        {
+            [appDel.wishListCount removeObjectAtIndex:index];
+            
+            NSLog(@"--app data->%@",appDel.wishListCount);
+            
+        }
+        
+        index--;
+    }
+    
+    
+    if([appDel.wishListCount count]>0)
+    {
+        wishList_btn.badgeValue=[NSString stringWithFormat:@"%lu", (unsigned long)appDel.wishListCount.count];
+    }
+   if ([appDel.cartListCount count]>0)
+    {
+        cart_btn.badgeValue=[NSString stringWithFormat:@"%lu", (unsigned long)appDel.cartListCount.count];
     }
     
     
@@ -38,6 +63,8 @@
     
    NSLog(@"--%lu",(unsigned long)appDel.wishListCount.count);
     NSLog(@"--%@",appDel.wishListCount);
+    
+    
 
     
     // Do any additional setup after loading the view.
@@ -51,7 +78,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return wishListvcArray.count;
+    return appDel.wishListCount.count;
 }
 
 
@@ -62,7 +89,7 @@
 {
     WishListCells *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"wishlist" forIndexPath:indexPath];
     
-    NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[wishListvcArray objectAtIndex:indexPath.row]]];
+    NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[appDel.wishListCount objectAtIndex:indexPath.row]]];
    
     cell.wishlistImageView.image=[UIImage imageWithData:imageData];
 

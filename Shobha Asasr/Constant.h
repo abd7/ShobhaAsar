@@ -36,4 +36,34 @@ extern NSString * const employee;
 
 
 //****************************************************
+#import "Validation.h"
+#import "CategoryVC.h"
+#import "CollectionVC.h"
+#import "ViewController.h"
+#import "ProductDetailViewController.h"
+#import "WishListVC.h"
+#import "MyCartVC.h"
+#import "EmployeeLoginVC.h"
+#import "CustomerLogInVC.h"
+#import "CustomerRegisterVC.h"
+#import "FilterVC.h"
+
+
+
+static const CGFloat KEYBOARD_ANIMATION_DURATION = 0.3;
+static const CGFloat MINIMUM_SCROLL_FRACTION = 0.2;
+static const CGFloat MAXIMUM_SCROLL_FRACTION = 0.8;
+static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 216;
+static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
+
+
+
+
+
+
+
+
+
+
+
 

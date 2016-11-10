@@ -7,7 +7,6 @@
 //
 
 #import "EmployeeLoginVC.h"
-#import "CollectionVC.h"
 #import "Validation.h"
 #import "Constant.h"
 #import "AppDelegate.h"

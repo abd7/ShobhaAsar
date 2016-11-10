@@ -7,7 +7,7 @@
 //
 
 #import "CategoryVC.h"
-#import "CollectionVC.h"
+#import "Constant.h"
 
 @interface CategoryVC ()
 {

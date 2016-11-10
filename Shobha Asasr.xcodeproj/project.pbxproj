@@ -78,6 +78,8 @@
 		C253E7791DBE519D0095704C /* In stock.png in Resources */ = {isa = PBXBuildFile; fileRef = C253E7781DBE519D0095704C /* In stock.png */; };
 		C255E2951DC08C8200A521E6 /* WishListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C255E2941DC08C8200A521E6 /* WishListVC.m */; };
 		C255E29A1DC08DE300A521E6 /* WishListCells.m in Sources */ = {isa = PBXBuildFile; fileRef = C255E2991DC08DE300A521E6 /* WishListCells.m */; };
+		C264F6351DD4346500AD8588 /* WebServiceParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = C264F6341DD4346500AD8588 /* WebServiceParsing.m */; };
+		C264F6391DD434B800AD8588 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C264F6381DD434B800AD8588 /* Reachability.m */; };
 		C26830C41DBB49BE00619420 /* CartCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C26830C31DBB49BE00619420 /* CartCollectionCell.m */; };
 		C26849BA1DBF17F30000CF55 /* Categories_Bangles.png in Resources */ = {isa = PBXBuildFile; fileRef = C26849B41DBF17F30000CF55 /* Categories_Bangles.png */; };
 		C26849BB1DBF17F30000CF55 /* Categories_Bracelet.png in Resources */ = {isa = PBXBuildFile; fileRef = C26849B51DBF17F30000CF55 /* Categories_Bracelet.png */; };
@@ -216,6 +218,10 @@
 		C255E2941DC08C8200A521E6 /* WishListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishListVC.m; sourceTree = "<group>"; };
 		C255E2981DC08DE300A521E6 /* WishListCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishListCells.h; sourceTree = "<group>"; };
 		C255E2991DC08DE300A521E6 /* WishListCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishListCells.m; sourceTree = "<group>"; };
+		C264F6331DD4346500AD8588 /* WebServiceParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceParsing.h; sourceTree = "<group>"; };
+		C264F6341DD4346500AD8588 /* WebServiceParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceParsing.m; sourceTree = "<group>"; };
+		C264F6371DD434B800AD8588 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C264F6381DD434B800AD8588 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		C26830C21DBB49BE00619420 /* CartCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartCollectionCell.h; sourceTree = "<group>"; };
 		C26830C31DBB49BE00619420 /* CartCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartCollectionCell.m; sourceTree = "<group>"; };
 		C26849B41DBF17F30000CF55 /* Categories_Bangles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Categories_Bangles.png; sourceTree = "<group>"; };
@@ -308,6 +314,8 @@
 		A1F634D71DAF6B4C004EC283 /* Shobha Asasr */ = {
 			isa = PBXGroup;
 			children = (
+				C264F6361DD434A600AD8588 /* Reachability */,
+				C264F6321DD4345500AD8588 /* Webservices */,
 				C217072C1DD1F0E8002F3BFB /* SplasScreen */,
 				C21707201DD1A184002F3BFB /* buttonBadge */,
 				C24979871DCB03CC00B52D9A /* Filter */,
@@ -555,6 +563,24 @@
 				A1F634E61DAF6B4C004EC283 /* LaunchScreen.storyboard */,
 			);
 			name = "Storyboards and xib files";
+			sourceTree = "<group>";
+		};
+		C264F6321DD4345500AD8588 /* Webservices */ = {
+			isa = PBXGroup;
+			children = (
+				C264F6331DD4346500AD8588 /* WebServiceParsing.h */,
+				C264F6341DD4346500AD8588 /* WebServiceParsing.m */,
+			);
+			name = Webservices;
+			sourceTree = "<group>";
+		};
+		C264F6361DD434A600AD8588 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				C264F6371DD434B800AD8588 /* Reachability.h */,
+				C264F6381DD434B800AD8588 /* Reachability.m */,
+			);
+			name = Reachability;
 			sourceTree = "<group>";
 		};
 		E97885D160B479E0F3FD5F4D /* Pods */ = {
@@ -928,7 +954,9 @@
 				C249798A1DCB040100B52D9A /* FilterVC.m in Sources */,
 				C255E29A1DC08DE300A521E6 /* WishListCells.m in Sources */,
 				C23304AF1DB8A66B00878BC2 /* CustomerRegisterVC.m in Sources */,
+				C264F6391DD434B800AD8588 /* Reachability.m in Sources */,
 				A1F634DA1DAF6B4C004EC283 /* main.m in Sources */,
+				C264F6351DD4346500AD8588 /* WebServiceParsing.m in Sources */,
 				C251C4081DCDC16100597DD6 /* CategoryVC.m in Sources */,
 				C255E2951DC08C8200A521E6 /* WishListVC.m in Sources */,
 			);

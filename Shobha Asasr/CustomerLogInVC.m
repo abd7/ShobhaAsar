@@ -7,7 +7,6 @@
 //
 
 #import "CustomerLogInVC.h"
-#import "CustomerRegisterVC.h"
 #import "Validation.h"
 #import "Constant.h"
 #import "AppDelegate.h"
@@ -209,7 +208,7 @@
         
         [[NSUserDefaults standardUserDefaults]setBool:true forKey:@"login"];
         
-        [app initializeScreen];
+        [self.navigationController popViewControllerAnimated:YES];
         
         //[self switchToRoot];
     }

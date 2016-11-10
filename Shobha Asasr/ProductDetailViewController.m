@@ -15,10 +15,8 @@
 #import "MetalCell.h"
 #import "DiamondCustomCell.h"
 #import "GemstoneCustomCell.h"
-#import "CollectionVC.h"
+#import "Constant.h"
 
-#import "MyCartVC.h"
-#import "WishListVC.h"
 
 @interface ProductDetailViewController ()
 {
@@ -44,6 +42,26 @@ alpha:1.0]
     [super viewDidLoad];
     
     app = [[UIApplication sharedApplication] delegate];
+    
+    NSArray *copy = [app.cartListCount copy];
+    
+    NSInteger index = [copy count] - 1;
+    
+    for (id object in [copy reverseObjectEnumerator])
+    {
+        
+        if ([app.cartListCount indexOfObject:object inRange:NSMakeRange(0, index)] != NSNotFound)
+            
+        {
+            [app.cartListCount removeObjectAtIndex:index];
+            
+        }
+        
+        index--;
+    }
+
+    
+    
     
     [self wishListBadgeCheck];
     [self cartListBadgeValCheck];
@@ -185,7 +203,7 @@ alpha:1.0]
 {
     if (collectionView ==cartItemsCollection) {
         
-        return self.cartImageArray.count;
+        return app.cartListCount.count;
         
     }
     
@@ -212,7 +230,7 @@ alpha:1.0]
         
         CartCollectionCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cartCell" forIndexPath:indexPath];
         
-        NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.cartImageArray objectAtIndex:indexPath.row]]];
+        NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[app.cartListCount objectAtIndex:indexPath.row]]];
        
         cell.cartImageView.image=[UIImage imageWithData:imageData];
         
@@ -461,6 +479,7 @@ alpha:1.0]
         
          [self.cartImageArray addObject:self.mainImageArray];
         [app.cartListCount addObject:self.mainImageArray];
+        [self cartListBadgeValCheck];
         
         [cartItemsCollection reloadData];
         
@@ -527,7 +546,7 @@ alpha:1.0]
 {
     if([app.cartListCount count]>0)
     {
-        wishList_btn.badgeValue=[NSString stringWithFormat:@"%lu", (unsigned long)app.wishListCount.count];
+        cart_btn.badgeValue=[NSString stringWithFormat:@"%lu", (unsigned long)app.cartListCount.count];
     }
 }
 
@@ -538,7 +557,7 @@ alpha:1.0]
         
         [self.wishListImageArray addObject:self.mainImageArray];
         
-        [app.wishListCount addObject:self.wishListImageArray];
+        [app.wishListCount addObject:self.mainImageArray];
         
         [self wishListBadgeCheck];
         

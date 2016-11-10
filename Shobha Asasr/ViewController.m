@@ -8,11 +8,7 @@
 
 #import "ViewController.h"
 #import "ImageCollectionViewCell.h"
-#import "ProductDetailViewController.h"
-#import "CollectionVC.h"
 #import "Constant.h"
-#import "WishListVC.h"
-#import "MyCartVC.h"
 #import "UIButton+Badge.h"
 #import "AppDelegate.h"
 
@@ -261,6 +257,9 @@
         [self.navigationController pushViewController:wishlistvc animated:YES];
     }
 }
+
+
+
 - (IBAction)onTapCart_btn:(id)sender
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -287,21 +286,36 @@
     }
     
 }
+
+
 -(void)onTapWishListButton:(UIButton *)sender
 {
 
     UIImage *image = [UIImage imageNamed:@"redHeart.png"];
     [sender setImage:image forState:UIControlStateNormal];
     
-    [wishSave addObject:[self.arrayForimgs objectAtIndex:sender.tag]];
     
-    [app.wishListCount addObject:wishSave];
+    if (![app.wishListCount containsObject:[self.arrayForimgs objectAtIndex:sender.tag]])
+    {
+        
+        [wishSave addObject:[self.arrayForimgs objectAtIndex:sender.tag]];
+        
+        [app.wishListCount addObject:[self.arrayForimgs objectAtIndex:sender.tag]];
+        
+        
+    }
     
-    NSLog(@"%@",app.wishListCount);
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"Already selected!"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
     
-   
-    //[app.wishListCount addObject:[self.arrayForimgs objectAtIndex:sender.tag]];
-    //NSLog(@"wishCount -->%lu",(unsigned long)app.wishListCount.count);
+
     [self wishListBadgeCheck];
     
    
@@ -316,21 +330,41 @@
     UIImage *image = [UIImage imageNamed:@"Cart Btn.png"];
     [sender setImage:image forState:UIControlStateNormal];
     
-    NSLog(@"-->%ld",(long)indexVal);
+    if (![app.cartListCount containsObject:[self.arrayForimgs objectAtIndex:sender.tag]])
+    {
+        
+        [cartSave addObject:[self.arrayForimgs objectAtIndex:sender.tag]];
+        
+        [app.cartListCount addObject:[self.arrayForimgs objectAtIndex:sender.tag]];
+        
+         [self cartListBadgeCheck];
+        
+        
+    }
+    
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"Already selected!"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 
-    NSLog(@"-->%ld",(long)sender.tag);
     
     
 
     proID=[NSString stringWithFormat:@"%@",[_productID objectAtIndex:indexVal]];
-    [cartSave addObject:[self.arrayForimgs objectAtIndex:sender.tag]];
+    //[cartSave addObject:[self.arrayForimgs objectAtIndex:sender.tag]];
     
-    [app.cartListCount addObject:cartSave];
+    //[app.cartListCount addObject:cartSave];
     proIdCount=cartSave.count;
    
     _paramArray=[[NSMutableArray alloc]init];
     
     NSMutableDictionary *postDIc = [[NSMutableDictionary alloc]init];
+    
     
     [postDIc setObject:proID forKey:@"product_id"];
     [postDIc setObject:[NSString stringWithFormat:@"%ld",(long)proIdCount] forKey:@"quantity"];
@@ -339,17 +373,17 @@
    
     [_paramArray addObject:postDIc];
     
-    [cartPostData setObject:_paramArray forKey:@"postdata"];
-    
+    [cartPostData setObject:_paramArray forKey:@"product_data"];
   
-    NSLog(@"proIm cart -->%lu",(long)proIdCount);
-    
-   [self cartListBadgeCheck];
+   
     
    urlName=[BaseUrl stringByAppendingString:addtocart];
     
    
-    //[self authenticateWithServer];
+    
+    [app customerLoginCheck];
+    
+    [self authenticateWithServer];
     
 }
 
@@ -357,47 +391,81 @@
 
 -(void)authenticateWithServer
 {
-   
-    
-    NSString *  user_email=@"vitthal@ascratech.in";
-    NSLog(@"--email %@",user_email);
-    
-    mutableReq = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:urlName]];
-    
-    
-    [mutableReq setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    
-    [mutableReq setHTTPMethod:@"POST"];
-    
-   // NSString *post = [[NSString alloc] initWithFormat:@"product_id=%@&quantity=%ld&user_email=%@",proID,(long)proIdCount,user_email];
-    
-    NSString *post = [[NSString alloc] initWithFormat:@"%@", cartPostData];
-    NSLog(@"%@",post);
-    
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    
-    NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-    
-    [mutableReq setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    
-    [mutableReq setHTTPBody:postData];
-    
-    
-    collectionDataTask = [urlSession dataTaskWithRequest:mutableReq completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+  
         
-        
-        NSLog(@"got response from server %@",[NSJSONSerialization JSONObjectWithData:data options:0 error:nil]);
-        
-        NSDictionary*json= [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        NSLog(@"---%@",json);
-        
-        
-    }];
+    
+    NSString * user_email=@"amit@ascratech.com";
+    NSString * quantity=@"1";
+    NSString *product_id=@"3";
     
     
-    [collectionDataTask resume];
+    NSMutableDictionary *postDIc = [[NSMutableDictionary alloc]init];
     
+    
+    [postDIc setObject:product_id forKey:@"product_id"];
+//    [postDIc setObject:quantity forKey:@"quantity"];
+//    [postDIc setObject:user_email forKey:@"user_email"];
+//    
+    NSMutableArray *paramArr=[[NSMutableArray alloc]init];
+    NSMutableDictionary *postDIcss = [[NSMutableDictionary alloc]init];
+    [paramArr addObject:postDIc];
+    [postDIcss setObject:paramArr forKey:@"product_data"];
+// 
+    NSData *data = [NSJSONSerialization dataWithJSONObject:postDIc options:0 error:nil];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://staticmagic.in/shobha_asar/v1/services/addtocart"]];
+    [request setHTTPMethod:@"POST"];
+    
+    [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"content-type"];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    NSURLSessionUploadTask *dataTask = [session uploadTaskWithRequest: request
+                                                             fromData: data completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                                 if (error)
+                                                                 {
+                                                                     return ;
+                                                                 }
+                                                        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                                                                 NSLog(@"-addCartPost %@",json);
 
+                                                             }];
+    
+    
+      [dataTask resume];
+//        
+//        mutableReq = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:[BaseUrl stringByAppendingString:addtocart]]];
+//        
+//        
+//        [mutableReq setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+//        [mutableReq setHTTPMethod:@"POST"];
+//        
+//        NSString *post = [[NSString alloc] initWithFormat:@"%@",postDIcss];
+//        NSLog(@"-addCartPost %@",post);
+//        
+//        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+//        NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
+//        
+//        [mutableReq setValue:postLength forHTTPHeaderField:@"Content-Length"];
+//        
+//        [mutableReq setHTTPBody:postData];
+//        
+//        
+//        collectionDataTask = [urlSession dataTaskWithRequest:mutableReq completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//            
+//            
+//            NSLog(@"got response from server %@",[NSJSONSerialization JSONObjectWithData:data options:0 error:nil]);
+//            NSDictionary*servDic= [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//            NSLog(@"---Response from server %@",servDic);
+//            
+//        }];
+//        
+//        [collectionDataTask resume];
+//        
+//    
+//    
+//    
+    
 }
 
 @end

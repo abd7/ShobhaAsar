@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewController.h"
+#import "Constant.h"
 @class AppDelegate;
 
 @interface CollectionVC : UIViewController

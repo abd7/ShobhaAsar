@@ -146,4 +146,18 @@
     
 }
 
+- (NSArray *) filterObjectsByKey:(NSString *) key
+{
+    NSMutableSet *tempValues = [[NSMutableSet alloc] init];
+    NSMutableArray *ret = [NSMutableArray array];
+    for(id obj in self) {
+        if(! [tempValues containsObject:[obj valueForKey:key]]) {
+            [tempValues addObject:[obj valueForKey:key]];
+            [ret addObject:obj];
+        }
+    }
+ 
+    return ret;
+}
+
 @end

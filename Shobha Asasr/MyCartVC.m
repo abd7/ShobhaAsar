@@ -26,13 +26,40 @@
     
     appDel=[[UIApplication sharedApplication]delegate];
     
-    if([self.myCartImageArray count]>0)
+   NSLog(@"--app data->%@",appDel.cartListCount);
+    
+    
+    NSArray *copy = [appDel.cartListCount copy];
+    
+    NSInteger index = [copy count] - 1;
+    
+    for (id object in [copy reverseObjectEnumerator])
     {
-        cart_btn.badgeValue=[NSString stringWithFormat:@"%lu", (unsigned long)self.myCartImageArray.count];
+        
+        if ([appDel.cartListCount indexOfObject:object inRange:NSMakeRange(0, index)] != NSNotFound)
+            
+        {
+            [appDel.cartListCount removeObjectAtIndex:index];
+          
+        }
+        
+        index--;
+    }
+    
+
+    
+    if([appDel.cartListCount count]>0)
+    {
+        cart_btn.badgeValue=[NSString stringWithFormat:@"%lu", (unsigned long)appDel.cartListCount.count];
+    }
+    if ([appDel.wishListCount count]>0)
+    {
+        wishlist_btn.badgeValue=[NSString stringWithFormat:@"%lu", (unsigned long)appDel.wishListCount.count];
     }
     
     myCartCollection.dataSource=self;
     myCartCollection.delegate=self;
+    
     
 
     
@@ -47,7 +74,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.myCartImageArray.count;
+    return appDel.cartListCount.count;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -59,10 +86,9 @@
      MyCartVCCell*cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"mycart" forIndexPath:indexPath];
     
     
-    NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",[appDel.cartListCount objectAtIndex:indexPath.row]]]];
+     NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[appDel.cartListCount objectAtIndex:indexPath.row]]];
     
  
-    
     cell.myCart_imageView.image=[UIImage imageWithData:imageData];;
     
 

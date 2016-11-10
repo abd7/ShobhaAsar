@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 @class AppDelegate;
 @interface MyCartVC : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UIApplicationDelegate>
-{AppDelegate *appDel;
+{
+    AppDelegate *appDel;
     
     IBOutlet UIButton *wishlist_btn;
     

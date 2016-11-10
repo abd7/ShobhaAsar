@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class AppDelegate;
-@interface CustomerRegisterVC : UIViewController
+@interface CustomerRegisterVC : UIViewController<UITextFieldDelegate>
 {
     AppDelegate *app;
 }

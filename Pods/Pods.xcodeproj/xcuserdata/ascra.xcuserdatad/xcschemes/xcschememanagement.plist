@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-Shobha Asasr.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Shobha AsasrTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Shobha AsasrUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TTRangeSlider.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>2158838F432E59C2954C56BC14BAC188</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71BCFBDE74CFA128D0D9F6CD1B67B0C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9727C7B7B26EEE774324BF983A07AC5A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97AFD4C6D93AC7D749D3D561D3936CFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

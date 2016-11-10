@@ -22,7 +22,7 @@
 
 @implementation AppDelegate
 @synthesize window = _window;
-@synthesize wishListCount,cartListCount;
+@synthesize wishListCount,cartListCount,produstID,productQuantity;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -31,6 +31,8 @@
     
     wishListCount = [[NSMutableArray alloc]init];
     cartListCount = [[NSMutableArray alloc]init];
+    produstID= [[NSMutableArray alloc]init];
+    productQuantity= [[NSMutableArray alloc]init];
     
     
     //[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"login"];
@@ -67,6 +69,32 @@
         
     }
 }
+
+-(void)customerLoginCheck
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"customerlogininfo"];
+    
+    BOOL login =[[NSUserDefaults  standardUserDefaults]boolForKey:@"customerlogininfo"];
+    
+    if(!login)
+    {
+        
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        
+        _customLogin = [storyBoard instantiateViewControllerWithIdentifier:@"CustomerLogInVC"];
+        
+        [self.navigationController pushViewController:_customLogin animated:YES];
+        
+        
+       }
+    else{
+        
+    
+        }
+}
+
+
+
 
 //-(void)initializeScreen
 //{

@@ -22,4 +22,6 @@
 -(BOOL)validateUsernameLength:(NSString*)usernameStringLength;
 -(BOOL)validateNumber:(NSString*)numberString;
 -(BOOL)validateNumberDigits:(NSString*)numberString;
+- (NSArray *) filterObjectsByKey:(NSString *) key;
+
 @end

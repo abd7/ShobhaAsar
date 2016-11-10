@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WebServiceParsing.h"
 #import "ImageCollectionViewCell.h"
 #import "ProductDetailViewController.h"
 @class AppDelegate;
@@ -26,7 +27,7 @@
     
 }
 
-
+@property (nonatomic, retain)  WebServiceParsing   * requesteAPI;
 
 
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionviewimgs;
