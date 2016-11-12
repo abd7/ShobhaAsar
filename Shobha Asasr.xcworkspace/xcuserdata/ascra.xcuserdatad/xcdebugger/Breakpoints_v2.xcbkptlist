@@ -186,7 +186,7 @@
                   moduleName = "Shobha Asasr"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ascra/Desktop/ShobhaAsasr/Shobha%20Asasr/WishListVC.m"
-                  timestampString = "500449436.914252"
+                  timestampString = "500644378.615616"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -201,7 +201,7 @@
                   moduleName = "Shobha Asasr"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ascra/Desktop/ShobhaAsasr/Shobha%20Asasr/WishListVC.m"
-                  timestampString = "500449436.916383"
+                  timestampString = "500644378.618565"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -362,7 +362,7 @@
                   moduleName = "Shobha Asasr"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ascra/Desktop/ShobhaAsasr/Shobha%20Asasr/CustomerRegisterVC.m"
-                  timestampString = "500449436.960976"
+                  timestampString = "500644378.655344"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "221"
@@ -377,7 +377,7 @@
                   moduleName = "Shobha Asasr"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ascra/Desktop/ShobhaAsasr/Shobha%20Asasr/CustomerRegisterVC.m"
-                  timestampString = "500449436.963383"
+                  timestampString = "500644378.657637"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "224"
@@ -390,16 +390,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shobha Asasr/AppsDataVC.m"
+            timestampString = "500644377.510781"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "-addSTYLE_MASTER:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Shobha Asasr/CollectionVC.m"
-            timestampString = "500449435.113876"
+            filePath = "Shobha Asasr/AppsDataVC.m"
+            timestampString = "500644377.510781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
-            landmarkName = "-getDataFromServer"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "-addCollectionDetails:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

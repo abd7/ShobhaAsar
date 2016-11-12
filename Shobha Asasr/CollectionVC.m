@@ -195,15 +195,6 @@ alpha:1.0]
 -(void)getDataFromServer
 {
     
-    //[self show_Loader];
-    
-    NSMutableString *postString;
-
-    _requesteAPI = nil;
-    _requesteAPI = [[WebServiceParsing alloc] getDataFromURLStringForPost:postString];
-    NSLog(@"-->%@",_requesteAPI);
-    _requesteAPI.requestDelegate = self;
-    
 
     
 //    urlName=[BaseUrl stringByAppendingString:get_products];

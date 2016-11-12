@@ -13,7 +13,11 @@
 
 @protocol WebServiceParsingDelegate
 
--(void)getResponce:(id)responceData;
+
+-(void)getProductResponce:(id)getProductResponce;
+
+
+
 
 -(void) failedToGetResponce:(NSError *) error;
 

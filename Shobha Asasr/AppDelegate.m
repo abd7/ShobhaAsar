@@ -12,10 +12,13 @@
 #import "CollectionVC.h"
 #import "EmployeeLoginVC.h"
 #import "SplashScreen.h"
+#import "ShobhaAsarDataBase.h"
+#import "Reachability.h"
 
 @interface AppDelegate ()
 {
     UIStoryboard *storyboard;
+    NSMutableArray * databaseTablename;
 }
 
 @end
@@ -34,42 +37,138 @@
     produstID= [[NSMutableArray alloc]init];
     productQuantity= [[NSMutableArray alloc]init];
     
+    //[self methodForRecheability];
+    
+    [self copyDatabaseIfNeeded];
+    [ShobhaAsarDataBase getInitialDataToDisplay:[self getDBPath]];
+    
+    //enterBackgroundMode=NO;
+    database = [[ShobhaAsarDataBase alloc]init];
+   
+    shobhaasarDB = [[ShobhaAsarDataBase alloc]init];
+    //NSLog(@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"fetchingCompleted"]);
+    databaseTablename = [[NSMutableArray alloc]initWithObjects:@"CATEGORY_MASTER",@"COLLECTION_MASTER",@"STYLE_MASTER", nil];
+    
+    
     
     //[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"login"];
-    [self initializeScreen];
+    //[self initializeScreen];
    
     
     return YES;
 }
 
-
-
--(void)initializeScreen
+#pragma mark- SEARCH FOR DATABASEPATH
+-(void)methodForRecheability
 {
-   
-    BOOL login =[[NSUserDefaults  standardUserDefaults]boolForKey:@"emplogininfo"];
+    // check for internet connection
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
     
-    if(!login){
-        
-        
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        
-        _employeeLoginVC = [storyBoard instantiateViewControllerWithIdentifier:@"EmployeeLoginVC"];
-        
-        self.window.rootViewController = _employeeLoginVC;
-    }
-    else{
-        
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] ;
-                ;
-                _collectionVC = [storyBoard instantiateViewControllerWithIdentifier:@"collectionvc"];
-                _navigationController =[[UINavigationController alloc]initWithRootViewController:_collectionVC];
-                _navigationController.navigationBarHidden=true;
-                self.window.rootViewController = _navigationController;
-        
-    }
+    internetReachable = [Reachability reachabilityForInternetConnection];
+    [internetReachable startNotifier];
+    
+    // check if a pathway to a random host exists
+    hostReachable = [Reachability reachabilityWithHostname:@"www.apple.com"];
+    [hostReachable startNotifier];
+    
+    // now patiently wait for the notification
+    
 }
 
+
+-(void)copyDatabaseIfNeeded
+{
+    //We are using file manager for file system manager...
+    NSFileManager *fileManger = [NSFileManager defaultManager];
+    NSError *error;
+    NSString *dbPath = [self getDBPath];
+    
+    BOOL success = [fileManger fileExistsAtPath:dbPath];
+    
+    if (!success)
+    {
+        NSString *defaultDBPAth =[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"shobhaasarDB.sqlite"];
+        
+        success = [fileManger copyItemAtPath:defaultDBPAth toPath:dbPath error:&error];
+        if (!success)
+        {
+            NSAssert1(0, @"Failed to create writable database file with messsage '%@'.", [error localizedDescription]);
+        }
+    }
+    else
+    {
+        
+        
+    }
+    NSURL *url = [NSURL fileURLWithPath:dbPath];
+    //[self addSkipBackupAttributeToItemAtURL:url];
+    
+    NSLog(@"I am in --> copyDatabaseIfNeeded");
+}
+
+-(NSString *)getDBPath
+{
+    
+    //Searching a standard documents using NSSearchPathForDirectoriesInDomains
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDir = [paths objectAtIndex:0];
+    
+    NSLog(@"I am in --> getDBPath==%@",paths);
+    
+    return [documentDir stringByAppendingPathComponent:@"shobhaasarDB.sqlite"];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-(void)initializeScreen
+//{
+//   
+//    BOOL login =[[NSUserDefaults  standardUserDefaults]boolForKey:@"emplogininfo"];
+//    
+//    if(!login){
+//        
+//        
+//        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//        
+//        _employeeLoginVC = [storyBoard instantiateViewControllerWithIdentifier:@"EmployeeLoginVC"];
+//        
+//        self.window.rootViewController = _employeeLoginVC;
+//    }
+//    else{
+//        
+//        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] ;
+//                ;
+//                _collectionVC = [storyBoard instantiateViewControllerWithIdentifier:@"collectionvc"];
+//                _navigationController =[[UINavigationController alloc]initWithRootViewController:_collectionVC];
+//                _navigationController.navigationBarHidden=true;
+//                self.window.rootViewController = _navigationController;
+//        
+//    }
+//}
+//
 -(void)customerLoginCheck
 {
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"customerlogininfo"];

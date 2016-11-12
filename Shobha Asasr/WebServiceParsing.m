@@ -28,6 +28,7 @@ Reachability* hostReachable;
 {
 
       strUrl = urlString;
+   
     
     [strUrl setString:[strUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:strUrl]];
@@ -110,7 +111,9 @@ return self;
 {
     NSError *error;
     jsonResponseData = [NSJSONSerialization JSONObjectWithData:_webData options:NSJSONReadingMutableContainers error:&error];
-    [_requestDelegate getResponce:jsonResponseData];
+    [_requestDelegate getProductResponce:jsonResponseData];
+   
+    
     postConnection = nil;
     _webData = nil;
 }

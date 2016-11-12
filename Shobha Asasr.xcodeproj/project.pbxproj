@@ -65,6 +65,7 @@
 		C23304CA1DB8F2CF00878BC2 /* Login.png in Resources */ = {isa = PBXBuildFile; fileRef = C23304C71DB8F2CF00878BC2 /* Login.png */; };
 		C23304CB1DB8F2CF00878BC2 /* Logo_Login Page.png in Resources */ = {isa = PBXBuildFile; fileRef = C23304C81DB8F2CF00878BC2 /* Logo_Login Page.png */; };
 		C23304CC1DB8F2CF00878BC2 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = C23304C91DB8F2CF00878BC2 /* password.png */; };
+		C23FA9DB1DD6EA95006A230B /* shobhaasarDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C23FA9DA1DD6EA95006A230B /* shobhaasarDB.sqlite */; };
 		C23FCEF01DCC96D500B62E61 /* bars_ffffff_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C23FCEEF1DCC96D500B62E61 /* bars_ffffff_64.png */; };
 		C249798A1DCB040100B52D9A /* FilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C24979891DCB040100B52D9A /* FilterVC.m */; };
 		C251C4081DCDC16100597DD6 /* CategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C251C4071DCDC16100597DD6 /* CategoryVC.m */; };
@@ -89,6 +90,12 @@
 		C26849BF1DBF17F30000CF55 /* Categories_Ring.png in Resources */ = {isa = PBXBuildFile; fileRef = C26849B91DBF17F30000CF55 /* Categories_Ring.png */; };
 		C2793C1F1DD0BB5D009B8010 /* Filter btn.png in Resources */ = {isa = PBXBuildFile; fileRef = C2793C1E1DD0BB5D009B8010 /* Filter btn.png */; };
 		C2CFB71D1DBA455A006346BB /* redHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = C2CFB71A1DBA455A006346BB /* redHeart.png */; };
+		C2E771F11DD59562003FF957 /* AppsDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E771F01DD59562003FF957 /* AppsDataVC.m */; };
+		C2E771F51DD5BE85003FF957 /* ShobhaAsarDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E771F41DD5BE85003FF957 /* ShobhaAsarDataBase.m */; };
+		C2E771FC1DD5EE99003FF957 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E771FA1DD5EE99003FF957 /* libsqlite3.0.tbd */; };
+		C2E771FD1DD5EE99003FF957 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E771FB1DD5EE99003FF957 /* libsqlite3.tbd */; };
+		C2E772001DD5EEA3003FF957 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E771FE1DD5EEA3003FF957 /* CoreFoundation.framework */; };
+		C2E772011DD5EEA3003FF957 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E771FF1DD5EEA3003FF957 /* Foundation.framework */; };
 		C2FF4C4A1DBB6F5200BEC995 /* SimilarProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FF4C491DBB6F5200BEC995 /* SimilarProductCell.m */; };
 		C2FF4C4C1DBB7B9700BEC995 /* MetalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2FF4C4B1DBB7B9700BEC995 /* MetalCell.xib */; };
 		C2FF4C4F1DBB7F2400BEC995 /* MetalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FF4C4E1DBB7F2400BEC995 /* MetalCell.m */; };
@@ -200,6 +207,7 @@
 		C23304C71DB8F2CF00878BC2 /* Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.png; sourceTree = "<group>"; };
 		C23304C81DB8F2CF00878BC2 /* Logo_Login Page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo_Login Page.png"; sourceTree = "<group>"; };
 		C23304C91DB8F2CF00878BC2 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
+		C23FA9DA1DD6EA95006A230B /* shobhaasarDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = shobhaasarDB.sqlite; sourceTree = "<group>"; };
 		C23FCEEF1DCC96D500B62E61 /* bars_ffffff_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bars_ffffff_64.png; sourceTree = "<group>"; };
 		C24979881DCB040100B52D9A /* FilterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterVC.h; sourceTree = "<group>"; };
 		C24979891DCB040100B52D9A /* FilterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterVC.m; sourceTree = "<group>"; };
@@ -233,6 +241,14 @@
 		C2793C1E1DD0BB5D009B8010 /* Filter btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Filter btn.png"; sourceTree = "<group>"; };
 		C2A4E56C1BD8FDBEB32F5CE7 /* Pods_Shobha_AsasrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shobha_AsasrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2CFB71A1DBA455A006346BB /* redHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redHeart.png; sourceTree = "<group>"; };
+		C2E771EF1DD59562003FF957 /* AppsDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsDataVC.h; sourceTree = "<group>"; };
+		C2E771F01DD59562003FF957 /* AppsDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsDataVC.m; sourceTree = "<group>"; };
+		C2E771F31DD5BE85003FF957 /* ShobhaAsarDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShobhaAsarDataBase.h; sourceTree = "<group>"; };
+		C2E771F41DD5BE85003FF957 /* ShobhaAsarDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShobhaAsarDataBase.m; sourceTree = "<group>"; };
+		C2E771FA1DD5EE99003FF957 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		C2E771FB1DD5EE99003FF957 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C2E771FE1DD5EEA3003FF957 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		C2E771FF1DD5EEA3003FF957 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C2FF4C481DBB6F5200BEC995 /* SimilarProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimilarProductCell.h; sourceTree = "<group>"; };
 		C2FF4C491DBB6F5200BEC995 /* SimilarProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimilarProductCell.m; sourceTree = "<group>"; };
 		C2FF4C4B1DBB7B9700BEC995 /* MetalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MetalCell.xib; sourceTree = "<group>"; };
@@ -253,6 +269,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2E772001DD5EEA3003FF957 /* CoreFoundation.framework in Frameworks */,
+				C2E772011DD5EEA3003FF957 /* Foundation.framework in Frameworks */,
+				C2E771FC1DD5EE99003FF957 /* libsqlite3.0.tbd in Frameworks */,
+				C2E771FD1DD5EE99003FF957 /* libsqlite3.tbd in Frameworks */,
 				B413AE9969B768E9EAF25217 /* Pods_Shobha_Asasr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +299,10 @@
 		75391E663A37D5F972611896 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2E771FE1DD5EEA3003FF957 /* CoreFoundation.framework */,
+				C2E771FF1DD5EEA3003FF957 /* Foundation.framework */,
+				C2E771FA1DD5EE99003FF957 /* libsqlite3.0.tbd */,
+				C2E771FB1DD5EE99003FF957 /* libsqlite3.tbd */,
 				0E44295192CBA26F3A4347DF /* Pods_Shobha_Asasr.framework */,
 				C2A4E56C1BD8FDBEB32F5CE7 /* Pods_Shobha_AsasrTests.framework */,
 				A82FBF73443873B3D6BAB49A /* Pods_Shobha_AsasrUITests.framework */,
@@ -314,6 +338,7 @@
 		A1F634D71DAF6B4C004EC283 /* Shobha Asasr */ = {
 			isa = PBXGroup;
 			children = (
+				C2E771F21DD5BE03003FF957 /* shobhasasr DataBase */,
 				C264F63A1DD43F4A00AD8588 /* Indicator */,
 				C264F6361DD434A600AD8588 /* Reachability */,
 				C264F6321DD4345500AD8588 /* Webservices */,
@@ -591,6 +616,18 @@
 			name = Indicator;
 			sourceTree = "<group>";
 		};
+		C2E771F21DD5BE03003FF957 /* shobhasasr DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				C23FA9DA1DD6EA95006A230B /* shobhaasarDB.sqlite */,
+				C2E771EF1DD59562003FF957 /* AppsDataVC.h */,
+				C2E771F01DD59562003FF957 /* AppsDataVC.m */,
+				C2E771F31DD5BE85003FF957 /* ShobhaAsarDataBase.h */,
+				C2E771F41DD5BE85003FF957 /* ShobhaAsarDataBase.m */,
+			);
+			name = "shobhasasr DataBase";
+			sourceTree = "<group>";
+		};
 		E97885D160B479E0F3FD5F4D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,6 +810,7 @@
 				C253E7791DBE519D0095704C /* In stock.png in Resources */,
 				C23304C51DB8CD9900878BC2 /* Text feild.png in Resources */,
 				C23304BE1DB8CD9900878BC2 /* Contact Icon.png in Resources */,
+				C23FA9DB1DD6EA95006A230B /* shobhaasarDB.sqlite in Resources */,
 				C217072A1DD1D7C1002F3BFB /* CartsCell.png in Resources */,
 				A1F6350F1DAF7902004EC283 /* Icon-40.png in Resources */,
 				C217072B1DD1D7C1002F3BFB /* HeartCell.png in Resources */,
@@ -957,6 +995,7 @@
 				C2FF4C591DBB8E3400BEC995 /* GemstoneCustomCell.m in Sources */,
 				A1F634DD1DAF6B4C004EC283 /* AppDelegate.m in Sources */,
 				C21707231DD1A19E002F3BFB /* UIButton+Badge.m in Sources */,
+				C2E771F11DD59562003FF957 /* AppsDataVC.m in Sources */,
 				C217072F1DD1F108002F3BFB /* SplashScreen.m in Sources */,
 				C23304AB1DB8A64500878BC2 /* CustomerLogInVC.m in Sources */,
 				C249798A1DCB040100B52D9A /* FilterVC.m in Sources */,
@@ -966,6 +1005,7 @@
 				A1F634DA1DAF6B4C004EC283 /* main.m in Sources */,
 				C264F6351DD4346500AD8588 /* WebServiceParsing.m in Sources */,
 				C251C4081DCDC16100597DD6 /* CategoryVC.m in Sources */,
+				C2E771F51DD5BE85003FF957 /* ShobhaAsarDataBase.m in Sources */,
 				C255E2951DC08C8200A521E6 /* WishListVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

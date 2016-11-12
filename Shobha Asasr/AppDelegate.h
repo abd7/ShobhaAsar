@@ -7,8 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Reachability.h"
+#import "ShobhaAsarDataBase.h"
 @class CustomerLogInVC,CollectionVC,EmployeeLoginVC,SplashScreen;
+@class ShobhaAsarDataBase;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    ShobhaAsarDataBase *shobhaasarDB;
+    
+    
+    NSString * imgString;
+    Reachability* internetReachable;
+    Reachability* hostReachable;
+    BOOL offlineMessageEnabled;
+    ShobhaAsarDataBase * database;
+    BOOL alertDisplay;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

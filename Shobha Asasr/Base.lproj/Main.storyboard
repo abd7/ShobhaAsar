@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="psH-Nx-b0y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9o6-4m-kjv">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -2184,10 +2184,10 @@
             </objects>
             <point key="canvasLocation" x="-6872" y="-804"/>
         </scene>
-        <!--Splash Screen-->
+        <!--Apps DataVC-->
         <scene sceneID="pUh-rE-9o6">
             <objects>
-                <viewController storyboardIdentifier="splashscreen" id="9o6-4m-kjv" customClass="SplashScreen" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="appsdata" id="9o6-4m-kjv" customClass="AppsDataVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uyv-xW-Ttu"/>
                         <viewControllerLayoutGuide type="bottom" id="51E-68-8Oz"/>
