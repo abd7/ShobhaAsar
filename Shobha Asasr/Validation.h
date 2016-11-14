@@ -11,6 +11,8 @@
 
 +(id)validationManager;
 
+
+
 -(BOOL)validateEmail:(NSString*)emailString;
 -(BOOL)validatePassword:(NSString*)password;
 -(BOOL)validateBlankField:(NSString*)string;
