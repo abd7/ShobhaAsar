@@ -102,26 +102,26 @@ alpha:1.0]
     
     sectionTitlesArray=[[NSMutableArray alloc]initWithObjects:@"Metal",@"Daimond",@"Gemstones",nil];
     
-   NSMutableDictionary* detailsDic= [[[NSUserDefaults standardUserDefaults]valueForKey:@"productDetails"] objectAtIndex:_indexVal];
+   
     
     
-        [purityArray addObject:[detailsDic valueForKey:@"karat"]];
-        [weightArray addObject:[detailsDic valueForKey:@"size"]];
+        [purityArray addObject:[[app.ProductArray objectAtIndex:_indexVal] valueForKey:@"karat"]];
+        [weightArray addObject:[[app.ProductArray objectAtIndex:_indexVal] valueForKey:@"size"]];
         
-        [DaiPieceArrOne addObject:[detailsDic objectForKey:@"dia_pcs"]];
-        [DaiWeightArrOne addObject:[detailsDic objectForKey:@"dia_wt"]];
+        [DaiPieceArrOne addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"dia_pcs"]];
+        [DaiWeightArrOne addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"dia_wt"]];
         
-        [DaiPieceArrTwo addObject:[detailsDic objectForKey:@"dia_pcs"]];
-        [DaiWeightArrTwo addObject:[detailsDic objectForKey:@"dia_wt"]];
+        [DaiPieceArrTwo addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"dia_pcs"]];
+        [DaiWeightArrTwo addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"dia_wt"]];
         
-        [gemsPieces1Array addObject:[detailsDic objectForKey:@"pieces"]];
-        [gemsWeight1Array addObject:[detailsDic objectForKey:@"weight"]];
+        [gemsPieces1Array addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"pieces"]];
+        [gemsWeight1Array addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"weight"]];
     
-        [gemsPieces2Array addObject:[detailsDic objectForKey:@"pieces"]];
-        [gemsWeight2Array addObject:[detailsDic objectForKey:@"weight"]];
+        [gemsPieces2Array addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"pieces"]];
+        [gemsWeight2Array addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"weight"]];
     
         
-        
+    
 
     
     [nameArray addObject:@"Gold"];
@@ -155,18 +155,17 @@ alpha:1.0]
     
     
   
-    NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",self.mainImageArray]]];
+    //NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",self.mainImageArray]]];
    
-    proDetails_imageView.image=[UIImage imageWithData:imageData];
+    proDetails_imageView.image=[UIImage imageWithData:self.imagedata];
     
-    styleNoLabel.text=[NSString stringWithFormat:@"Style No. %@",self.productStyleNo];
+    styleNoLabel.text=[NSString stringWithFormat:@"Style No. %@",[[app.ProductArray objectAtIndex:_indexVal] valueForKey:@"style_id"]];
     
-    styleNo.text=[NSString stringWithFormat:@"Style No. %@",self.productStyleNo];;
+    styleNo.text=[NSString stringWithFormat:@"Style No. %@",[[app.ProductArray objectAtIndex:_indexVal] valueForKey:@"style_id"]];;
     
     collectionNameLabel.text=self.productTypeName;
     
-    NSLog(@"%@",self.productStyleNo);
-
+    
 }
 
 
@@ -209,11 +208,11 @@ alpha:1.0]
     
     else if (collectionView ==  similaarProductCV)
     {
-        return arrayforimgs.count;
+        return app.ProductArray.count;
     }
     else
     {
-        return arrayforimgs.count;
+        return app.ProductArray.count;
     }
     
     
@@ -230,16 +229,12 @@ alpha:1.0]
         
         CartCollectionCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cartCell" forIndexPath:indexPath];
         
-        NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[app.cartListCount objectAtIndex:indexPath.row]]];
+        //NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[app.cartListCount objectAtIndex:indexPath.row]]];
        
-        cell.cartImageView.image=[UIImage imageWithData:imageData];
+        cell.cartImageView.image=[UIImage imageWithData:[[app.cartListCount objectAtIndex:indexPath.row] valueForKey:@"image1"]];
         
+       
     
-       
-      
-       //cell.cellview.layer.borderWidth=1.5;
-        
-        
         return  cell;
         
     }
@@ -250,7 +245,7 @@ alpha:1.0]
         
         SimilarProductCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"similarproduct" forIndexPath:indexPath];
         
-        cell.similarItemImage.image=[arrayforimgs objectAtIndex:indexPath.row];
+        cell.similarItemImage.image=[UIImage imageWithData:[[app.ProductArray objectAtIndex:indexPath.row] valueForKey:@"image1"]];
         
         cell.similarItemView.layer.borderColor=[UIColor colorWithRed:0.91 green:0.82 blue:0.63 alpha:1.0].CGColor;
         cell.similarItemView.layer.borderWidth=1.5;
@@ -263,7 +258,7 @@ alpha:1.0]
        
         ProductCollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"imageview" forIndexPath:indexPath];
         
-        cell.imgview.image=[arrayforimgs objectAtIndex:indexPath.row];
+        cell.imgview.image=[UIImage imageWithData:[[app.ProductArray objectAtIndex:indexPath.row] valueForKey:@"image1"]];;
         
         cell.cellview.layer.borderColor=[UIColor colorWithRed:0.91 green:0.82 blue:0.63 alpha:1.0].CGColor;
         cell.cellview.layer.borderWidth=1.5;
@@ -390,9 +385,7 @@ alpha:1.0]
         
         cell.emeraldPiece.text = [gemsPieces1Array objectAtIndex:indexPath.row];
         cell.rubyPieces.text=[gemsWeight1Array objectAtIndex:indexPath.row];
-        
-//        cell.emeraldWeight.text = [gemsPiecesArray objectAtIndex:indexPath.row];
-//        cell.rubyWeight.text=@"20g";
+
         [cell setBackgroundColor:UIColorFromRGB(0x301F0E)];
         
         return cell;
@@ -420,7 +413,7 @@ alpha:1.0]
     {
         
     }
-       
+    
     
 }
 
@@ -441,6 +434,8 @@ alpha:1.0]
     }
    
 }
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
 {
     return 3;
@@ -605,7 +600,7 @@ alpha:1.0]
 
 
 
-- (void) snapToCellAtIndex:(NSInteger)index withAnimation:(BOOL) animated
+- (void)snapToCellAtIndex:(NSInteger)index withAnimation:(BOOL) animated
 {
     
   

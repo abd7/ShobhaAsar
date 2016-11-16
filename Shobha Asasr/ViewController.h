@@ -36,6 +36,8 @@
 
 @property NSMutableArray *arrayForimgs,*priceArray,*styleArray,*productID,*paramArray,*stockArray;
 
+@property NSMutableArray *productArr;
+
 @property NSString *collectionName;
 
 

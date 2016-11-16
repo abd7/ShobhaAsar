@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "WebServiceParsing.h"
 #import "ShobhaAsarDataBase.h"
+
 @interface AppsDataVC : UIViewController<WebServiceParsingDelegate>
+
 @property (nonatomic, retain)  WebServiceParsing   * requesteAPI;
 
 

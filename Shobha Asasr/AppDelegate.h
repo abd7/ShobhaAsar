@@ -32,7 +32,7 @@
 @property (strong, nonatomic) EmployeeLoginVC *employeeLoginVC;
 @property (strong,nonatomic) SplashScreen *splashScreen;
 
-@property (strong, nonatomic) NSMutableArray *wishListCount,*cartListCount,*produstID,*productQuantity;
+@property (strong, nonatomic) NSMutableArray *wishListCount,*cartListCount,*produstID,*productQuantity,*ProductArray;
 
 
 

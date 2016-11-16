@@ -53,7 +53,6 @@
 {
     [super viewDidLoad];
  
-    
     [self TopViewUnderLine];
     
     [self tabButton];
@@ -63,28 +62,24 @@
     [self cartListBadgeCheck];
     [self wishListBadgeCheck];
     
-    //self.productDetailsPage=[[ProductDetailViewController alloc]init];
+
 
     _collectionviewimgs.backgroundColor = [UIColor clearColor];
+    
     _collectionTitleLabel.text=self.collectionName;
+   
     
-    NSLog(@"%@",self.collectionName);
-    
- 
+   
     _collectionviewimgs.delegate=self;
     _collectionviewimgs.dataSource=self;
  
-    
-    
+ 
     tab_Btn.hidden=YES;
     tab_Btn2.hidden=YES;
     
     //filter_btn.layer.cornerRadius=filter_btn.frame.size.height/2;
     filter_btn.clipsToBounds=YES;
     
-    urlSessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-    
-    urlSession = [NSURLSession sessionWithConfiguration:urlSessionConfig];
     cartSave=[[NSMutableArray alloc]init];
     wishSave=[[NSMutableArray alloc]init];
     cartPostData=[[NSMutableDictionary alloc]init];
@@ -144,14 +139,14 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return _arrayForimgs.count;
+    return app.ProductArray.count;
 }
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if (![[self.stockArray objectAtIndex:indexPath.row]isEqualToString:@"1"]) {
+    if (![[[app.ProductArray objectAtIndex:indexPath.row] valueForKey:@"in_stock_status"]isEqualToString:@"1"]) {
         
         
     }else
@@ -162,24 +157,28 @@
     
     cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
-   NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.arrayForimgs objectAtIndex:indexPath.row]]];
-  cell.jewelimg.image=[UIImage imageWithData:imageData] ;
+   //NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[[self.arrayForimgs objectAtIndex:indexPath.row] valueForKey:@"image1"]]];
+    
+   cell.jewelimg.image=[UIImage imageWithData:[[app.ProductArray objectAtIndex:indexPath.row] valueForKey:@"image1"]] ;
     
     
     [cell.wishListButton setBackgroundImage:[UIImage imageNamed:@"HeartCell.png"] forState:UIControlStateNormal];
     
     cell.cartbtnoutlet.tag=indexPath.row;
     cell.wishListButton.tag=indexPath.row;
+    
     NSLog(@"cartButt-->%ld",(long)cell.cartbtnoutlet.tag);
     
     [cell.cartbtnoutlet setBackgroundImage:[UIImage imageNamed:@"CartsCell.png"] forState:UIControlStateNormal];
+    
     [cell.cartbtnoutlet addTarget:self action:@selector(onTapCartButtons:) forControlEvents:UIControlEventTouchUpInside];
     [cell.wishListButton addTarget:self action:@selector(onTapWishListButton:) forControlEvents:UIControlEventTouchUpInside];
     
-    cell.priceLabel.text=[NSString stringWithFormat:@"%@",[self.priceArray objectAtIndex:indexPath.row]];
-    cell.styleLabel.text=[NSString stringWithFormat:@"Style No. %@",[self.styleArray objectAtIndex:indexPath.row]];
+    cell.priceLabel.text=[NSString stringWithFormat:@"%@",[[app.ProductArray objectAtIndex:indexPath.row] valueForKey:@"price"]];
     
-    NSLog(@"%@",[self.priceArray objectAtIndex:indexPath.row]);
+    cell.styleLabel.text=[NSString stringWithFormat:@"Style No. %@",[[app.ProductArray objectAtIndex:indexPath.row] valueForKey:@"style_id"]];
+    
+    NSLog(@"%@",[[app.ProductArray objectAtIndex:indexPath.row] valueForKey:@"style_id"]);
     cell.cellview.layer.borderColor=[UIColor colorWithRed:0.91 green:0.82 blue:0.63 alpha:1.0].CGColor;
     cell.cellview.layer.borderWidth=1.5;
     
@@ -197,13 +196,14 @@
     
     productDetailsPage=[[self storyboard]instantiateViewControllerWithIdentifier:@"productid"];
     
-    productDetailsPage.mainImageArray=[self.arrayForimgs objectAtIndex:indexPath.row];
+    //productDetailsPage.mainImageArray=[app.ProductArray objectAtIndex:indexPath.row];
     
-    productDetailsPage.cartImageArray = cartSave;
+    productDetailsPage.imagedata=[[app.ProductArray objectAtIndex:indexPath.row]valueForKey:@"image1"];
+    //productDetailsPage.cartImageArray = cartSave;
     
-    productDetailsPage.wishListImageArray=wishSave;
+   // productDetailsPage.wishListImageArray=wishSave;
 
-    productDetailsPage.productStyleNo=[self.styleArray objectAtIndex:indexPath.row];
+   // productDetailsPage.productStyleNo=[self.styleArray objectAtIndex:indexPath.row];
     
     productDetailsPage.productTypeName= self.collectionName;
   
@@ -295,12 +295,12 @@
     [sender setImage:image forState:UIControlStateNormal];
     
     
-    if (![app.wishListCount containsObject:[self.arrayForimgs objectAtIndex:sender.tag]])
+    if (![app.wishListCount containsObject:[app.ProductArray objectAtIndex:sender.tag]])
     {
         
-        [wishSave addObject:[self.arrayForimgs objectAtIndex:sender.tag]];
+        [wishSave addObject:[app.ProductArray objectAtIndex:sender.tag]];
         
-        [app.wishListCount addObject:[self.arrayForimgs objectAtIndex:sender.tag]];
+        [app.wishListCount addObject:[app.ProductArray objectAtIndex:sender.tag]];
         
         
     }
@@ -330,12 +330,12 @@
     UIImage *image = [UIImage imageNamed:@"Cart Btn.png"];
     [sender setImage:image forState:UIControlStateNormal];
     
-    if (![app.cartListCount containsObject:[self.arrayForimgs objectAtIndex:sender.tag]])
+    if (![app.cartListCount containsObject:[app.ProductArray objectAtIndex:sender.tag]])
     {
         
-        [cartSave addObject:[self.arrayForimgs objectAtIndex:sender.tag]];
+        [cartSave addObject:[app.ProductArray objectAtIndex:sender.tag]];
         
-        [app.cartListCount addObject:[self.arrayForimgs objectAtIndex:sender.tag]];
+        [app.cartListCount addObject:[app.ProductArray objectAtIndex:sender.tag]];
         
          [self cartListBadgeCheck];
         
@@ -375,97 +375,12 @@
     
     [cartPostData setObject:_paramArray forKey:@"product_data"];
   
-   
-    
-   urlName=[BaseUrl stringByAppendingString:addtocart];
-    
-   
-    
-    [app customerLoginCheck];
-    
-    [self authenticateWithServer];
-    
-}
-
-
-
--(void)authenticateWithServer
-{
   
-        
-    
-    NSString * user_email=@"amit@ascratech.com";
-    NSString * quantity=@"1";
-    NSString *product_id=@"3";
-    
-    
-    NSMutableDictionary *postDIc = [[NSMutableDictionary alloc]init];
-    
-    
-    [postDIc setObject:product_id forKey:@"product_id"];
-//    [postDIc setObject:quantity forKey:@"quantity"];
-//    [postDIc setObject:user_email forKey:@"user_email"];
-//    
-    NSMutableArray *paramArr=[[NSMutableArray alloc]init];
-    NSMutableDictionary *postDIcss = [[NSMutableDictionary alloc]init];
-    [paramArr addObject:postDIc];
-    [postDIcss setObject:paramArr forKey:@"product_data"];
-// 
-    NSData *data = [NSJSONSerialization dataWithJSONObject:postDIc options:0 error:nil];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://staticmagic.in/shobha_asar/v1/services/addtocart"]];
-    [request setHTTPMethod:@"POST"];
-    
-    [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"content-type"];
-    
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    
-    NSURLSessionUploadTask *dataTask = [session uploadTaskWithRequest: request
-                                                             fromData: data completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                                 if (error)
-                                                                 {
-                                                                     return ;
-                                                                 }
-                                                        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                                                                 NSLog(@"-addCartPost %@",json);
-
-                                                             }];
-    
-    
-      [dataTask resume];
-//        
-//        mutableReq = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:[BaseUrl stringByAppendingString:addtocart]]];
-//        
-//        
-//        [mutableReq setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-//        [mutableReq setHTTPMethod:@"POST"];
-//        
-//        NSString *post = [[NSString alloc] initWithFormat:@"%@",postDIcss];
-//        NSLog(@"-addCartPost %@",post);
-//        
-//        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-//        NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-//        
-//        [mutableReq setValue:postLength forHTTPHeaderField:@"Content-Length"];
-//        
-//        [mutableReq setHTTPBody:postData];
-//        
-//        
-//        collectionDataTask = [urlSession dataTaskWithRequest:mutableReq completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-//            
-//            
-//            NSLog(@"got response from server %@",[NSJSONSerialization JSONObjectWithData:data options:0 error:nil]);
-//            NSDictionary*servDic= [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-//            NSLog(@"---Response from server %@",servDic);
-//            
-//        }];
-//        
-//        [collectionDataTask resume];
-//        
-//    
-//    
-//    
+    [app customerLoginCheck];
+  
     
 }
+
+
 
 @end

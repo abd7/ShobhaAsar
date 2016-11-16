@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9o6-4m-kjv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ebu-j4-Byd">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -666,7 +666,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tW7-0m-bfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.799999999999997" y="-804.19790104947538"/>
+            <point key="canvasLocation" x="1931.2" y="-804.19790104947538"/>
         </scene>
         <!--My CartVC-->
         <scene sceneID="493-32-0ib">
@@ -851,7 +851,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDu-ZY-rGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1987.2" y="-804.19790104947538"/>
+            <point key="canvasLocation" x="3865.5999999999999" y="-804.19790104947538"/>
         </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="LcM-OE-R1x">
@@ -1461,128 +1461,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6st-EQ-Pb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1601.25" y="-803.75"/>
-        </scene>
-        <!--CategoryVC-->
-        <scene sceneID="P9g-2U-MgY">
-            <objects>
-                <viewController storyboardIdentifier="categoryvc" modalTransitionStyle="crossDissolve" id="EB7-ea-KN7" customClass="CategoryVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bSr-5o-TDN"/>
-                        <viewControllerLayoutGuide type="bottom" id="OVo-J3-aJX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="P1B-GM-Cza">
-                        <rect key="frame" x="0.0" y="0.0" width="800" height="1000"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wko-k3-7WS">
-                                <frame key="frameInset" width="800" height="1000"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJF-EL-Pgt">
-                                <frame key="frameInset" width="800" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qab-8N-9Sp">
-                                        <frame key="frameInset" minX="-14" minY="-5" width="76" height="76"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="leftNaviImage"/>
-                                        <connections>
-                                            <action selector="onTapLeftMenu_btn:" destination="EB7-ea-KN7" eventType="touchUpInside" id="RPx-kS-02w"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVp-wa-6ZW">
-                                        <frame key="frameInset" minX="74" minY="25" width="87" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
-                                        <state key="normal" title="COLLECTION">
-                                            <color key="titleColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onTapCollection_btn:" destination="EB7-ea-KN7" eventType="touchUpInside" id="eqh-Qc-sDP"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhI-W3-w6t">
-                                        <frame key="frameInset" minX="181" minY="25" width="70" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
-                                        <state key="normal" title="CATEGORY">
-                                            <color key="titleColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onTapCategory_btn:" destination="EB7-ea-KN7" eventType="touchUpInside" id="NZP-wT-uP1"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRJ-YP-glB">
-                                        <frame key="frameInset" minX="686" minY="5" width="52" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="Cart Notification.png"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elR-EP-gMr">
-                                        <frame key="frameInset" minX="633" minY="5" width="52" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="Wishlist Notification icon.png"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDY-PQ-k9q">
-                                        <frame key="frameInset" minX="579" minY="5" width="52" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="Camera.png"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOB-kl-bTD">
-                                        <frame key="frameInset" minX="730" minY="5" width="52" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="Search.png"/>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo 167x167.png" translatesAutoresizingMaskIntoConstraints="NO" id="GUf-qG-lea">
-                                        <frame key="frameInset" minX="342" minY="-20" width="117" height="96"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.039215686270000001" green="0.039215686270000001" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xSM-Kp-2aO">
-                                <frame key="frameInset" minY="60" width="800" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BR673.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Wc5-CG-7jd">
-                                <frame key="frameInset" minX="69" minY="117" width="627" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Categories_Pendant.png" translatesAutoresizingMaskIntoConstraints="NO" id="o7U-tC-qHV">
-                                <frame key="frameInset" minX="69" minY="763" width="627" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RG599.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dN2-LW-uAc">
-                                <frame key="frameInset" minX="69" minY="333" width="300" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RG599.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8yZ-Jp-9gc">
-                                <frame key="frameInset" minX="397" minY="333" width="300" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PE818.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="eT5-Fa-PQg">
-                                <frame key="frameInset" minX="69" minY="549" width="300" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PE818.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="r8V-8p-fqi">
-                                <frame key="frameInset" minX="396" minY="549" width="300" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="800" height="1000"/>
-                    <connections>
-                        <outlet property="category_btn" destination="OhI-W3-w6t" id="fDp-Eo-JTz"/>
-                        <outlet property="collection_btn" destination="mVp-wa-6ZW" id="7AR-23-Q13"/>
-                        <outlet property="underLineView" destination="xSM-Kp-2aO" id="QIf-5E-8Jf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ryv-ET-o0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4896" y="-2701"/>
+            <point key="canvasLocation" x="276.80000000000001" y="-804.19790104947538"/>
         </scene>
         <!--CollectionVC-->
         <scene sceneID="9ze-9v-ls7">
@@ -1622,7 +1501,7 @@
                                             <color key="titleColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="onTapCollection_btn:" destination="lkb-sF-i5O" eventType="touchUpInside" id="0zO-wn-b4r"/>
+                                            <action selector="onTapCollectionButton:" destination="lkb-sF-i5O" eventType="touchUpInside" id="yIn-ck-GDK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hg-lU-EdJ">
@@ -1633,7 +1512,7 @@
                                             <color key="titleColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="onTapCategory_btn:" destination="lkb-sF-i5O" eventType="touchUpInside" id="eps-DK-5Aq"/>
+                                            <action selector="onTapCategoryButton:" destination="lkb-sF-i5O" eventType="touchUpInside" id="PQj-vK-Xfe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyJ-0e-dGb">
@@ -1663,196 +1542,6 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.039215686270000001" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tRd-V0-4sh">
-                                <frame key="frameInset" minX="69" minY="117" width="627" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Categories_Necklace.png" translatesAutoresizingMaskIntoConstraints="NO" id="aBO-aD-KIW">
-                                        <frame key="frameInset" width="627" height="190"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Collection" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpq-bE-3eg">
-                                        <frame key="frameInset" minX="85" minY="44" width="158" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NECKLACE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7i-ww-EAi">
-                                        <frame key="frameInset" minX="84" minY="66" width="158" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKM-Gu-PgW">
-                                        <frame key="frameInset" minX="81" minY="128" width="120" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="8"/>
-                                        <state key="normal" title="SEE ALL COLLECTIONS">
-                                            <color key="titleColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DaF-NP-y9M">
-                                <frame key="frameInset" minX="69" minY="333" width="300" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Categories_Ring.png" translatesAutoresizingMaskIntoConstraints="NO" id="Isu-yP-Q4f">
-                                        <frame key="frameInset" width="300" height="190"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hc6-Fv-kHt">
-                                        <frame key="frameInset" minX="110" minY="179" width="80" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4V-Ur-e2g">
-                                        <frame key="frameInset" minX="107" minY="121" width="84" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHz-T8-DBX">
-                                        <frame key="frameInset" minX="90" minY="156" width="120" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="8"/>
-                                        <state key="normal" title="SEE ALL COLLECTIONS">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kiC-hQ-HuH">
-                                <frame key="frameInset" minX="397" minY="333" width="300" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Categories_Earrings.png" translatesAutoresizingMaskIntoConstraints="NO" id="ltp-C7-13J">
-                                        <frame key="frameInset" width="300" height="190"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DM1-bu-tUf">
-                                        <frame key="frameInset" minX="27" minY="177" width="80" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EARRINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVd-II-6EY">
-                                        <frame key="frameInset" minX="14" minY="121" width="111" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltg-BN-h4c">
-                                        <frame key="frameInset" minX="5" minY="157" width="120" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="8"/>
-                                        <state key="normal" title="SEE ALL COLLECTIONS">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9sk-ia-Owa">
-                                <frame key="frameInset" minX="69" minY="549" width="300" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Categories_Bracelet.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cai-i1-AfT">
-                                        <frame key="frameInset" width="300" height="190"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zzb-7L-TWM">
-                                        <frame key="frameInset" minX="52" minY="179" width="80" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="0.51377971625766872" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BRACELETS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPm-z0-oDb">
-                                        <frame key="frameInset" minX="27" minY="114" width="132" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iN-PR-dW2">
-                                        <frame key="frameInset" minX="31" minY="156" width="120" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="8"/>
-                                        <state key="normal" title="SEE ALL COLLECTIONS">
-                                            <color key="titleColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HMX-5o-gBL">
-                                <frame key="frameInset" minX="397" minY="549" width="300" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Categories_Bangles.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cqe-vy-LrV">
-                                        <frame key="frameInset" width="300" height="190"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BANGLES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4q-vY-R7B">
-                                        <frame key="frameInset" minX="98" minY="114" width="104" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t6v-e9-O3b">
-                                        <frame key="frameInset" minX="111" minY="179" width="80" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <button opaque="NO" tag="14" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuB-1R-XPq">
-                                        <frame key="frameInset" minX="90" minY="156" width="120" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="8"/>
-                                        <state key="normal" title="SEE ALL COLLECTIONS">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b58-pz-8Jt">
-                                <frame key="frameInset" minX="69" minY="763" width="627" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Categories_Pendant.png" translatesAutoresizingMaskIntoConstraints="NO" id="oR9-c8-ee0">
-                                        <frame key="frameInset" width="627" height="190"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Collection" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hn-ll-kOT">
-                                        <frame key="frameInset" minX="376" minY="48" width="158" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PENDANT" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcE-74-RsW">
-                                        <frame key="frameInset" minX="377" minY="66" width="158" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" tag="15" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4w-3D-3hM">
-                                        <frame key="frameInset" minX="433" minY="128" width="120" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="8"/>
-                                        <state key="normal" title="SEE ALL COLLECTIONS">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.18823529410000001" green="0.1215686275" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1861,22 +1550,14 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="800" height="1000"/>
                     <connections>
-                        <outlet property="bangles_btn" destination="GuB-1R-XPq" id="T7j-ot-noT"/>
-                        <outlet property="bracelets_btn" destination="7iN-PR-dW2" id="IWQ-NS-LRR"/>
-                        <outlet property="cart_btn" destination="IyJ-0e-dGb" id="2fi-7P-kkE"/>
-                        <outlet property="category_btn" destination="3Hg-lU-EdJ" id="HsX-R3-bzK"/>
-                        <outlet property="collection_btn" destination="g0h-2Z-1iD" id="Mjl-M5-phO"/>
-                        <outlet property="earrings_btn" destination="Ltg-BN-h4c" id="j8D-9w-FeE"/>
-                        <outlet property="necklace_btn" destination="HKM-Gu-PgW" id="uDM-uf-BuG"/>
-                        <outlet property="pendant_btn" destination="w4w-3D-3hM" id="YCv-wx-TeQ"/>
-                        <outlet property="ring_btn" destination="VHz-T8-DBX" id="Mw0-BI-rUg"/>
-                        <outlet property="underLineView" destination="anT-5Y-JRE" id="AWS-hK-4Lw"/>
-                        <outlet property="wishList_btn" destination="NE6-Hh-euq" id="AVj-zt-dhu"/>
+                        <outlet property="category_btn" destination="3Hg-lU-EdJ" id="9eq-2U-Cl8"/>
+                        <outlet property="collection_btn" destination="g0h-2Z-1iD" id="tdb-se-YgJ"/>
+                        <outlet property="underLineView" destination="anT-5Y-JRE" id="aMZ-XA-Sut"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ef-aa-jfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4900.8000000000002" y="-805.09745127436292"/>
+            <point key="canvasLocation" x="-3022.4000000000001" y="-805.09745127436292"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1943,8 +1624,8 @@
                                                                         <constraint firstAttribute="bottom" secondItem="aq6-PT-Twj" secondAttribute="bottom" constant="31" id="I2r-VK-nVI"/>
                                                                         <constraint firstAttribute="trailing" secondItem="58Z-1M-RG2" secondAttribute="trailing" constant="42" id="lE0-IG-hTm"/>
                                                                         <constraint firstItem="58Z-1M-RG2" firstAttribute="bottom" secondItem="JLO-W2-epy" secondAttribute="bottomMargin" constant="6" id="npg-Ml-4ph"/>
-                                                                        <constraint firstItem="58Z-1M-RG2" firstAttribute="leading" secondItem="aq6-PT-Twj" secondAttribute="trailing" constant="63" id="wpq-ch-3Cd"/>
-                                                                        <constraint firstItem="aq6-PT-Twj" firstAttribute="leading" secondItem="JLO-W2-epy" secondAttribute="leading" constant="17" id="yBs-Nv-a9l"/>
+                                                                        <constraint firstItem="58Z-1M-RG2" firstAttribute="leading" secondItem="aq6-PT-Twj" secondAttribute="trailing" constant="74" id="wpq-ch-3Cd"/>
+                                                                        <constraint firstItem="aq6-PT-Twj" firstAttribute="leading" secondItem="JLO-W2-epy" secondAttribute="leading" constant="6" id="yBs-Nv-a9l"/>
                                                                         <constraint firstItem="58Z-1M-RG2" firstAttribute="top" secondItem="JLO-W2-epy" secondAttribute="top" constant="6" id="yEB-JS-DYz"/>
                                                                     </constraints>
                                                                 </view>
@@ -1988,7 +1669,7 @@
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="JLO-W2-epy" firstAttribute="trailing" secondItem="Iym-Eo-M29" secondAttribute="trailing" id="3SO-8i-wy8"/>
-                                                                <constraint firstItem="vy3-61-VwV" firstAttribute="leading" secondItem="tt5-co-bGj" secondAttribute="leading" constant="32" id="6fO-U5-pew"/>
+                                                                <constraint firstItem="vy3-61-VwV" firstAttribute="leading" secondItem="tt5-co-bGj" secondAttribute="leading" constant="19" id="6fO-U5-pew"/>
                                                                 <constraint firstItem="Zu9-zM-JnN" firstAttribute="leading" secondItem="coe-D8-NnO" secondAttribute="trailing" constant="37" id="9vu-uc-iqA"/>
                                                                 <constraint firstAttribute="bottom" secondItem="JLO-W2-epy" secondAttribute="bottom" id="Hpt-ME-WU1"/>
                                                                 <constraint firstItem="Xjf-cH-7e6" firstAttribute="leading" secondItem="tt5-co-bGj" secondAttribute="leading" id="J2B-rx-duE"/>
@@ -1997,16 +1678,16 @@
                                                                 <constraint firstItem="JLO-W2-epy" firstAttribute="leading" secondItem="Iym-Eo-M29" secondAttribute="leading" id="NKZ-I4-gv7"/>
                                                                 <constraint firstItem="Iym-Eo-M29" firstAttribute="leading" secondItem="Xjf-cH-7e6" secondAttribute="leading" id="RFB-7L-jlF"/>
                                                                 <constraint firstItem="3aH-Gu-obE" firstAttribute="trailing" secondItem="Iym-Eo-M29" secondAttribute="trailing" id="RiL-gM-HG4"/>
-                                                                <constraint firstItem="Zu9-zM-JnN" firstAttribute="leading" secondItem="vy3-61-VwV" secondAttribute="trailing" constant="51" id="VqR-AW-Zte"/>
+                                                                <constraint firstItem="Zu9-zM-JnN" firstAttribute="leading" secondItem="vy3-61-VwV" secondAttribute="trailing" constant="64" id="VqR-AW-Zte"/>
                                                                 <constraint firstAttribute="bottom" secondItem="coe-D8-NnO" secondAttribute="bottom" constant="5" id="Z1O-38-Bur"/>
-                                                                <constraint firstItem="coe-D8-NnO" firstAttribute="leading" secondItem="tt5-co-bGj" secondAttribute="leading" constant="22" id="bdt-bF-3GB"/>
+                                                                <constraint firstItem="coe-D8-NnO" firstAttribute="leading" secondItem="tt5-co-bGj" secondAttribute="leading" constant="8" id="bdt-bF-3GB"/>
                                                                 <constraint firstAttribute="trailing" secondItem="3aH-Gu-obE" secondAttribute="trailing" id="cVG-AK-SCI"/>
                                                                 <constraint firstItem="3aH-Gu-obE" firstAttribute="top" secondItem="tt5-co-bGj" secondAttribute="top" id="cek-Pj-h8w"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Zu9-zM-JnN" secondAttribute="bottom" constant="-1" id="f0B-dL-IFr"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Xjf-cH-7e6" secondAttribute="trailing" constant="132" id="jAb-G0-f1r"/>
                                                                 <constraint firstItem="JLO-W2-epy" firstAttribute="centerY" secondItem="Zu9-zM-JnN" secondAttribute="centerY" constant="-1" id="nfi-tQ-hTY"/>
-                                                                <constraint firstItem="vy3-61-VwV" firstAttribute="top" secondItem="Iym-Eo-M29" secondAttribute="bottom" constant="4" id="voe-dI-Luf"/>
-                                                                <constraint firstItem="coe-D8-NnO" firstAttribute="top" secondItem="vy3-61-VwV" secondAttribute="bottom" id="wKM-Cb-kEw"/>
+                                                                <constraint firstItem="vy3-61-VwV" firstAttribute="top" secondItem="Iym-Eo-M29" secondAttribute="bottom" constant="3" id="voe-dI-Luf"/>
+                                                                <constraint firstItem="coe-D8-NnO" firstAttribute="top" secondItem="vy3-61-VwV" secondAttribute="bottom" constant="1" id="wKM-Cb-kEw"/>
                                                                 <constraint firstItem="Xjf-cH-7e6" firstAttribute="top" secondItem="tt5-co-bGj" secondAttribute="top" constant="11" id="y22-NO-bZ4"/>
                                                                 <constraint firstItem="Iym-Eo-M29" firstAttribute="top" secondItem="3aH-Gu-obE" secondAttribute="bottom" id="zJX-zj-ElH"/>
                                                             </constraints>
@@ -2162,27 +1843,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3257.5999999999999" y="-803.29835082458771"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="opc-Ei-00W">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="psH-Nx-b0y" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="800" height="1000"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HHK-bA-X3q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lkb-sF-i5O" kind="relationship" relationship="rootViewController" id="BA5-g5-K9H"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="24I-YS-dVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-6872" y="-804"/>
+            <point key="canvasLocation" x="-1379.2" y="-803.29835082458771"/>
         </scene>
         <!--Apps DataVC-->
         <scene sceneID="pUh-rE-9o6">
@@ -2257,12 +1918,51 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vAm-O0-WAk"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="800" height="1000"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63n-zd-2ga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-8941" y="-855"/>
+            <point key="canvasLocation" x="-8003.1999999999998" y="-855.47226386806608"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EYs-9V-GTO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7IP-Bx-ldf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IWf-Gy-hyF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9o6-4m-kjv" kind="relationship" relationship="rootViewController" id="BUr-RO-5MB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gDm-4N-zXz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-9434" y="-855"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ifl-lU-Zw7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ebu-j4-Byd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YOk-rH-yAn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lkb-sF-i5O" kind="relationship" relationship="rootViewController" id="ZGG-V0-dgx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWE-dA-PE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4559" y="-855"/>
         </scene>
     </scenes>
     <resources>
@@ -2274,12 +1974,6 @@
         <image name="Cart Notification.png" width="152" height="152"/>
         <image name="Cart.png" width="66" height="71"/>
         <image name="CartsCell.png" width="152" height="152"/>
-        <image name="Categories_Bangles.png" width="750" height="502"/>
-        <image name="Categories_Bracelet.png" width="750" height="502"/>
-        <image name="Categories_Earrings.png" width="750" height="502"/>
-        <image name="Categories_Necklace.png" width="1554" height="499"/>
-        <image name="Categories_Pendant.png" width="1554" height="499"/>
-        <image name="Categories_Ring.png" width="750" height="502"/>
         <image name="CheckedBtn.png" width="50" height="50"/>
         <image name="DropDown Arrow.png" width="50" height="50"/>
         <image name="Employee Login BG 3.png" width="2048" height="2732"/>
@@ -2291,9 +1985,7 @@
         <image name="Logo 167x167.png" width="167" height="167"/>
         <image name="Logo_Login Page.png" width="643" height="349"/>
         <image name="Next Arrow.png" width="152" height="152"/>
-        <image name="PE818.jpg" width="3879" height="3254"/>
         <image name="Previous Arrow.png" width="152" height="152"/>
-        <image name="RG599.jpg" width="3879" height="3254"/>
         <image name="Register Btn.png" width="465" height="109"/>
         <image name="RegistrationBg.png" width="2048" height="2732"/>
         <image name="Search.png" width="152" height="152"/>

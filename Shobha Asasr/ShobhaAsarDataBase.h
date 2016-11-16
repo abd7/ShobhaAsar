@@ -47,4 +47,7 @@
 
 -(void)addToWishlist_productid:(int)productid addToWishlist_quantity:(int)quantity addToWishlist_userEmail:(NSString *)useremail;
 
+-(NSMutableArray *)getCollectionData:(NSUInteger)collectionId;
+-(NSMutableArray *)getCategoryData:(NSUInteger)category_id;
+
 @end

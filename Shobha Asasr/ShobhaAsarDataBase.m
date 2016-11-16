@@ -7,6 +7,7 @@
 //
 
 #import "ShobhaAsarDataBase.h"
+
 #import <sqlite3.h>
 
 static sqlite3 *database = nil;
@@ -113,7 +114,10 @@ static sqlite3_stmt * updatestmt = nil;
         
         // NSMutableString *image = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 3)];
         
-         NSData *imageData = [[NSData alloc] initWithBytes:sqlite3_column_blob(detailStmt, 3) length:sqlite3_column_bytes(detailStmt, 3)];
+         //NSData *imageData = [[NSData alloc] initWithBytes:sqlite3_column_blob(detailStmt, 3) length:sqlite3_column_bytes(detailStmt, 3)];
+        
+        int length = sqlite3_column_bytes(detailStmt, 3);
+        NSData *imageData = [NSData dataWithBytes:sqlite3_column_blob(detailStmt, 3) length:length];
         
         NSNumber *secid = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 4)];
         
@@ -132,7 +136,6 @@ static sqlite3_stmt * updatestmt = nil;
         NSNumber *stat = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 10)];
         
         NSMutableString *status = [[NSMutableString alloc] initWithFormat:@"%d",[stat intValue]];
-        
         
         NSMutableString *created_at = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 11)];
         NSMutableString *updated_at = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 12)];
@@ -167,7 +170,8 @@ static sqlite3_stmt * updatestmt = nil;
         
         [[NSUserDefaults standardUserDefaults] setObject:collectionArr forKey:@"collectionData"];
         
-        NSLog(@"---collectionDataFrom %@",collectionArr);
+       
+        
 
         
     }
@@ -264,8 +268,6 @@ static sqlite3_stmt * updatestmt = nil;
         
         [[NSUserDefaults standardUserDefaults] setObject:categoryArr forKey:@"categoryData"];
         
-        NSLog(@"---collectionDataFrom %@",categoryArr);
-        
         
     }
     //Reset the detail statement.
@@ -274,28 +276,28 @@ static sqlite3_stmt * updatestmt = nil;
 }
 
 
--(void)getinitialPageData
-{
-    NSString *string = @"";
-    
-    
-    string = [NSString stringWithFormat:@"Select * From CATEGORY_MASTER"];
-    const char *sql= [string cStringUsingEncoding:NSUTF8StringEncoding];
-    if(sqlite3_prepare_v2(database, sql, -1, &detailStmt, NULL) != SQLITE_OK)
-        NSAssert1(0, @"Error while creating detail view statement. '%s'", sqlite3_errmsg(database));
-    while (sqlite3_step(detailStmt) == SQLITE_ROW)
-    {
-        NSMutableString *feedStatus = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 38)];
-        NSMutableString *show_social_feeds = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 39)];
-        
-        NSLog(@"%@",feedStatus);
-        NSLog(@"%@",show_social_feeds);
-        
-    }
-    //Reset the detail statement.
-    sqlite3_reset(detailStmt);
-
-}
+//-(void)getinitialPageData
+//{
+//    NSString *string = @"";
+//    
+//    
+//    string = [NSString stringWithFormat:@"Select * From CATEGORY_MASTER"];
+//    const char *sql= [string cStringUsingEncoding:NSUTF8StringEncoding];
+//    if(sqlite3_prepare_v2(database, sql, -1, &detailStmt, NULL) != SQLITE_OK)
+//        NSAssert1(0, @"Error while creating detail view statement. '%s'", sqlite3_errmsg(database));
+//    while (sqlite3_step(detailStmt) == SQLITE_ROW)
+//    {
+//        NSMutableString *feedStatus = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 38)];
+//        NSMutableString *show_social_feeds = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 39)];
+//        
+//        NSLog(@"%@",feedStatus);
+//        NSLog(@"%@",show_social_feeds);
+//        
+//    }
+//    //Reset the detail statement.
+//    sqlite3_reset(detailStmt);
+//
+//}
 
 -(void)addProduct_ids:(int)proid addProduct_name:(NSString *)name addProduct_pieces:(int)pieces addProduct_weight:(int)weight addProduct_dia_pcs:(int)dia_pcs addProduct_dia_wt:(int)dia_wt addProduct_cst_pcs:(int)cst_pcs addProduct_cst_wt:(int)cst_wt addProduct_image1:(NSString *)image1 addProduct_image2:(NSString *)image2 addProduct_image3:(NSString *)image3 addProduct_in_stock_status:(int)in_stock_status addProduct_collection_id:(int)collection_id addProduct_metal:(int)metal addProduct_karat:(int)karat addProduct_size:(int)size addProduct_quality:(int)quality addProduct_price:(int)price addProduct_quality_price:(int)quality_price  addProduct_category_id:(int)category_id addProduct_style_id:(NSString *)style_id addProduct_slash_no:(NSString *)slash_no addProduct_location_id:(NSString *)location_id addProduct_sub_category_id:(NSString *)sub_category_id addProduct_created_at:(NSString *)created_at addProduct_updated_at:(NSString *)updated_at
 {
@@ -369,8 +371,7 @@ static sqlite3_stmt * updatestmt = nil;
     
     sqlite3_bind_text(addStmt, 26, [updated_at UTF8String], -1, SQLITE_TRANSIENT);
     
-   
-    
+ 
     if(SQLITE_DONE != sqlite3_step(addStmt))
         
         NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(database));
@@ -623,9 +624,285 @@ static sqlite3_stmt * updatestmt = nil;
         NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(database));
     else
         cate_ID = (int)sqlite3_last_insert_rowid(database);
-    //NSLog(@"----> %ld",(long)cate_ID);
+   
     
     sqlite3_reset(addStmt);
 }
+#pragma mark SELECT QUERY FOR category Data
+
+-(NSMutableArray *)getCategoryData:(NSUInteger)category_id
+{
+    NSMutableArray  *categoryArr = [[NSMutableArray alloc] init];
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    
+    NSString *string = @"";
+    
+    string = [NSString stringWithFormat:@"Select * From STYLE_MASTER where category_id = %lu",(unsigned long)category_id];
+    
+    const char *sql= [string cStringUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    if(sqlite3_prepare_v2(database, sql, -1, &detailStmt, NULL) != SQLITE_OK)
+        NSAssert1(0, @"Error while creating detail view statement. '%s'", sqlite3_errmsg(database));
+    
+    while (sqlite3_step(detailStmt) == SQLITE_ROW)
+    {
+        
+        
+        NSNumber *pid = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 1)];
+        
+        NSMutableString *proid = [[NSMutableString alloc] initWithFormat:@"%d",[pid intValue]];
+        
+        NSMutableString *name = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 2)];
+        
+        NSNumber *piece = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 2)];
+        
+        NSMutableString *pieces = [[NSMutableString alloc] initWithFormat:@"%d",[piece intValue]];
+        
+        NSNumber *wt = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 4)];
+        
+        NSMutableString *weight = [[NSMutableString alloc] initWithFormat:@"%d",[wt intValue]];
+        
+        NSNumber *dpc = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 5)];
+        
+        NSMutableString *dia_pcs = [[NSMutableString alloc] initWithFormat:@"%d",[dpc intValue]];
+        
+        
+        NSNumber *dwt = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 6)];
+        
+        NSMutableString *dia_wt = [[NSMutableString alloc] initWithFormat:@"%d",[dwt intValue]];
+        
+        NSNumber *cpcs = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 7)];
+        
+        NSMutableString *cst_pcs = [[NSMutableString alloc] initWithFormat:@"%d",[cpcs intValue]];
+        
+        
+        NSNumber *cwt = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 8)];
+        
+        NSMutableString *cst_wt = [[NSMutableString alloc] initWithFormat:@"%d",[cwt intValue]];
+        
+        NSData *image1 = [[NSData alloc] initWithBytes:sqlite3_column_blob(detailStmt, 9) length:sqlite3_column_bytes(detailStmt, 9)];
+        NSData *image2 = [[NSData alloc] initWithBytes:sqlite3_column_blob(detailStmt, 10) length:sqlite3_column_bytes(detailStmt, 10)];
+        NSData *image3 = [[NSData alloc] initWithBytes:sqlite3_column_blob(detailStmt, 11) length:sqlite3_column_bytes(detailStmt, 11)];
+        
+        NSNumber *instk = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 12)];
+        
+        NSMutableString *in_stock_status = [[NSMutableString alloc] initWithFormat:@"%d",[instk intValue]];
+        
+        NSNumber *catid = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 20)];
+        
+        NSMutableString *category_id = [[NSMutableString alloc] initWithFormat:@"%d",[catid intValue]];
+        
+        NSNumber *mtl = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 14)];
+        
+        NSMutableString *metal = [[NSMutableString alloc] initWithFormat:@"%d",[mtl intValue]];
+        
+        NSNumber *krt = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 15)];
+        
+        NSMutableString *karat = [[NSMutableString alloc] initWithFormat:@"%d",[krt intValue]];
+        
+        NSNumber *szd = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 16)];
+        
+        NSMutableString *size = [[NSMutableString alloc] initWithFormat:@"%d",[szd intValue]];
+        
+        NSNumber *qlty = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 17)];
+        
+        NSMutableString *quality = [[NSMutableString alloc] initWithFormat:@"%d",[qlty intValue]];
+        
+        NSNumber *prc = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 18)];
+        
+        NSMutableString *price = [[NSMutableString alloc] initWithFormat:@"%d",[prc intValue]];
+        
+        NSNumber *qltyprc=[[NSNumber alloc]initWithInt:sqlite3_column_int(detailStmt, 19)];
+        
+        NSMutableString *quality_price=[[NSMutableString alloc]initWithFormat:@"%d",[qltyprc intValue]];
+        
+        NSMutableString *style_id = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 21)];
+        
+        NSMutableString *slash_no = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 22)];
+        
+        NSMutableString *location_id = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 23)];
+        
+        NSMutableString *created_at = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 25)];
+        NSMutableString *updated_at = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 26)];
+        
+        
+        [dict setValue:proid forKey:@"proid"];
+        [dict setValue:name forKey:@"name"];
+        [dict setValue:pieces forKey:@"pieces"];
+        [dict setValue:weight forKey:@"weight"];
+        [dict setValue:dia_pcs forKey:@"dia_pcs"];
+        [dict setValue:dia_wt forKey:@"dia_wt"];
+        [dict setValue:cst_pcs forKey:@"cst_pcs"];
+        [dict setValue:cst_wt forKey:@"cst_wt"];
+        [dict setValue:image1 forKey:@"image1"];
+        [dict setValue:image2 forKey:@"image2"];
+        [dict setValue:image3 forKey:@"image3"];
+        [dict setValue:in_stock_status forKey:@"in_stock_status"];
+        
+        [dict setValue:category_id forKey:@"category_id"];
+        [dict setValue:metal forKey:@"metal"];
+        [dict setValue:karat forKey:@"karat"];
+        [dict setValue:size forKey:@"size"];
+        [dict setValue:quality forKey:@"quality"];
+        [dict setValue:price forKey:@"price"];
+        [dict setValue:quality_price forKey:@"quality_price"];
+        [dict setValue:style_id forKey:@"style_id"];
+        [dict setValue:slash_no forKey:@"slash_no"];
+        
+        [dict setValue:location_id forKey:@"location_id"];
+        [dict setValue:created_at forKey:@"created_at"];
+        [dict setValue:updated_at forKey:@"updated_at"];
+        
+        
+        [categoryArr addObject:[dict copy]];
+        [[NSUserDefaults standardUserDefaults] setObject:categoryArr forKey:@"categoryListingData"];
+        
+        
+    }
+    //Reset the detail statement.
+    sqlite3_reset(detailStmt);
+    return categoryArr;
+}
+
+
+
+
+#pragma mark SELECT QUERY FOR collectionData
+
+-(NSMutableArray *)getCollectionData:(NSUInteger)collectionId
+{
+    NSMutableArray  *collectionarray = [[NSMutableArray alloc] init];
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    
+    NSString *string = @"";
+    
+    string = [NSString stringWithFormat:@"Select * From STYLE_MASTER where collection_id = %lu",(unsigned long)collectionId];
+  
+    const char *sql= [string cStringUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    if(sqlite3_prepare_v2(database, sql, -1, &detailStmt, NULL) != SQLITE_OK)
+        NSAssert1(0, @"Error while creating detail view statement. '%s'", sqlite3_errmsg(database));
+    
+    while (sqlite3_step(detailStmt) == SQLITE_ROW)
+    {
+        
+
+        NSNumber *pid = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 1)];
+        
+        NSMutableString *proid = [[NSMutableString alloc] initWithFormat:@"%d",[pid intValue]];
+        
+        NSMutableString *name = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 2)];
+        
+        NSNumber *piece = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 2)];
+        
+        NSMutableString *pieces = [[NSMutableString alloc] initWithFormat:@"%d",[piece intValue]];
+       
+        NSNumber *wt = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 4)];
+        
+        NSMutableString *weight = [[NSMutableString alloc] initWithFormat:@"%d",[wt intValue]];
+        
+        NSNumber *dpc = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 5)];
+        
+        NSMutableString *dia_pcs = [[NSMutableString alloc] initWithFormat:@"%d",[dpc intValue]];
+        
+        
+        NSNumber *dwt = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 6)];
+        
+        NSMutableString *dia_wt = [[NSMutableString alloc] initWithFormat:@"%d",[dwt intValue]];
+        
+        NSNumber *cpcs = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 7)];
+        
+        NSMutableString *cst_pcs = [[NSMutableString alloc] initWithFormat:@"%d",[cpcs intValue]];
+        
+        
+        NSNumber *cwt = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 8)];
+        
+        NSMutableString *cst_wt = [[NSMutableString alloc] initWithFormat:@"%d",[cwt intValue]];
+     
+        NSData *image1 = [[NSData alloc] initWithBytes:sqlite3_column_blob(detailStmt, 9) length:sqlite3_column_bytes(detailStmt, 9)];
+        NSData *image2 = [[NSData alloc] initWithBytes:sqlite3_column_blob(detailStmt, 10) length:sqlite3_column_bytes(detailStmt, 10)];
+        NSData *image3 = [[NSData alloc] initWithBytes:sqlite3_column_blob(detailStmt, 11) length:sqlite3_column_bytes(detailStmt, 11)];
+        
+        NSNumber *instk = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 12)];
+        
+        NSMutableString *in_stock_status = [[NSMutableString alloc] initWithFormat:@"%d",[instk intValue]];
+     
+        NSNumber *colid = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 13)];
+        
+        NSMutableString *collection_id = [[NSMutableString alloc] initWithFormat:@"%d",[colid intValue]];
+   
+        NSNumber *mtl = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 14)];
+        
+        NSMutableString *metal = [[NSMutableString alloc] initWithFormat:@"%d",[mtl intValue]];
+  
+        NSNumber *krt = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 15)];
+        
+        NSMutableString *karat = [[NSMutableString alloc] initWithFormat:@"%d",[krt intValue]];
+ 
+        NSNumber *szd = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 16)];
+        
+        NSMutableString *size = [[NSMutableString alloc] initWithFormat:@"%d",[szd intValue]];
+
+        NSNumber *qlty = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 17)];
+        
+        NSMutableString *quality = [[NSMutableString alloc] initWithFormat:@"%d",[qlty intValue]];
+        
+        NSNumber *prc = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 18)];
+        
+        NSMutableString *price = [[NSMutableString alloc] initWithFormat:@"%d",[prc intValue]];
+        
+        NSNumber *qltyprc=[[NSNumber alloc]initWithInt:sqlite3_column_int(detailStmt, 19)];
+        
+        NSMutableString *quality_price=[[NSMutableString alloc]initWithFormat:@"%d",[qltyprc intValue]];
+       
+        NSMutableString *style_id = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 21)];
+        
+        NSMutableString *slash_no = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 22)];
+        
+        NSMutableString *location_id = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 23)];
+
+        NSMutableString *created_at = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 25)];
+        NSMutableString *updated_at = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 26)];
+     
+        
+        [dict setValue:proid forKey:@"proid"];
+        [dict setValue:name forKey:@"name"];
+        [dict setValue:pieces forKey:@"pieces"];
+        [dict setValue:weight forKey:@"weight"];
+        [dict setValue:dia_pcs forKey:@"dia_pcs"];
+        [dict setValue:dia_wt forKey:@"dia_wt"];
+        [dict setValue:cst_pcs forKey:@"cst_pcs"];
+        [dict setValue:cst_wt forKey:@"cst_wt"];
+        [dict setValue:image1 forKey:@"image1"];
+        [dict setValue:image2 forKey:@"image2"];
+        [dict setValue:image3 forKey:@"image3"];
+        [dict setValue:in_stock_status forKey:@"in_stock_status"];
+        
+        [dict setValue:collection_id forKey:@"collection_id"];
+        [dict setValue:metal forKey:@"metal"];
+        [dict setValue:karat forKey:@"karat"];
+        [dict setValue:size forKey:@"size"];
+        [dict setValue:quality forKey:@"quality"];
+        [dict setValue:price forKey:@"price"];
+        [dict setValue:quality_price forKey:@"quality_price"];
+        [dict setValue:style_id forKey:@"style_id"];
+        [dict setValue:slash_no forKey:@"slash_no"];
+        
+        [dict setValue:location_id forKey:@"location_id"];
+        [dict setValue:created_at forKey:@"created_at"];
+        [dict setValue:updated_at forKey:@"updated_at"];
+        
+   
+        
+        [collectionarray addObject:[dict copy]];
+        [[NSUserDefaults standardUserDefaults] setObject:collectionarray forKey:@"collectionListingData"];
+    }
+    //Reset the detail statement.
+    sqlite3_reset(detailStmt);
+    return collectionarray;
+}
+
 
 @end

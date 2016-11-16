@@ -16,9 +16,11 @@
 
 
 
+
 @interface AppsDataVC ()
 {
     UIScrollView *scrollview;
+    ViewController *listingPage;
 }
 
 #define UIColorFromRGB(rgbValue) \
@@ -33,10 +35,13 @@ alpha:1.0]
 
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
      [self callWebService];
     [self getCollectionData];
     [self getcategoryData];
+    
+    listingPage=[[ViewController alloc]init];
     
     scrollview=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 70, self.view.frame.size.width, self.view.frame.size.height-70)];
     
@@ -183,261 +188,62 @@ alpha:1.0]
 
 }
 
-- (IBAction)onTapCategory_btn:(id)sender {
-    
-    ShobhaAsarDataBase * dataBase = [[ShobhaAsarDataBase alloc]init];
-    
-    [dataBase getCategoryPageDetails];
-    
-    
-    NSMutableArray *fullDataArr=[[NSMutableArray alloc]init];
-    NSMutableArray *halfData=[[NSMutableArray alloc]init];
-    
-    
-    NSMutableArray *ascendingData=[[NSMutableArray alloc]init];
-    
-    NSMutableArray *categoryData=[[NSUserDefaults standardUserDefaults] valueForKey:@"categoryData"];
-    
-
-    
-    NSLog(@"--CollectionData %lu",(unsigned long)categoryData.count);
-    
-    int seqC=1;
-    int x=70;
-    int y=60;
-    int buttonHeight=200;
-    int fullButtonW=630;
-    int halfButtonW=300;
-    
-    int  ycoordi=categoryData.count*(buttonHeight+30)+halfData.count *(buttonHeight+30);
-    
-    [scrollview setContentSize:CGSizeMake(self.view.frame.size.width, ycoordi)];
-    
-    for (int i=0; i<categoryData.count; i++) {
-        
-        if ([[[categoryData objectAtIndex:i]valueForKey:@"sequence"] isEqual:[NSString stringWithFormat:@"%d",i]])
-           
-        {
-            [ascendingData addObject:[categoryData objectAtIndex:i]];
-            NSLog(@"-->%@",ascendingData);
-        }
-            if ([[[categoryData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"full"]) {
-                
-                UIButton *fullImageButton=[[UIButton alloc]initWithFrame:CGRectMake(x, y,fullButtonW, buttonHeight)];
-                
-                [fullImageButton setBackgroundImage:[UIImage imageWithData:[[categoryData objectAtIndex:i] valueForKey:@"image"]] forState:UIControlStateNormal];
-                fullImageButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[categoryData objectAtIndex:i] valueForKey:@"background"]]];
-               [scrollview addSubview:fullImageButton];
-                y= y+buttonHeight+30;
-
-                
-            }
-            else if ([[[categoryData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"half"])
-            {
-                UIButton *halfButton=[[UIButton alloc]initWithFrame:CGRectMake(x, y,halfButtonW, buttonHeight)];
-                
-                
-                [halfButton setBackgroundImage:[UIImage imageWithData:[[categoryData objectAtIndex:i] valueForKey:@"image"]] forState:UIControlStateNormal];
-                halfButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[categoryData objectAtIndex:i] valueForKey:@"background"]]];
-                [[halfButton imageView] setContentMode: UIViewContentModeScaleAspectFit];
-                [scrollview addSubview:halfButton];
-                
-                
-                x=x+halfButtonW+30;
-                if (x>630)
-                {
-                    y=y+buttonHeight+30;
-                    x=70;
-                }
-
-            }
-            
-        }
-       
-    }
-
-        
-//            
-//        }
-//        else if ([[[categoryData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"half"])
-//        {
-//            
-//            [halfData addObject:[categoryData objectAtIndex:i]];
-//            
-//        }
-//        
-//        
-//    }
-    
-//    
-//    int x=70;
-//    int y=60;
-//    int buttonHeight=200;
-//    int fullButtonW=630;
-//    int halfButtonW=300;
-//    
-//    int  ycoordi=fullDataArr.count*(buttonHeight+30)+halfData.count *(buttonHeight+30);
-//    
-//    [scrollview setContentSize:CGSizeMake(self.view.frame.size.width, ycoordi)];
-//    
-//    if (fullDataArr.count>0) {
-//        
-//        for (int i=0; i<fullDataArr.count; i++) {
-//            
-//           UIButton *fullImageButton=[[UIButton alloc]initWithFrame:CGRectMake(x, y,fullButtonW, buttonHeight)];
-//            
-//            //[fullImageButton setTitle:[NSString stringWithFormat:@"%@",[[fullDataArr objectAtIndex:i] valueForKey:@"name"]] forState:UIControlStateNormal];
-//            [fullImageButton setBackgroundImage:[UIImage imageWithData:[[fullDataArr objectAtIndex:i] valueForKey:@"image"]] forState:UIControlStateNormal];
-//            fullImageButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[fullDataArr objectAtIndex:i] valueForKey:@"background"]]];
-//            [[fullImageButton imageView] setContentMode: UIViewContentModeScaleAspectFit];
-//            
-//            [scrollview addSubview:fullImageButton];
-//            y= y+buttonHeight+30;
-//        }
-//        
-//        
-//    }
-//    
-//    if (halfData.count>0)
-//    {
-//        int  y=fullDataArr.count*(buttonHeight+30)+100;
-//        int  x=70;
-//        
-//        for (int i=0; i<halfData.count; i++)
-//        {
-//            
-//            
-//            UIButton *halfButton=[[UIButton alloc]initWithFrame:CGRectMake(x, y,halfButtonW, buttonHeight)];
-//            
-//            //[halfButton setTitle:[NSString stringWithFormat:@"%@",[[halfData objectAtIndex:i] valueForKey:@"name"]] forState:UIControlStateNormal];
-//            [halfButton setBackgroundImage:[UIImage imageWithData:[[halfData objectAtIndex:i] valueForKey:@"image"]] forState:UIControlStateNormal];
-//            halfButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[halfData objectAtIndex:i] valueForKey:@"background"]]];
-//            [[halfButton imageView] setContentMode: UIViewContentModeScaleAspectFit];
-//            [scrollview addSubview:halfButton];
-//            
-//            
-//            x=x+halfButtonW+30;
-//            
-//            if (x>630)
-//            {
-//                y=y+buttonHeight+30;
-//                x=70;
-//            }
-//            
-//        }
-//        
-//        
-//        
-//        
-//        
-//        
-//    }
-//
-    
 
 
-- (IBAction)onTapCollection_btn:(id)sender {
-    
-    
-    ShobhaAsarDataBase * dataBase = [[ShobhaAsarDataBase alloc]init];
-    
-    [dataBase getCollectionsPageDetails];
-    
-    NSMutableArray *fullDataArr=[[NSMutableArray alloc]init];
-    NSMutableArray *halfData=[[NSMutableArray alloc]init];
-    
-    NSMutableArray *collectData=[[NSUserDefaults standardUserDefaults] valueForKey:@"collectionData"];
-    
-    NSLog(@"--CollectionData %lu",(unsigned long)collectData.count);
 
-    
-    for (int i=0; i<collectData.count; i++) {
-        
-     if ([[[collectData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"full"])
-     {
-             [fullDataArr addObject:[collectData objectAtIndex:i]];
-         
-     }
-     else if ([[[collectData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"half"])
-      {
+-(void)onTapCategoryFullButton:(UIButton *)button
+{
+    ShobhaAsarDataBase *database=[[ShobhaAsarDataBase alloc]init];
+    [database getCategoryData:button.tag];
+   
+   listingPage.arrayForimgs =[[NSUserDefaults standardUserDefaults] valueForKey:@"categoryData"];
+    NSLog(@"-->categry Data for listing page %@",listingPage.arrayForimgs);
+    NSLog(@"-->categry Data for listing page %@",[[NSUserDefaults standardUserDefaults] valueForKey:@"categoryListingData"]);
+   
+    [self switchToListingPage];
+}
 
-            [halfData addObject:[collectData objectAtIndex:i]];
-            
-        }
-        
-        
-    }
-    
+-(void)onTapCategoryHalfButton:(UIButton *)button
+{
+    ShobhaAsarDataBase *database=[[ShobhaAsarDataBase alloc]init];
+    [database getCategoryData:button.tag];
+    listingPage.arrayForimgs =[[NSUserDefaults standardUserDefaults] valueForKey:@"categoryListingData"];
+    [self switchToListingPage];
+}
 
-    int x=70;
-    int y=60;
-    int buttonHeight=190;
-    int fullButtonW=620;
-    int halfButtonW=290;
-    
-  int  ycoordi=fullDataArr.count*(buttonHeight+30)+halfData.count *(buttonHeight+30);
-    
-    [scrollview setContentSize:CGSizeMake(self.view.frame.size.width, ycoordi)];
-    
-    if (fullDataArr.count>0) {
-        
-        for (int i=0; i<fullDataArr.count; i++) {
-            
-            
-            UIButton *fullImageButton=[[UIButton alloc]initWithFrame:CGRectMake(x, y,fullButtonW, buttonHeight)];
-            
-            //[fullImageButton setTitle:[NSString stringWithFormat:@"%@",[[fullDataArr objectAtIndex:i] valueForKey:@"name"]] forState:UIControlStateNormal];
-            [fullImageButton setBackgroundImage:[UIImage imageWithData:[[fullDataArr objectAtIndex:i] valueForKey:@"image"]] forState:UIControlStateNormal];
-            fullImageButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[fullDataArr objectAtIndex:i] valueForKey:@"background"]]];
-            
-            [scrollview addSubview:fullImageButton];
-            y= y+buttonHeight+30;
-        }
-        
-        
-     }
-    
-    if (halfData.count>0)
-    {
-      int  y=fullDataArr.count*(buttonHeight+30)+100;
-        int  x=70;
-        
-        for (int i=0; i<halfData.count; i++)
-        {
-            
-            
-            UIButton *halfButton=[[UIButton alloc]initWithFrame:CGRectMake(x, y,halfButtonW, buttonHeight)];
-           
-            //[halfButton setTitle:[NSString stringWithFormat:@"%@",[[halfData objectAtIndex:i] valueForKey:@"name"]] forState:UIControlStateNormal];
-            [halfButton setBackgroundImage:[UIImage imageWithData:[[halfData objectAtIndex:i] valueForKey:@"image"]] forState:UIControlStateNormal];
-            halfButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[halfData objectAtIndex:i] valueForKey:@"background"]]];
-            [scrollview addSubview:halfButton];
-            
-            
-            x=x+halfButtonW+30;
-            
-            if (x>630)
-            {
-                y=y+buttonHeight+30;
-                x=70;
-            }
-            
-        }
-        
-        
-        
-      
-        
-        
-    }
 
-  
+
+-(void)onTapCollectionFullButton:(UIButton *)button
+{
     
+    ShobhaAsarDataBase *database=[[ShobhaAsarDataBase alloc]init];
+    [database getCollectionData:button.tag];
+    listingPage.arrayForimgs =[[NSUserDefaults standardUserDefaults] valueForKey:@"collectionListingData"];
+    [self switchToListingPage];
+    
+    NSLog(@"---%ld",(long)button.tag);
+   
     
 }
 
 
 
+- (void)onTapCollectionHalfButton:(UIButton*)button
+{
+    
+    NSLog(@"---%ld",(long)button.tag);
+    
+    ShobhaAsarDataBase *database=[[ShobhaAsarDataBase alloc]init];
+    [database getCollectionData:button.tag];
+    listingPage.arrayForimgs =[[NSUserDefaults standardUserDefaults] valueForKey:@"collectionListingData"];
+    
+    [self switchToListingPage];
+}
+-(void)switchToListingPage
+{
+    listingPage=[[self storyboard]instantiateViewControllerWithIdentifier:@"ViewController"];
+    [self.navigationController pushViewController:listingPage animated:YES];
+}
 
 -(void)addCollectionDetails:(NSMutableArray *)collectionDetailsArray
 {
@@ -534,6 +340,205 @@ alpha:1.0]
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+- (IBAction)onTapCategory_btn:(id)sender {
+    
+    ShobhaAsarDataBase * dataBase = [[ShobhaAsarDataBase alloc]init];
+    
+    [dataBase getCategoryPageDetails];
+    
+    
+    NSMutableArray *fullDataArr=[[NSMutableArray alloc]init];
+    NSMutableArray *halfData=[[NSMutableArray alloc]init];
+    
+    NSMutableArray *categoryData=[[NSUserDefaults standardUserDefaults] valueForKey:@"categoryData"];
+    
+    
+    NSLog(@"--CollectionData %lu",(unsigned long)categoryData.count);
+    
+    
+    for (int i=0; i<categoryData.count; i++) {
+        
+        if ([[[categoryData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"full"])
+        {
+            [fullDataArr addObject:[categoryData objectAtIndex:i]];
+            
+        }
+        else if ([[[categoryData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"half"])
+        {
+            
+            [halfData addObject:[categoryData objectAtIndex:i]];
+            
+        }
+        
+        
+    }
+    
+    
+    int x=70;
+    int y=60;
+    int buttonHeight=190;
+    int fullButtonW=620;
+    int halfButtonW=290;
+    
+    int  ycoordi=fullDataArr.count*(buttonHeight+30)+halfData.count *(buttonHeight+30);
+    
+    [scrollview setContentSize:CGSizeMake(self.view.frame.size.width, ycoordi)];
+    
+    if (fullDataArr.count>0) {
+        
+        for (int i=0; i<fullDataArr.count; i++) {
+            
+            
+            UIButton *fullImageButton=[[UIButton alloc]initWithFrame:CGRectMake(x, y,fullButtonW, buttonHeight)];
+            
+            [fullImageButton setBackgroundImage:[UIImage imageWithData:[[fullDataArr objectAtIndex:i] valueForKey:@"image"]] forState:UIControlStateNormal];
+            fullImageButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[fullDataArr objectAtIndex:i] valueForKey:@"background"]]];
+            [fullImageButton setTag:[[[fullDataArr objectAtIndex:i] valueForKey:@"category_id"] integerValue]];
+            
+            [fullImageButton addTarget:self action:@selector(onTapCategoryFullButton:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [scrollview addSubview:fullImageButton];
+            y= y+buttonHeight+30;
+        }
+        
+        
+    }
+    
+    if (halfData.count>0)
+    {
+        int  y=fullDataArr.count*(buttonHeight+30)+100;
+        int  x=70;
+        
+        for (int i=0; i<halfData.count; i++)
+        {
+            
+            
+            UIButton *halfButton=[[UIButton alloc]initWithFrame:CGRectMake(x, y,halfButtonW, buttonHeight)];
+            
+            [halfButton setTitle:[NSString stringWithFormat:@"%@",[[halfData objectAtIndex:i] valueForKey:@"name"]] forState:UIControlStateNormal];
+            halfButton.titleLabel.hidden=YES;
+            [halfButton setBackgroundImage:[UIImage imageWithData:[[halfData objectAtIndex:i] valueForKey:@"image"]] forState:UIControlStateNormal];
+            halfButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[halfData objectAtIndex:i] valueForKey:@"background"]]];
+            
+            [halfButton setTag:[[[halfData objectAtIndex:i] valueForKey:@"category_id"] integerValue]];
+            
+            [halfButton addTarget:self action:@selector(onTapCategoryHalfButton:) forControlEvents:UIControlEventTouchUpInside];
+            [scrollview addSubview:halfButton];
+            
+            
+            x=x+halfButtonW+30;
+            
+            if (x>630)
+            {
+                y=y+buttonHeight+30;
+                x=70;
+            }
+            
+        }
+    }
+}
+
+
+
+
+- (IBAction)onTapCollection_btn:(id)sender {
+    
+    
+    ShobhaAsarDataBase * dataBase = [[ShobhaAsarDataBase alloc]init];
+    
+    [dataBase getCollectionsPageDetails];
+    
+    NSMutableArray *fullDataArr=[[NSMutableArray alloc]init];
+    NSMutableArray *halfData=[[NSMutableArray alloc]init];
+    
+    NSMutableArray *collectData=[[NSUserDefaults standardUserDefaults] valueForKey:@"collectionData"];
+    
+    NSLog(@"--CollectionData %lu",(unsigned long)collectData.count);
+    
+    
+    for (int i=0; i<collectData.count; i++) {
+        
+        if ([[[collectData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"full"])
+        {
+            [fullDataArr addObject:[collectData objectAtIndex:i]];
+            
+        }
+        else if ([[[collectData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"half"])
+        {
+            
+            [halfData addObject:[collectData objectAtIndex:i]];
+            
+        }
+        
+        
+    }
+    
+    
+    int x=70;
+    int y=60;
+    int buttonHeight=190;
+    int fullButtonW=620;
+    int halfButtonW=290;
+    
+    int  ycoordi=fullDataArr.count*(buttonHeight+30)+halfData.count *(buttonHeight+30);
+    
+    [scrollview setContentSize:CGSizeMake(self.view.frame.size.width, ycoordi)];
+    
+    if (fullDataArr.count>0) {
+        
+        for (int i=0; i<fullDataArr.count; i++) {
+            
+            
+            UIButton *fullImageButton=[[UIButton alloc]initWithFrame:CGRectMake(x, y,fullButtonW, buttonHeight)];
+            
+            [fullImageButton setTitle:[NSString stringWithFormat:@"%@",[[fullDataArr objectAtIndex:i] valueForKey:@"name"]] forState:UIControlStateNormal];
+            fullImageButton.titleLabel.hidden=YES;
+            [fullImageButton setBackgroundImage:[UIImage imageWithData:[[fullDataArr objectAtIndex:i] valueForKey:@"image"]] forState:UIControlStateNormal];
+            fullImageButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[fullDataArr objectAtIndex:i] valueForKey:@"background"]]];
+            [fullImageButton setTag:[[[fullDataArr objectAtIndex:i] valueForKey:@"collection_id"] integerValue]];
+            [fullImageButton addTarget:self action:@selector(onTapCollectionFullButton:) forControlEvents:UIControlEventTouchUpInside];
+            [scrollview addSubview:fullImageButton];
+            y= y+buttonHeight+30;
+        }
+        
+        
+    }
+    
+    if (halfData.count>0)
+    {
+        int  y=fullDataArr.count*(buttonHeight+30)+100;
+        int  x=70;
+        
+        for (int i=0; i<halfData.count; i++)
+        {
+            
+            
+            UIButton *halfButton=[[UIButton alloc]initWithFrame:CGRectMake(x, y,halfButtonW, buttonHeight)];
+            
+            [halfButton setTitle:[NSString stringWithFormat:@"%@",[[halfData objectAtIndex:i] valueForKey:@"name"]] forState:UIControlStateNormal];
+            halfButton.titleLabel.hidden=YES;
+            [halfButton setBackgroundImage:[UIImage imageWithData:[[halfData objectAtIndex:i] valueForKey:@"image"]] forState:UIControlStateNormal];
+            halfButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[halfData objectAtIndex:i] valueForKey:@"background"]]];
+            
+            [halfButton setTag:[[[halfData objectAtIndex:i] valueForKey:@"collection_id"] integerValue]];
+            
+            [halfButton addTarget:self action:@selector(onTapCollectionHalfButton:) forControlEvents:UIControlEventTouchUpInside];
+            [scrollview addSubview:halfButton];
+            
+            
+            x=x+halfButtonW+30;
+            
+            if (x>630)
+            {
+                y=y+buttonHeight+30;
+                x=70;
+            }
+        }
+    }
 }
 
 /*

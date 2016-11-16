@@ -25,7 +25,7 @@
 
 @implementation AppDelegate
 @synthesize window = _window;
-@synthesize wishListCount,cartListCount,produstID,productQuantity;
+@synthesize wishListCount,cartListCount,produstID,productQuantity,ProductArray;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -36,6 +36,7 @@
     cartListCount = [[NSMutableArray alloc]init];
     produstID= [[NSMutableArray alloc]init];
     productQuantity= [[NSMutableArray alloc]init];
+    ProductArray=[[NSMutableArray alloc]init];
     
     //[self methodForRecheability];
     

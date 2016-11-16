@@ -38,6 +38,8 @@
 @property NSInteger indexVal;
 @property NSMutableArray *mainImageArray,*cartImageArray,*wishListImageArray;
 
+@property NSData *imagedata;
+
 @property NSString *productTypeName,*productStyleNo;
 @property (strong, nonatomic) IBOutlet UIScrollView *product_Scroll;
 @property NSMutableArray *sectionTitlesArray;
