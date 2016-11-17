@@ -122,7 +122,7 @@
                   moduleName = "Shobha Asasr"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ascra/Desktop/ShobhaAsasr/Shobha%20Asasr/WishListVC.m"
-                  timestampString = "500909255.946133"
+                  timestampString = "501058366.97472"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -137,76 +137,12 @@
                   moduleName = "Shobha Asasr"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ascra/Desktop/ShobhaAsasr/Shobha%20Asasr/WishListVC.m"
-                  timestampString = "500909255.948791"
+                  timestampString = "501058366.977223"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
                   endingLineNumber = "34"
                   offsetFromSymbolStart = "385">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shobha Asasr/CustomerRegisterVC.m"
-            timestampString = "500449435.113876"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "-onTapRegister_btn:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shobha Asasr/CustomerRegisterVC.m"
-            timestampString = "500449435.113876"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
-            landmarkName = "-onTapRegister_btn:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[CustomerRegisterVC onTapRegister_btn:]"
-                  moduleName = "Shobha Asasr"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ascra/Desktop/ShobhaAsasr/Shobha%20Asasr/CustomerRegisterVC.m"
-                  timestampString = "500909255.957726"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "221"
-                  endingLineNumber = "221"
-                  offsetFromSymbolStart = "2496">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[CustomerRegisterVC onTapRegister_btn:]_block_invoke_2"
-                  moduleName = "Shobha Asasr"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ascra/Desktop/ShobhaAsasr/Shobha%20Asasr/CustomerRegisterVC.m"
-                  timestampString = "500909255.960033"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "224"
-                  endingLineNumber = "224"
-                  offsetFromSymbolStart = "125">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -232,11 +168,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shobha Asasr/ShobhaAsarDataBase.m"
-            timestampString = "500901413.565709"
+            timestampString = "500992303.715372"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "422"
-            endingLineNumber = "422"
+            startingLineNumber = "474"
+            endingLineNumber = "474"
             landmarkName = "-addCollection_coll_id:addCollection_name:addCollection_image:addCollection_sequence:addCollection_image_pos:addCollection_is_new_collection:addCollection_section:addCollection_background:addCollection_collection_id:addCollection_status:addCollection_created_at:addCollection_updated_at:"
             landmarkType = "7">
          </BreakpointContent>
@@ -248,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shobha Asasr/ShobhaAsarDataBase.m"
-            timestampString = "500901413.565709"
+            timestampString = "500992303.715372"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "773"
-            endingLineNumber = "773"
+            startingLineNumber = "828"
+            endingLineNumber = "828"
             landmarkName = "-getCollectionData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -296,38 +232,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shobha Asasr/ViewController.m"
-            timestampString = "500900290.46371"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shobha Asasr/ViewController.m"
-            timestampString = "500909927.382847"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
-            landmarkName = "-onTapCart_btn:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shobha Asasr/ViewController.m"
             timestampString = "500909927.382847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -353,6 +257,86 @@
                   offsetFromSymbolStart = "0">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shobha Asasr/FilterVC.m"
+            timestampString = "500992303.715372"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "-onTapCollection_btn:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shobha Asasr/FilterVC.m"
+            timestampString = "500992303.715372"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-onTapCollection_btn:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shobha Asasr/FilterVC.m"
+            timestampString = "500992303.715372"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "-onTapCollection_btn:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shobha Asasr/ViewController.m"
+            timestampString = "501057331.806814"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "296"
+            endingLineNumber = "296"
+            landmarkName = "-onTapCart_btn:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shobha Asasr/ViewController.m"
+            timestampString = "501057318.082169"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
+            landmarkName = "-onTapCart_btn:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

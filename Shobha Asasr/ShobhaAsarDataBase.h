@@ -23,6 +23,9 @@
 -(void)getCollectionsPageDetails;
 -(void)getCategoryPageDetails;
 
+//For FIlter
+-(void)getFilterData;
+
 +(void)getInitialDataToDisplay:(NSString *)dbpath;
 
 

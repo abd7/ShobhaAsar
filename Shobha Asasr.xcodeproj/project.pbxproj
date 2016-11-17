@@ -67,6 +67,7 @@
 		C23304CC1DB8F2CF00878BC2 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = C23304C91DB8F2CF00878BC2 /* password.png */; };
 		C23FA9E71DD75A0E006A230B /* shobhaasarDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C23FA9E61DD75A0E006A230B /* shobhaasarDB.sqlite */; };
 		C23FCEF01DCC96D500B62E61 /* bars_ffffff_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C23FCEEF1DCC96D500B62E61 /* bars_ffffff_64.png */; };
+		C24935151DDC36BB0008DF07 /* ItemFIlterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C24935141DDC36BB0008DF07 /* ItemFIlterCell.m */; };
 		C249798A1DCB040100B52D9A /* FilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C24979891DCB040100B52D9A /* FilterVC.m */; };
 		C253E7681DBDF49C0095704C /* Cart Btn.png in Resources */ = {isa = PBXBuildFile; fileRef = C253E7661DBDF49C0095704C /* Cart Btn.png */; };
 		C253E7691DBDF49C0095704C /* rupee.png in Resources */ = {isa = PBXBuildFile; fileRef = C253E7671DBDF49C0095704C /* rupee.png */; };
@@ -88,9 +89,9 @@
 		C26849BD1DBF17F30000CF55 /* Categories_Necklace.png in Resources */ = {isa = PBXBuildFile; fileRef = C26849B71DBF17F30000CF55 /* Categories_Necklace.png */; };
 		C26849BE1DBF17F30000CF55 /* Categories_Pendant.png in Resources */ = {isa = PBXBuildFile; fileRef = C26849B81DBF17F30000CF55 /* Categories_Pendant.png */; };
 		C26849BF1DBF17F30000CF55 /* Categories_Ring.png in Resources */ = {isa = PBXBuildFile; fileRef = C26849B91DBF17F30000CF55 /* Categories_Ring.png */; };
+		C278035E1DDC91A900DD1480 /* Indicator.m in Sources */ = {isa = PBXBuildFile; fileRef = C278035C1DDC91A900DD1480 /* Indicator.m */; };
 		C2793C1F1DD0BB5D009B8010 /* Filter btn.png in Resources */ = {isa = PBXBuildFile; fileRef = C2793C1E1DD0BB5D009B8010 /* Filter btn.png */; };
 		C2CFB71D1DBA455A006346BB /* redHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = C2CFB71A1DBA455A006346BB /* redHeart.png */; };
-		C2E771F11DD59562003FF957 /* AppsDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E771F01DD59562003FF957 /* AppsDataVC.m */; };
 		C2E771F51DD5BE85003FF957 /* ShobhaAsarDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E771F41DD5BE85003FF957 /* ShobhaAsarDataBase.m */; };
 		C2E771FC1DD5EE99003FF957 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E771FA1DD5EE99003FF957 /* libsqlite3.0.tbd */; };
 		C2E771FD1DD5EE99003FF957 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E771FB1DD5EE99003FF957 /* libsqlite3.tbd */; };
@@ -209,6 +210,8 @@
 		C23304C91DB8F2CF00878BC2 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
 		C23FA9E61DD75A0E006A230B /* shobhaasarDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = shobhaasarDB.sqlite; sourceTree = "<group>"; };
 		C23FCEEF1DCC96D500B62E61 /* bars_ffffff_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bars_ffffff_64.png; sourceTree = "<group>"; };
+		C24935131DDC36BB0008DF07 /* ItemFIlterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemFIlterCell.h; sourceTree = "<group>"; };
+		C24935141DDC36BB0008DF07 /* ItemFIlterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemFIlterCell.m; sourceTree = "<group>"; };
 		C24979881DCB040100B52D9A /* FilterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterVC.h; sourceTree = "<group>"; };
 		C24979891DCB040100B52D9A /* FilterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterVC.m; sourceTree = "<group>"; };
 		C253E7661DBDF49C0095704C /* Cart Btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cart Btn.png"; sourceTree = "<group>"; };
@@ -238,11 +241,11 @@
 		C26849B71DBF17F30000CF55 /* Categories_Necklace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Categories_Necklace.png; sourceTree = "<group>"; };
 		C26849B81DBF17F30000CF55 /* Categories_Pendant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Categories_Pendant.png; sourceTree = "<group>"; };
 		C26849B91DBF17F30000CF55 /* Categories_Ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Categories_Ring.png; sourceTree = "<group>"; };
+		C278035C1DDC91A900DD1480 /* Indicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Indicator.m; sourceTree = "<group>"; };
+		C278035D1DDC91A900DD1480 /* Indicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Indicator.h; sourceTree = "<group>"; };
 		C2793C1E1DD0BB5D009B8010 /* Filter btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Filter btn.png"; sourceTree = "<group>"; };
 		C2A4E56C1BD8FDBEB32F5CE7 /* Pods_Shobha_AsasrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shobha_AsasrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2CFB71A1DBA455A006346BB /* redHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redHeart.png; sourceTree = "<group>"; };
-		C2E771EF1DD59562003FF957 /* AppsDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsDataVC.h; sourceTree = "<group>"; };
-		C2E771F01DD59562003FF957 /* AppsDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsDataVC.m; sourceTree = "<group>"; };
 		C2E771F31DD5BE85003FF957 /* ShobhaAsarDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShobhaAsarDataBase.h; sourceTree = "<group>"; };
 		C2E771F41DD5BE85003FF957 /* ShobhaAsarDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShobhaAsarDataBase.m; sourceTree = "<group>"; };
 		C2E771FA1DD5EE99003FF957 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -513,6 +516,8 @@
 			children = (
 				C24979881DCB040100B52D9A /* FilterVC.h */,
 				C24979891DCB040100B52D9A /* FilterVC.m */,
+				C24935131DDC36BB0008DF07 /* ItemFIlterCell.h */,
+				C24935141DDC36BB0008DF07 /* ItemFIlterCell.m */,
 			);
 			name = Filter;
 			sourceTree = "<group>";
@@ -612,6 +617,8 @@
 		C264F63A1DD43F4A00AD8588 /* Indicator */ = {
 			isa = PBXGroup;
 			children = (
+				C278035C1DDC91A900DD1480 /* Indicator.m */,
+				C278035D1DDC91A900DD1480 /* Indicator.h */,
 			);
 			name = Indicator;
 			sourceTree = "<group>";
@@ -620,8 +627,6 @@
 			isa = PBXGroup;
 			children = (
 				C23FA9E61DD75A0E006A230B /* shobhaasarDB.sqlite */,
-				C2E771EF1DD59562003FF957 /* AppsDataVC.h */,
-				C2E771F01DD59562003FF957 /* AppsDataVC.m */,
 				C2E771F31DD5BE85003FF957 /* ShobhaAsarDataBase.h */,
 				C2E771F41DD5BE85003FF957 /* ShobhaAsarDataBase.m */,
 			);
@@ -994,8 +999,8 @@
 				C21534201DC0B5630053A21B /* MyCartVC.m in Sources */,
 				C2FF4C591DBB8E3400BEC995 /* GemstoneCustomCell.m in Sources */,
 				A1F634DD1DAF6B4C004EC283 /* AppDelegate.m in Sources */,
+				C278035E1DDC91A900DD1480 /* Indicator.m in Sources */,
 				C21707231DD1A19E002F3BFB /* UIButton+Badge.m in Sources */,
-				C2E771F11DD59562003FF957 /* AppsDataVC.m in Sources */,
 				C217072F1DD1F108002F3BFB /* SplashScreen.m in Sources */,
 				C23304AB1DB8A64500878BC2 /* CustomerLogInVC.m in Sources */,
 				C249798A1DCB040100B52D9A /* FilterVC.m in Sources */,
@@ -1006,6 +1011,7 @@
 				A1F634DA1DAF6B4C004EC283 /* main.m in Sources */,
 				C264F6351DD4346500AD8588 /* WebServiceParsing.m in Sources */,
 				C2E771F51DD5BE85003FF957 /* ShobhaAsarDataBase.m in Sources */,
+				C24935151DDC36BB0008DF07 /* ItemFIlterCell.m in Sources */,
 				C255E2951DC08C8200A521E6 /* WishListVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
