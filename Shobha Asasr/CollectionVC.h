@@ -21,7 +21,8 @@
     IBOutlet UIButton *collection_btn;
     IBOutlet UIButton *category_btn;
     IBOutlet UIView *underLineView;
-    
+   
+    IBOutlet UIActivityIndicatorView *indicator;
 }
 
 
@@ -38,6 +39,8 @@
 -(void)addSTYLE_MASTER:(NSMutableArray *)STYLE_MASTERArray;
 -(void)addCollectionDetails:(NSMutableArray *)collectionDetailsArray;
 -(void)addCategoryDetails:(NSMutableArray *)categoryArray;
+
+
 
 - (IBAction)onTapCollectionButton:(id)sender;
 

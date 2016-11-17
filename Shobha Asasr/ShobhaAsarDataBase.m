@@ -89,6 +89,58 @@ static sqlite3_stmt * updatestmt = nil;
     
 }
 
+#pragma Fetch Filter Data
+
+-(void)getFilterData
+{
+    
+    NSMutableArray  *collectionArr = [[NSMutableArray alloc] init];
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    NSString *string = @"";
+    
+    
+    string = [NSString stringWithFormat:@"Select * From STYLE_MASTER"];
+    
+    const char *sql= [string cStringUsingEncoding:NSUTF8StringEncoding];
+    if(sqlite3_prepare_v2(database, sql, -1, &detailStmt, NULL) != SQLITE_OK)
+        NSAssert1(0, @"Error while creating detail view statement. '%s'", sqlite3_errmsg(database));
+    while (sqlite3_step(detailStmt) == SQLITE_ROW)
+    {
+       
+        
+        NSMutableString *name = [[NSMutableString alloc] initWithUTF8String:(const char *)sqlite3_column_text(detailStmt, 2)];
+        
+        
+        NSNumber *szd = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 16)];
+        
+        NSMutableString *size = [[NSMutableString alloc] initWithFormat:@"%d",[szd intValue]];
+        
+        NSNumber *prc = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 18)];
+        
+        NSMutableString *price = [[NSMutableString alloc] initWithFormat:@"%d",[prc intValue]];
+        
+        NSNumber *instk = [[NSNumber alloc] initWithInt:sqlite3_column_int(detailStmt, 12)];
+        
+        NSMutableString *in_stock_status = [[NSMutableString alloc] initWithFormat:@"%d",[instk intValue]];
+        
+        
+        
+        
+        [dict setValue:size forKey:@"size"];
+        [dict setValue:name forKey:@"name"];
+        [dict setValue:in_stock_status forKey:@"in_stock_status"];
+        [dict setValue:price forKey:@"price"];
+        
+      
+        [collectionArr addObject:[dict copy]];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:collectionArr forKey:@"filterData"];
+    }
+    sqlite3_reset(detailStmt);
+}
+
+
+
 
 #pragma mark SELECT QUERY FOR Collection
 
@@ -729,6 +781,7 @@ static sqlite3_stmt * updatestmt = nil;
         
         [dict setValue:proid forKey:@"proid"];
         [dict setValue:name forKey:@"name"];
+        
         [dict setValue:pieces forKey:@"pieces"];
         [dict setValue:weight forKey:@"weight"];
         [dict setValue:dia_pcs forKey:@"dia_pcs"];
@@ -738,6 +791,7 @@ static sqlite3_stmt * updatestmt = nil;
         [dict setValue:image1 forKey:@"image1"];
         [dict setValue:image2 forKey:@"image2"];
         [dict setValue:image3 forKey:@"image3"];
+        
         [dict setValue:in_stock_status forKey:@"in_stock_status"];
         
         [dict setValue:category_id forKey:@"category_id"];
@@ -745,6 +799,7 @@ static sqlite3_stmt * updatestmt = nil;
         [dict setValue:karat forKey:@"karat"];
         [dict setValue:size forKey:@"size"];
         [dict setValue:quality forKey:@"quality"];
+        
         [dict setValue:price forKey:@"price"];
         [dict setValue:quality_price forKey:@"quality_price"];
         [dict setValue:style_id forKey:@"style_id"];

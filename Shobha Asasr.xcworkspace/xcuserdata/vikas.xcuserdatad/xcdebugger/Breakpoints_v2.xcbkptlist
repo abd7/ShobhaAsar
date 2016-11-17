@@ -20,12 +20,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shobha Asasr/CollectionVC.m"
-            timestampString = "501063348.370528"
+            timestampString = "501076614.320638"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "377"
-            endingLineNumber = "377"
-            landmarkName = "-failedToGetResponce:"
+            startingLineNumber = "374"
+            endingLineNumber = "374"
+            landmarkName = "-addSTYLE_MASTER:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shobha Asasr/ProductDetailViewController.m"
-            timestampString = "501074546.644519"
+            timestampString = "501076614.320638"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "644"
-            endingLineNumber = "644"
+            startingLineNumber = "640"
+            endingLineNumber = "640"
             landmarkName = "-tapOnce:"
             landmarkType = "7">
          </BreakpointContent>
@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shobha Asasr/ProductDetailViewController.m"
-            timestampString = "501074546.644519"
+            timestampString = "501076614.320638"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "651"
-            endingLineNumber = "651"
+            startingLineNumber = "647"
+            endingLineNumber = "647"
             landmarkName = "-tapTwice:"
             landmarkType = "7">
          </BreakpointContent>
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shobha Asasr/ProductDetailViewController.m"
-            timestampString = "501074546.644519"
+            timestampString = "501076614.320638"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "656"
-            endingLineNumber = "656"
+            startingLineNumber = "652"
+            endingLineNumber = "652"
             landmarkName = "-showTable"
             landmarkType = "7">
          </BreakpointContent>

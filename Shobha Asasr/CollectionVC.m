@@ -14,6 +14,7 @@
 #import <sqlite3.h>
 #import "UIColor+ColorCategory.h"
 #import "AppDelegate.h"
+#import "Indicator.h"
 
 
 
@@ -37,6 +38,9 @@
     NSMutableArray *categorySortedData;
     NSMutableArray *collectionSortedData;
 
+    Indicator *indicatorrr;
+  
+    
 }
 
 
@@ -57,6 +61,13 @@ alpha:1.0]
     [self tabButton];
        tab_Btn.hidden=YES;
     tab_Btn2.hidden=NO;
+    
+    indicatorrr=[[Indicator alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [indicatorrr setBackgroundColor:UIColorFromRGB(0x1E1409)];
+    
+    
+    [indicatorrr setHidden:YES];
+    //[indicator setHidden:YES];
     
     [self callWebService];
     //[self getCollectionData];
@@ -82,10 +93,12 @@ alpha:1.0]
     categoryHalfData=[[NSMutableArray alloc]init];
     
     app=[[UIApplication sharedApplication]delegate];
+    [self getCategoryDefaultData];
     
 
     
 }
+
 
 
 -(void)tabButton
@@ -103,6 +116,9 @@ alpha:1.0]
 
 -(void)getCollectionData
 {
+    
+    [indicatorrr setHidden:NO];
+    [self.view addSubview:indicatorrr];
     
     NSURLSession * urlSession;
     NSURLSessionConfiguration * urlSessionConfig;
@@ -135,11 +151,15 @@ alpha:1.0]
                         }];
     
     [collectionDataTask resume];
-    
+     [indicatorrr removeFromSuperview];
+    [indicatorrr setHidden:YES];
 }
 
 -(void)getcategoryData
 {
+    [indicatorrr setHidden:NO];
+    [self.view addSubview:indicatorrr];
+    
     NSURLSession * urlSession;
     NSURLSessionConfiguration * urlSessionConfig;
     NSURLSessionDataTask * collectionDataTask;
@@ -206,6 +226,9 @@ alpha:1.0]
     NSMutableArray *STYLE_MASTERArray=[resData objectAtIndex:0];
     
     [self addSTYLE_MASTER:STYLE_MASTERArray];
+    
+    [indicatorrr removeFromSuperview];
+    [indicatorrr setHidden:YES];
     
 }
 
@@ -399,6 +422,7 @@ alpha:1.0]
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
 }
@@ -445,9 +469,6 @@ alpha:1.0]
 - (IBAction)onTapCollectionButton:(id)sender {
     
     
-    [categoryData removeAllObjects];
-    [categoryFullDataArr removeAllObjects];
-    [categoryHalfData removeAllObjects];
     
     ShobhaAsarDataBase * dataBase = [[ShobhaAsarDataBase alloc]init];
     
@@ -479,7 +500,7 @@ alpha:1.0]
     
     int x=70;
     int y=60;
-    int buttonHeight=190;
+    int buttonHeight=200;
     int fullButtonW=620;
     int halfButtonW=290;
     
@@ -494,11 +515,13 @@ alpha:1.0]
             
             UIButton *fullImageButton=[[UIButton alloc]initWithFrame:CGRectMake(x, y,fullButtonW, buttonHeight)];
             
-            [fullImageButton setTitle:[NSString stringWithFormat:@"%@",[[collectFullDataArr objectAtIndex:i] valueForKey:@"name"]] forState:UIControlStateNormal];
+           // [fullImageButton setTitle:[NSString stringWithFormat:@"%@",[[collectFullDataArr objectAtIndex:i] valueForKey:@"name"]] forState:UIControlStateNormal];
             fullImageButton.titleLabel.textColor=[UIColor clearColor];
             
             [fullImageButton setBackgroundImage:[UIImage imageWithData:[[collectFullDataArr objectAtIndex:i] valueForKey:@"image"]] forState:UIControlStateNormal];
-            fullImageButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[collectFullDataArr objectAtIndex:i] valueForKey:@"background"]]];
+           // fullImageButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[collectFullDataArr objectAtIndex:i] valueForKey:@"background"]]];
+            
+            //fullImageButton.backgroundColor=[UIColor whiteColor];
             [fullImageButton setTag:[[[collectFullDataArr objectAtIndex:i] valueForKey:@"collection_id"] integerValue]];
             [fullImageButton addTarget:self action:@selector(onTapCollectionFullButton:) forControlEvents:UIControlEventTouchUpInside];
             [scrollview addSubview:fullImageButton];
@@ -519,10 +542,10 @@ alpha:1.0]
             
             UIButton *halfButton=[[UIButton alloc]initWithFrame:CGRectMake(x, y,halfButtonW, buttonHeight)];
             
-            [halfButton setTitle:[NSString stringWithFormat:@"%@",[[collectHalfData objectAtIndex:i] valueForKey:@"name"]] forState:UIControlStateNormal];
+            //[halfButton setTitle:[NSString stringWithFormat:@"%@",[[collectHalfData objectAtIndex:i] valueForKey:@"name"]] forState:UIControlStateNormal];
             halfButton.titleLabel.textColor=[UIColor clearColor];
             [halfButton setBackgroundImage:[UIImage imageWithData:[[collectHalfData objectAtIndex:i] valueForKey:@"image"]] forState:UIControlStateNormal];
-            halfButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[collectHalfData objectAtIndex:i] valueForKey:@"background"]]];
+            //halfButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[collectHalfData objectAtIndex:i] valueForKey:@"background"]]];
             
             [halfButton setTag:[[[collectHalfData objectAtIndex:i] valueForKey:@"collection_id"] integerValue]];
             
@@ -542,11 +565,11 @@ alpha:1.0]
 }
 
 - (IBAction)onTapCategoryButton:(id)sender {
-    
-    [collectData removeAllObjects];
-    [collectHalfData removeAllObjects];
-    [collectFullDataArr removeAllObjects];
-    
+    [self getCategoryDefaultData];
+}
+
+-(void)getCategoryDefaultData
+{
     ShobhaAsarDataBase * dataBase = [[ShobhaAsarDataBase alloc]init];
     [dataBase getCategoryPageDetails];
     
@@ -575,7 +598,7 @@ alpha:1.0]
     
     int x=70;
     int y=60;
-    int buttonHeight=190;
+    int buttonHeight=200;
     int fullButtonW=620;
     int halfButtonW=290;
     
@@ -592,8 +615,10 @@ alpha:1.0]
             
             [fullImageButton setBackgroundImage:[UIImage imageWithData:[[categoryFullDataArr objectAtIndex:i] valueForKey:@"image"]] forState:UIControlStateNormal];
             [fullImageButton setTitle:[NSString stringWithFormat:@"%@",[[categoryFullDataArr objectAtIndex:i] valueForKey:@"name"]] forState:UIControlStateNormal];
+            fullImageButton.titleLabel.hidden=YES;
             fullImageButton.titleLabel.textColor=[UIColor clearColor];
-            fullImageButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[categoryFullDataArr objectAtIndex:i] valueForKey:@"background"]]];
+            //fullImageButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[categoryFullDataArr objectAtIndex:i] valueForKey:@"background"]]];
+             //fullImageButton.backgroundColor=[UIColor whiteColor];
             [fullImageButton setTag:[[[categoryFullDataArr objectAtIndex:i] valueForKey:@"category_id"] integerValue]];
             
             [fullImageButton addTarget:self action:@selector(onTapCategoryFullButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -618,8 +643,9 @@ alpha:1.0]
             
             [halfButton setTitle:[NSString stringWithFormat:@"%@",[[categoryHalfData objectAtIndex:i] valueForKey:@"name"]] forState:UIControlStateNormal];
             halfButton.titleLabel.textColor=[UIColor clearColor];
+            halfButton.titleLabel.hidden=YES;
             [halfButton setBackgroundImage:[UIImage imageWithData:[[categoryHalfData objectAtIndex:i] valueForKey:@"image"]] forState:UIControlStateNormal];
-            halfButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[categoryHalfData objectAtIndex:i] valueForKey:@"background"]]];
+            //halfButton.backgroundColor=[UIColor colorWithHexString:[NSString stringWithFormat:@"%@",[[categoryHalfData objectAtIndex:i] valueForKey:@"background"]]];
             
             [halfButton setTag:[[[categoryHalfData objectAtIndex:i] valueForKey:@"category_id"] integerValue]];
             

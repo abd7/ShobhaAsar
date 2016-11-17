@@ -239,6 +239,16 @@
 
 - (IBAction)onTapFilter_btn:(id)sender {
     
+    ShobhaAsarDataBase *database=[[ShobhaAsarDataBase alloc]init];
+    //[database getCollectionData:button.tag];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    FilterVC *myVC = (FilterVC *)[storyboard instantiateViewControllerWithIdentifier:@"filtervc"];
+    
+    [self.navigationController pushViewController:myVC animated:YES];
+    
+    
     
 }
 
@@ -262,11 +272,60 @@
 
 - (IBAction)onTapCart_btn:(id)sender
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    myCartvc = (MyCartVC *)[storyboard instantiateViewControllerWithIdentifier:@"mycart"];
-    myCartvc.myCartImageArray=cartSave;
+ 
     
-    [self.navigationController pushViewController:myCartvc animated:YES];
+    NSArray *objects = [NSArray arrayWithObjects:@"17",@"1",@"vitthal@ascratech.in",nil];
+    NSArray *keys = [NSArray arrayWithObjects:@"product_id", @"quantity", @"user_email", nil];
+    
+    NSDictionary *pdataDic = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+    
+    NSDictionary *jsonDict = [NSDictionary dictionaryWithObject:pdataDic forKey:@"product_data"];
+
+    
+    urlSessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    urlSession = [NSURLSession sessionWithConfiguration:urlSessionConfig];
+    
+    
+    mutableReq = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:[BaseUrl stringByAppendingString:addtocart]]];
+    
+    
+    [mutableReq setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [mutableReq setHTTPMethod:@"POST"];
+    
+    NSString *post = [[NSString alloc] initWithFormat:@"%@", jsonDict];
+    
+    NSLog(@"--registerinfo %@",post);
+    
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
+    
+    [mutableReq setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    
+    [mutableReq setHTTPBody:postData];
+    
+    
+    collectionDataTask = [urlSession dataTaskWithRequest:mutableReq completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        
+        NSLog(@"got response from server %@",[NSJSONSerialization JSONObjectWithData:data options:0 error:nil]);
+        NSDictionary*servDic= [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSLog(@"--->addTo Cart Respon %@",servDic);
+        
+        
+        
+    }];
+    
+    [collectionDataTask resume];
+    
+    
+//    
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    myCartvc = (MyCartVC *)[storyboard instantiateViewControllerWithIdentifier:@"mycart"];
+//    myCartvc.myCartImageArray=cartSave;
+//    
+//    [self.navigationController pushViewController:myCartvc animated:YES];
 }
 
 -(void)wishListBadgeCheck
@@ -325,59 +384,63 @@
 
  -(void)onTapCartButtons:(UIButton*)sender
 {
+  
     
- 
-    UIImage *image = [UIImage imageNamed:@"Cart Btn.png"];
-    [sender setImage:image forState:UIControlStateNormal];
-    
-    if (![app.cartListCount containsObject:[app.ProductArray objectAtIndex:sender.tag]])
-    {
-        
-        [cartSave addObject:[app.ProductArray objectAtIndex:sender.tag]];
-        
-        [app.cartListCount addObject:[app.ProductArray objectAtIndex:sender.tag]];
-        
-         [self cartListBadgeCheck];
-        
-        
-    }
-    
-    else
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:@"Already selected!"
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
 
     
     
-
-    proID=[NSString stringWithFormat:@"%@",[_productID objectAtIndex:indexVal]];
-    //[cartSave addObject:[self.arrayForimgs objectAtIndex:sender.tag]];
-    
-    //[app.cartListCount addObject:cartSave];
-    proIdCount=cartSave.count;
-   
-    _paramArray=[[NSMutableArray alloc]init];
-    
-    NSMutableDictionary *postDIc = [[NSMutableDictionary alloc]init];
-    
-    
-    [postDIc setObject:proID forKey:@"product_id"];
-    [postDIc setObject:[NSString stringWithFormat:@"%ld",(long)proIdCount] forKey:@"quantity"];
-    [postDIc setObject:@"m@m.com" forKey:@"user_email"];
-    
-   
-    [_paramArray addObject:postDIc];
-    
-    [cartPostData setObject:_paramArray forKey:@"product_data"];
-  
-  
-    [app customerLoginCheck];
-  
+//
+//    UIImage *image = [UIImage imageNamed:@"Cart Btn.png"];
+//    [sender setImage:image forState:UIControlStateNormal];
+//
+//    if (![app.cartListCount containsObject:[app.ProductArray objectAtIndex:sender.tag]])
+//    {
+//        
+//        [cartSave addObject:[app.ProductArray objectAtIndex:sender.tag]];
+//        
+//        [app.cartListCount addObject:[app.ProductArray objectAtIndex:sender.tag]];
+//        
+//         [self cartListBadgeCheck];
+//        
+//        
+//    }
+//    
+//    else
+//    {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+//                                                        message:@"Already selected!"
+//                                                       delegate:self
+//                                              cancelButtonTitle:@"OK"
+//                                              otherButtonTitles:nil];
+//        [alert show];
+//    }
+//
+//    
+//    
+//
+//    proID=[NSString stringWithFormat:@"%@",[_productID objectAtIndex:indexVal]];
+//    //[cartSave addObject:[self.arrayForimgs objectAtIndex:sender.tag]];
+//    
+//    //[app.cartListCount addObject:cartSave];
+//    proIdCount=cartSave.count;
+//   
+//    _paramArray=[[NSMutableArray alloc]init];
+//    
+//    NSMutableDictionary *postDIc = [[NSMutableDictionary alloc]init];
+//    
+//    
+//    [postDIc setObject:proID forKey:@"product_id"];
+//    [postDIc setObject:[NSString stringWithFormat:@"%ld",(long)proIdCount] forKey:@"quantity"];
+//    [postDIc setObject:@"m@m.com" forKey:@"user_email"];
+//    
+//   
+//    [_paramArray addObject:postDIc];
+//    
+//    [cartPostData setObject:_paramArray forKey:@"product_data"];
+//  
+//  
+//    [app customerLoginCheck];
+//  
     
 }
 
