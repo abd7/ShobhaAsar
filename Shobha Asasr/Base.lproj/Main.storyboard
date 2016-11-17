@@ -177,17 +177,6 @@
                                             <action selector="onTapLogIb_btn:" destination="17W-wo-wyP" eventType="touchUpInside" id="z1L-HV-tFt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFO-eJ-AX5">
-                                        <frame key="frameInset" minX="389" minY="632" width="92" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="17"/>
-                                        <state key="normal" title="REGISTER">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onTapnewUserButton:" destination="17W-wo-wyP" eventType="touchUpInside" id="5Jd-6O-Xtq"/>
-                                        </connections>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Text_Underline.png" translatesAutoresizingMaskIntoConstraints="NO" id="xLS-gu-mIN">
                                         <frame key="frameInset" minX="375" minY="359" width="52" height="9"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -197,13 +186,17 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.90721881390000003" green="0.81436747310000002" blue="0.63592469689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New User? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYt-13-MV6">
-                                        <frame key="frameInset" minX="317" minY="637" width="100" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFO-eJ-AX5">
+                                        <frame key="frameInset" minX="334" minY="636" width="133" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="13"/>
+                                        <state key="normal" title="Forgot Password?">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTapnewUserButton:" destination="17W-wo-wyP" eventType="touchUpInside" id="5Jd-6O-Xtq"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo_Login Page.png" translatesAutoresizingMaskIntoConstraints="NO" id="gOa-gT-o59">
@@ -228,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02I-xW-n6k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4898" y="734"/>
+            <point key="canvasLocation" x="-4899.1999999999998" y="733.13343328335839"/>
         </scene>
         <!--Employee LoginVC-->
         <scene sceneID="zJe-IE-kJK">
@@ -345,16 +338,16 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Uz-5d-p7p">
-                                        <frame key="frameInset" width="800" height="60"/>
+                                        <frame key="frameInset" width="800" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sP8-Zp-UNS">
-                                                <frame key="frameInset" minX="-5" minY="4" width="58" height="57"/>
+                                                <frame key="frameInset" minX="-5" minY="9" width="58" height="57"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="leftNaviImage"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUO-nR-axg">
-                                                <frame key="frameInset" minX="74" minY="25" width="87" height="30"/>
+                                                <frame key="frameInset" minX="74" minY="23" width="87" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
                                                 <state key="normal" title="COLLECTION">
@@ -362,7 +355,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fS-Vc-7fO">
-                                                <frame key="frameInset" minX="181" minY="25" width="70" height="30"/>
+                                                <frame key="frameInset" minX="181" minY="23" width="70" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
                                                 <state key="normal" title="CATEGORY">
@@ -370,27 +363,27 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3o-no-ODe">
-                                                <frame key="frameInset" minX="686" minY="5" width="52" height="52"/>
+                                                <frame key="frameInset" minX="686" minY="11" width="52" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="Cart Notification.png"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhs-F0-qGm">
-                                                <frame key="frameInset" minX="633" minY="5" width="52" height="52"/>
+                                                <frame key="frameInset" minX="633" minY="11" width="52" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" backgroundImage="Wishlist Notification icon.png"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbm-4O-P12">
-                                                <frame key="frameInset" minX="579" minY="5" width="52" height="52"/>
+                                                <frame key="frameInset" minX="579" minY="11" width="52" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="Camera.png"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnL-ff-9qn">
-                                                <frame key="frameInset" minX="727" minY="5" width="52" height="52"/>
+                                                <frame key="frameInset" minX="727" minY="11" width="52" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="Search.png"/>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo 167x167.png" translatesAutoresizingMaskIntoConstraints="NO" id="rsS-5M-nXQ">
-                                                <frame key="frameInset" minX="342" minY="-20" width="117" height="96"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo_Login Page.png" translatesAutoresizingMaskIntoConstraints="NO" id="rsS-5M-nXQ">
+                                                <frame key="frameInset" minX="342" width="117" height="75"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -478,7 +471,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VW1-6j-BPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="216" y="734"/>
+            <point key="canvasLocation" x="216" y="733.13343328335839"/>
         </scene>
         <!--Wish ListVC-->
         <scene sceneID="U0d-HC-SW8">
@@ -543,12 +536,8 @@
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rupee.png" translatesAutoresizingMaskIntoConstraints="NO" id="dBt-2h-Tcd">
-                                                                    <frame key="frameInset" minX="10" minY="203" width="22" height="22"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                </imageView>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVW-RY-ptW">
-                                                                    <frame key="frameInset" minX="163" minY="203" width="55" height="55"/>
+                                                                    <frame key="frameInset" minX="163" minY="203" width="60" height="55"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <state key="normal" title="Button" image="CartsCell.png"/>
                                                                     <connections>
@@ -556,16 +545,16 @@
                                                                     </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOn-Ms-6fH">
-                                                                    <frame key="frameInset" minX="23" minY="208" width="62" height="21"/>
+                                                                    <frame key="frameInset" minX="16" minY="208" width="62" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
                                                                     <color key="textColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Style No: BR673" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zt8-Yi-H0H">
-                                                                    <frame key="frameInset" minX="15" minY="231" width="83" height="21"/>
+                                                                    <frame key="frameInset" minX="10" minY="231" width="83" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="8"/>
+                                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="8"/>
                                                                     <color key="textColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -577,6 +566,10 @@
                                                                         <action selector="onTapRemoveWishList:" destination="6aI-1U-h60" eventType="touchUpInside" id="fX6-bb-LXQ"/>
                                                                     </connections>
                                                                 </button>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rupee.png" translatesAutoresizingMaskIntoConstraints="NO" id="dBt-2h-Tcd">
+                                                                    <frame key="frameInset" minY="205" width="22" height="22"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </view>
@@ -597,11 +590,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wkQ-sz-wsd">
-                                <frame key="frameInset" width="800" height="60"/>
+                                <frame key="frameInset" width="800" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVU-AP-C3e">
-                                        <frame key="frameInset" minX="-5" minY="4" width="58" height="57"/>
+                                        <frame key="frameInset" minX="-5" minY="10" width="58" height="57"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="leftNaviImage"/>
                                         <connections>
@@ -609,7 +602,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdx-hg-sPC">
-                                        <frame key="frameInset" minX="74" minY="25" width="87" height="30"/>
+                                        <frame key="frameInset" minX="74" minY="35" width="87" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
                                         <state key="normal" title="COLLECTION">
@@ -617,7 +610,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZ3-jW-Baw">
-                                        <frame key="frameInset" minX="181" minY="25" width="70" height="30"/>
+                                        <frame key="frameInset" minX="181" minY="35" width="70" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
                                         <state key="normal" title="CATEGORY">
@@ -625,27 +618,27 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAv-Vm-ZRm">
-                                        <frame key="frameInset" minX="695" minY="19" width="26" height="26"/>
+                                        <frame key="frameInset" minX="695" minY="27" width="26" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Cart.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44b-f0-52d">
-                                        <frame key="frameInset" minX="645" minY="19" width="26" height="26"/>
+                                        <frame key="frameInset" minX="645" minY="28" width="24" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="Heart.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5H-T3-LLb">
-                                        <frame key="frameInset" minX="579" minY="5" width="52" height="52"/>
+                                        <frame key="frameInset" minX="579" minY="12" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Camera.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFP-OA-nxN">
-                                        <frame key="frameInset" minX="727" minY="5" width="52" height="52"/>
+                                        <frame key="frameInset" minX="727" minY="14" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Search.png"/>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo 167x167.png" translatesAutoresizingMaskIntoConstraints="NO" id="iMd-W3-KuN">
-                                        <frame key="frameInset" minX="342" minY="-20" width="117" height="96"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo_Login Page.png" translatesAutoresizingMaskIntoConstraints="NO" id="iMd-W3-KuN">
+                                        <frame key="frameInset" minX="342" width="117" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -689,11 +682,11 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oru-PA-f5v">
-                                        <frame key="frameInset" width="800" height="60"/>
+                                        <frame key="frameInset" width="800" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRj-fi-XE9">
-                                                <frame key="frameInset" minX="-5" minY="4" width="58" height="57"/>
+                                                <frame key="frameInset" minX="-5" minY="11" width="58" height="57"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="leftNaviImage"/>
                                                 <connections>
@@ -701,7 +694,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSU-9K-1KA">
-                                                <frame key="frameInset" minX="74" minY="25" width="87" height="30"/>
+                                                <frame key="frameInset" minX="74" minY="35" width="87" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
                                                 <state key="normal" title="COLLECTION">
@@ -709,7 +702,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORk-pJ-Rvs">
-                                                <frame key="frameInset" minX="181" minY="25" width="70" height="30"/>
+                                                <frame key="frameInset" minX="181" minY="35" width="70" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
                                                 <state key="normal" title="CATEGORY">
@@ -717,27 +710,27 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-zR-ZaT">
-                                                <frame key="frameInset" minX="693" minY="19" width="26" height="26"/>
+                                                <frame key="frameInset" minX="693" minY="24" width="26" height="26"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="Cart.png"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-hz-sti">
-                                                <frame key="frameInset" minX="647" minY="19" width="26" height="26"/>
+                                                <frame key="frameInset" minX="647" minY="27" width="24" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" backgroundImage="Heart.png"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tap-ye-rie">
-                                                <frame key="frameInset" minX="579" minY="5" width="52" height="52"/>
+                                                <frame key="frameInset" minX="579" minY="11" width="52" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="Camera.png"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3Q-kD-RtS">
-                                                <frame key="frameInset" minX="727" minY="5" width="52" height="52"/>
+                                                <frame key="frameInset" minX="727" minY="11" width="52" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="Search.png"/>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo 167x167.png" translatesAutoresizingMaskIntoConstraints="NO" id="apZ-01-na2">
-                                                <frame key="frameInset" minX="342" minY="-20" width="117" height="96"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo_Login Page.png" translatesAutoresizingMaskIntoConstraints="NO" id="apZ-01-na2">
+                                                <frame key="frameInset" minX="342" width="117" height="76"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -791,7 +784,7 @@
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 </imageView>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qy-0p-CVP">
-                                                                    <frame key="frameInset" minX="167" minY="207" width="55" height="55"/>
+                                                                    <frame key="frameInset" minX="174" minY="212" width="35" height="35"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <state key="normal" title="Button" image="HeartCell.png"/>
                                                                     <connections>
@@ -799,16 +792,16 @@
                                                                     </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6t-Zh-GhQ">
-                                                                    <frame key="frameInset" minX="24" minY="208" width="62" height="21"/>
+                                                                    <frame key="frameInset" minX="26" minY="208" width="62" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="16"/>
+                                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
                                                                     <color key="textColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Style No: BR673" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWC-jT-w55">
                                                                     <frame key="frameInset" minX="20" minY="233" width="83" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="8"/>
+                                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="8"/>
                                                                     <color key="textColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -866,11 +859,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FW4-yc-qZJ">
-                                <frame key="frameInset" width="800" height="60"/>
+                                <frame key="frameInset" width="800" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYO-On-mws">
-                                        <frame key="frameInset" minX="-5" minY="4" width="58" height="57"/>
+                                        <frame key="frameInset" minX="-5" minY="12" width="58" height="57"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="leftNaviImage"/>
                                         <connections>
@@ -878,23 +871,23 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqp-lH-wjn">
-                                        <frame key="frameInset" minX="74" minY="25" width="87" height="30"/>
+                                        <frame key="frameInset" minX="74" minY="35" width="87" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="12"/>
                                         <state key="normal" title="COLLECTION">
                                             <color key="titleColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dcs-Fb-Q2r">
-                                        <frame key="frameInset" minX="181" minY="25" width="70" height="30"/>
+                                        <frame key="frameInset" minX="181" minY="35" width="70" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="12"/>
                                         <state key="normal" title="CATEGORY">
                                             <color key="titleColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JC7-oC-B03">
-                                        <frame key="frameInset" minX="694" minY="19" width="26" height="26"/>
+                                        <frame key="frameInset" minX="694" minY="25" width="26" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Cart.png"/>
                                         <connections>
@@ -902,7 +895,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WM-0n-5vy">
-                                        <frame key="frameInset" minX="645" minY="19" width="26" height="26"/>
+                                        <frame key="frameInset" minX="647" minY="28" width="24" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="Heart.png"/>
                                         <connections>
@@ -910,24 +903,24 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wum-Kz-tzH">
-                                        <frame key="frameInset" minX="579" minY="5" width="52" height="52"/>
+                                        <frame key="frameInset" minX="579" minY="11" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Camera.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-FU-AfU">
-                                        <frame key="frameInset" minX="727" minY="5" width="52" height="52"/>
+                                        <frame key="frameInset" minX="727" minY="14" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Search.png"/>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo 167x167.png" translatesAutoresizingMaskIntoConstraints="NO" id="VE6-76-MkZ">
-                                        <frame key="frameInset" minX="342" minY="-20" width="117" height="96"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo_Login Page.png" translatesAutoresizingMaskIntoConstraints="NO" id="VE6-76-MkZ">
+                                        <frame key="frameInset" minX="342" width="117" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o1n-cU-XkM">
-                                <frame key="frameInset" minY="56" width="1000" height="944"/>
+                                <frame key="frameInset" minY="77" width="1000" height="923"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="bXb-6l-OiU">
@@ -1021,14 +1014,14 @@
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Style No: BR673" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zze-4R-pun">
-                                                                                            <frame key="frameInset" minX="21" minY="198" width="73" height="21"/>
+                                                                                            <frame key="frameInset" minX="19" minY="198" width="73" height="21"/>
                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                             <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="9"/>
                                                                                             <color key="textColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEJ-iY-AnE">
-                                                                                            <frame key="frameInset" minX="127" minY="176" width="42" height="42"/>
+                                                                                            <frame key="frameInset" minX="127" minY="176" width="35" height="35"/>
                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                             <state key="normal" title="Button" image="HeartCell.png"/>
                                                                                             <connections>
@@ -1211,7 +1204,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="0.61093270705521474" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </view>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BR673.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="X0i-Ov-8NI">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Categories_Bangles.png" translatesAutoresizingMaskIntoConstraints="NO" id="X0i-Ov-8NI">
                                                         <frame key="frameInset" minX="-1" width="394" height="284"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
@@ -1298,6 +1291,33 @@
                                                 <rect key="frame" x="466" y="8" width="287" height="366"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o5v-le-isu">
+                                                        <frame key="frameInset" minX="84" minY="139" width="128" height="153"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="31" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qUg-sd-jcC">
+                                                                <frame key="frameInset" width="128" height="153"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                <prototypes>
+                                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Dpq-C2-uOj">
+                                                                        <rect key="frame" x="0.0" y="28" width="128" height="31"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dpq-C2-uOj" id="8D1-FU-TPb">
+                                                                            <frame key="frameInset" width="128" height="30"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                        </tableViewCellContentView>
+                                                                    </tableViewCell>
+                                                                </prototypes>
+                                                                <connections>
+                                                                    <outlet property="dataSource" destination="bGu-xK-mHX" id="5lv-JA-WMQ"/>
+                                                                    <outlet property="delegate" destination="bGu-xK-mHX" id="ZrE-Uu-ac3"/>
+                                                                </connections>
+                                                            </tableView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOe-KD-Xub">
                                                         <frame key="frameInset" minY="152" width="127" height="35"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1313,10 +1333,14 @@
                                                         <color key="textColor" red="0.90980392156862744" green="0.81568627450980391" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txG-Mh-nIs">
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txG-Mh-nIs">
                                                         <frame key="frameInset" minX="188" minY="114" width="30" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <gestureRecognizers/>
                                                         <state key="normal" image="DropDown Arrow.png"/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="HAX-7t-Y1u" appends="YES" id="hdU-GN-hhW"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Style No: BR673" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcr-qF-blg">
                                                         <frame key="frameInset" minX="19" minY="13" width="149" height="21"/>
@@ -1370,15 +1394,8 @@
                                                         <color key="textColor" red="0.90980392156862744" green="0.81568627450980391" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select size" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48t-wK-yyK">
-                                                        <frame key="frameInset" minX="72" minY="123" width="75" height="18"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="10"/>
-                                                        <color key="textColor" red="0.90980392156862744" green="0.81568627450980391" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="24" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="547-g9-vEH">
-                                                        <frame key="frameInset" minY="202" width="267" height="257"/>
+                                                        <frame key="frameInset" minY="187" width="267" height="257"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.10980392160000001" green="0.070588235289999995" blue="0.031372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <prototypes>
@@ -1425,6 +1442,13 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <state key="normal" title="Button" image="In stock.png"/>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48t-wK-yyK">
+                                                        <frame key="frameInset" minX="84" minY="122" width="102" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="10"/>
+                                                        <color key="textColor" red="0.90980392156862744" green="0.81568627450980391" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                             </view>
                                         </subviews>
@@ -1449,17 +1473,26 @@
                         <outlet property="cart_btn" destination="JC7-oC-B03" id="H6v-8P-4li"/>
                         <outlet property="collectionNameLabel" destination="NpZ-3N-4Nz" id="Z3L-uZ-Zbm"/>
                         <outlet property="collectionviewimgs" destination="CJl-4x-n1b" id="xUy-Yo-vDM"/>
+                        <outlet property="dropDown" destination="txG-Mh-nIs" id="PgH-a7-PTG"/>
                         <outlet property="noCartLabel" destination="aTz-P3-ERu" id="8MK-Rk-0oa"/>
                         <outlet property="ornamentLstTable" destination="547-g9-vEH" id="EjT-sg-3XN"/>
                         <outlet property="proDetails_imageView" destination="X0i-Ov-8NI" id="zhk-KE-vYD"/>
                         <outlet property="product_Scroll" destination="26D-gm-gak" id="pFG-Ru-HyJ"/>
                         <outlet property="similaarProductCV" destination="vvP-qk-Od1" id="O7r-1q-bEv"/>
+                        <outlet property="sizeListTableView" destination="qUg-sd-jcC" id="mpQ-qh-W6k"/>
+                        <outlet property="sizeListTextView" destination="48t-wK-yyK" id="j0P-Mw-YdX"/>
+                        <outlet property="sizeListView" destination="o5v-le-isu" id="Vre-vt-YHT"/>
                         <outlet property="styleNo" destination="6p4-r0-i0e" id="xXL-kT-Lnu"/>
                         <outlet property="styleNoLabel" destination="dcr-qF-blg" id="fp5-8A-QOL"/>
                         <outlet property="wishList_btn" destination="1WM-0n-5vy" id="m1z-B9-qNM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6st-EQ-Pb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HAX-7t-Y1u">
+                    <connections>
+                        <outlet property="delegate" destination="txG-Mh-nIs" id="OSq-Q8-J2q"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="276.80000000000001" y="-804.19790104947538"/>
         </scene>
@@ -1485,16 +1518,16 @@
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAz-rw-OmB">
-                                <frame key="frameInset" width="800" height="60"/>
+                                <frame key="frameInset" width="800" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQX-rm-9WG">
-                                        <frame key="frameInset" minX="-5" minY="4" width="58" height="58"/>
+                                        <frame key="frameInset" minX="-5" minY="12" width="58" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="leftNaviImage"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0h-2Z-1iD">
-                                        <frame key="frameInset" minX="74" minY="25" width="87" height="30"/>
+                                        <frame key="frameInset" minX="74" minY="35" width="87" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
                                         <state key="normal" title="COLLECTION">
@@ -1505,7 +1538,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hg-lU-EdJ">
-                                        <frame key="frameInset" minX="181" minY="25" width="70" height="30"/>
+                                        <frame key="frameInset" minX="181" minY="35" width="70" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
                                         <state key="normal" title="CATEGORY">
@@ -1516,29 +1549,29 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyJ-0e-dGb">
-                                        <frame key="frameInset" minX="696" minY="19" width="26" height="26"/>
+                                        <frame key="frameInset" minX="695" minY="27" width="26" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Cart.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NE6-Hh-euq">
-                                        <frame key="frameInset" minX="647" minY="19" width="26" height="26"/>
+                                        <frame key="frameInset" minX="647" minY="29" width="24" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="Heart.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJs-dq-eYO">
-                                        <frame key="frameInset" minX="579" minY="5" width="52" height="52"/>
+                                        <frame key="frameInset" minX="576" minY="14" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Camera.png"/>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo_Login Page.png" translatesAutoresizingMaskIntoConstraints="NO" id="fKh-8N-Ptd">
+                                        <frame key="frameInset" minX="342" width="117" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qF6-Wn-AaR">
-                                        <frame key="frameInset" minX="730" minY="5" width="52" height="52"/>
+                                        <frame key="frameInset" minX="723" minY="15" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Search.png"/>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo 167x167.png" translatesAutoresizingMaskIntoConstraints="NO" id="fKh-8N-Ptd">
-                                        <frame key="frameInset" minX="342" minY="-20" width="117" height="96"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.039215686270000001" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -1622,18 +1655,18 @@
                                                                     <constraints>
                                                                         <constraint firstItem="aq6-PT-Twj" firstAttribute="top" secondItem="JLO-W2-epy" secondAttribute="top" constant="-1" id="G66-bE-5x5"/>
                                                                         <constraint firstAttribute="bottom" secondItem="aq6-PT-Twj" secondAttribute="bottom" constant="31" id="I2r-VK-nVI"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="58Z-1M-RG2" secondAttribute="trailing" constant="42" id="lE0-IG-hTm"/>
-                                                                        <constraint firstItem="58Z-1M-RG2" firstAttribute="bottom" secondItem="JLO-W2-epy" secondAttribute="bottomMargin" constant="6" id="npg-Ml-4ph"/>
-                                                                        <constraint firstItem="58Z-1M-RG2" firstAttribute="leading" secondItem="aq6-PT-Twj" secondAttribute="trailing" constant="74" id="wpq-ch-3Cd"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="58Z-1M-RG2" secondAttribute="trailing" constant="50" id="lE0-IG-hTm"/>
+                                                                        <constraint firstItem="58Z-1M-RG2" firstAttribute="bottom" secondItem="JLO-W2-epy" secondAttribute="bottomMargin" id="npg-Ml-4ph"/>
+                                                                        <constraint firstItem="58Z-1M-RG2" firstAttribute="leading" secondItem="aq6-PT-Twj" secondAttribute="trailing" constant="76" id="wpq-ch-3Cd"/>
                                                                         <constraint firstItem="aq6-PT-Twj" firstAttribute="leading" secondItem="JLO-W2-epy" secondAttribute="leading" constant="6" id="yBs-Nv-a9l"/>
-                                                                        <constraint firstItem="58Z-1M-RG2" firstAttribute="top" secondItem="JLO-W2-epy" secondAttribute="top" constant="6" id="yEB-JS-DYz"/>
+                                                                        <constraint firstItem="58Z-1M-RG2" firstAttribute="top" secondItem="JLO-W2-epy" secondAttribute="top" constant="11" id="yEB-JS-DYz"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vy3-61-VwV">
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="ZfA-az-xiC"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="15"/>
                                                                     <color key="textColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1641,7 +1674,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="wUd-vp-2R1"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="10"/>
+                                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="10"/>
                                                                     <color key="textColor" red="0.90588235289999997" green="0.81568627449999997" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1664,27 +1697,29 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="19" id="gDw-Sc-JHD"/>
                                                                     </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                     <state key="normal" title="Button" image="In stock.png"/>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="JLO-W2-epy" firstAttribute="trailing" secondItem="Iym-Eo-M29" secondAttribute="trailing" id="3SO-8i-wy8"/>
                                                                 <constraint firstItem="vy3-61-VwV" firstAttribute="leading" secondItem="tt5-co-bGj" secondAttribute="leading" constant="19" id="6fO-U5-pew"/>
-                                                                <constraint firstItem="Zu9-zM-JnN" firstAttribute="leading" secondItem="coe-D8-NnO" secondAttribute="trailing" constant="37" id="9vu-uc-iqA"/>
+                                                                <constraint firstItem="Zu9-zM-JnN" firstAttribute="leading" secondItem="coe-D8-NnO" secondAttribute="trailing" constant="38" id="9vu-uc-iqA"/>
                                                                 <constraint firstAttribute="bottom" secondItem="JLO-W2-epy" secondAttribute="bottom" id="Hpt-ME-WU1"/>
-                                                                <constraint firstItem="Xjf-cH-7e6" firstAttribute="leading" secondItem="tt5-co-bGj" secondAttribute="leading" id="J2B-rx-duE"/>
-                                                                <constraint firstItem="3aH-Gu-obE" firstAttribute="leading" secondItem="Xjf-cH-7e6" secondAttribute="leading" id="KOI-bJ-112"/>
+                                                                <constraint firstItem="Xjf-cH-7e6" firstAttribute="leading" secondItem="tt5-co-bGj" secondAttribute="leading" constant="-2" id="J2B-rx-duE"/>
+                                                                <constraint firstItem="3aH-Gu-obE" firstAttribute="leading" secondItem="Xjf-cH-7e6" secondAttribute="leading" constant="2" id="KOI-bJ-112"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Zu9-zM-JnN" secondAttribute="trailing" id="KzL-YP-Od4"/>
                                                                 <constraint firstItem="JLO-W2-epy" firstAttribute="leading" secondItem="Iym-Eo-M29" secondAttribute="leading" id="NKZ-I4-gv7"/>
-                                                                <constraint firstItem="Iym-Eo-M29" firstAttribute="leading" secondItem="Xjf-cH-7e6" secondAttribute="leading" id="RFB-7L-jlF"/>
+                                                                <constraint firstItem="Iym-Eo-M29" firstAttribute="leading" secondItem="Xjf-cH-7e6" secondAttribute="leading" constant="2" id="RFB-7L-jlF"/>
                                                                 <constraint firstItem="3aH-Gu-obE" firstAttribute="trailing" secondItem="Iym-Eo-M29" secondAttribute="trailing" id="RiL-gM-HG4"/>
+                                                                <constraint firstItem="Xjf-cH-7e6" firstAttribute="leading" secondItem="tt5-co-bGj" secondAttribute="leading" constant="-2" id="UlR-yM-icn"/>
                                                                 <constraint firstItem="Zu9-zM-JnN" firstAttribute="leading" secondItem="vy3-61-VwV" secondAttribute="trailing" constant="64" id="VqR-AW-Zte"/>
                                                                 <constraint firstAttribute="bottom" secondItem="coe-D8-NnO" secondAttribute="bottom" constant="5" id="Z1O-38-Bur"/>
-                                                                <constraint firstItem="coe-D8-NnO" firstAttribute="leading" secondItem="tt5-co-bGj" secondAttribute="leading" constant="8" id="bdt-bF-3GB"/>
+                                                                <constraint firstItem="coe-D8-NnO" firstAttribute="leading" secondItem="tt5-co-bGj" secondAttribute="leading" constant="15" id="bdt-bF-3GB"/>
                                                                 <constraint firstAttribute="trailing" secondItem="3aH-Gu-obE" secondAttribute="trailing" id="cVG-AK-SCI"/>
                                                                 <constraint firstItem="3aH-Gu-obE" firstAttribute="top" secondItem="tt5-co-bGj" secondAttribute="top" id="cek-Pj-h8w"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Zu9-zM-JnN" secondAttribute="bottom" constant="-1" id="f0B-dL-IFr"/>
-                                                                <constraint firstAttribute="trailing" secondItem="Xjf-cH-7e6" secondAttribute="trailing" constant="132" id="jAb-G0-f1r"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Xjf-cH-7e6" secondAttribute="trailing" constant="134" id="jAb-G0-f1r"/>
                                                                 <constraint firstItem="JLO-W2-epy" firstAttribute="centerY" secondItem="Zu9-zM-JnN" secondAttribute="centerY" constant="-1" id="nfi-tQ-hTY"/>
                                                                 <constraint firstItem="vy3-61-VwV" firstAttribute="top" secondItem="Iym-Eo-M29" secondAttribute="bottom" constant="3" id="voe-dI-Luf"/>
                                                                 <constraint firstItem="coe-D8-NnO" firstAttribute="top" secondItem="vy3-61-VwV" secondAttribute="bottom" constant="1" id="wKM-Cb-kEw"/>
@@ -1733,7 +1768,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJi-XS-oX1">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R18-3g-HXL">
-                                        <frame key="frameInset" minX="69" minY="25" width="87" height="30"/>
+                                        <frame key="frameInset" minX="69" minY="35" width="87" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
                                         <state key="normal" title="COLLECTION">
@@ -1744,7 +1779,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iol-rh-9V6">
-                                        <frame key="frameInset" minX="-5" minY="4" width="58" height="57"/>
+                                        <frame key="frameInset" minX="-5" minY="10" width="58" height="57"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="leftNaviImage"/>
                                         <connections>
@@ -1752,7 +1787,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1E-9g-rPU">
-                                        <frame key="frameInset" minX="176" minY="24" width="70" height="30"/>
+                                        <frame key="frameInset" minX="176" minY="35" width="70" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ZapfHumanist601BT-Roman" family="ZapfHumnst BT" pointSize="12"/>
                                         <state key="normal" title="CATEGORY">
@@ -1763,7 +1798,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEI-fT-Qmc">
-                                        <frame key="frameInset" minX="636" minY="18" width="26" height="26"/>
+                                        <frame key="frameInset" minX="636" minY="25" width="24" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Heart.png"/>
                                         <connections>
@@ -1771,7 +1806,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DP-eg-Nvg">
-                                        <frame key="frameInset" minX="685" minY="18" width="26" height="26"/>
+                                        <frame key="frameInset" minX="685" minY="24" width="26" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Cart.png"/>
                                         <connections>
@@ -1779,24 +1814,24 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrl-RN-vB8">
-                                        <frame key="frameInset" minX="571" minY="5" width="52" height="52"/>
+                                        <frame key="frameInset" minX="571" minY="11" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Camera.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mX-HS-PDF">
-                                        <frame key="frameInset" minX="721" minY="5" width="52" height="52"/>
+                                        <frame key="frameInset" minX="721" minY="11" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Search.png"/>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo 167x167.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Lm-6g-SOZ">
-                                        <frame key="frameInset" minX="342" minY="-20" width="117" height="96"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo_Login Page.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Lm-6g-SOZ">
+                                        <frame key="frameInset" minX="342" width="117" height="76"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="4ap-Sa-BbC"/>
-                                    <constraint firstAttribute="width" secondItem="QJi-XS-oX1" secondAttribute="height" multiplier="40:3" id="q63-F6-VDZ"/>
+                                    <constraint firstAttribute="height" constant="75" id="4ap-Sa-BbC"/>
+                                    <constraint firstAttribute="width" secondItem="QJi-XS-oX1" secondAttribute="height" multiplier="40:3" constant="-200" id="q63-F6-VDZ"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDA-8E-U9o">
@@ -1821,7 +1856,7 @@
                             <constraint firstItem="cle-jI-rEP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bBM-2P-I8r"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cle-jI-rEP" secondAttribute="bottom" id="phl-k6-t01"/>
                             <constraint firstItem="cle-jI-rEP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rfz-jp-R8N"/>
-                            <constraint firstItem="1HN-6K-S3M" firstAttribute="top" secondItem="QJi-XS-oX1" secondAttribute="bottom" constant="29" id="uuL-bG-yrT"/>
+                            <constraint firstItem="1HN-6K-S3M" firstAttribute="top" secondItem="QJi-XS-oX1" secondAttribute="bottom" constant="14" id="uuL-bG-yrT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7xt-UB-gUN"/>
@@ -1931,7 +1966,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7IP-Bx-ldf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IWf-Gy-hyF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="IWf-Gy-hyF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1951,7 +1986,7 @@
                     <toolbarItems/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YOk-rH-yAn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YOk-rH-yAn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1968,12 +2003,12 @@
     <resources>
         <image name="Add to Cart Btn.png" width="358" height="84"/>
         <image name="Add to Wishlist Btn.png" width="358" height="84"/>
-        <image name="BR673.jpg" width="3879" height="3254"/>
         <image name="Bg.png" width="2048" height="2732"/>
         <image name="Camera.png" width="152" height="152"/>
         <image name="Cart Notification.png" width="152" height="152"/>
         <image name="Cart.png" width="66" height="71"/>
         <image name="CartsCell.png" width="152" height="152"/>
+        <image name="Categories_Bangles.png" width="750" height="502"/>
         <image name="CheckedBtn.png" width="50" height="50"/>
         <image name="DropDown Arrow.png" width="50" height="50"/>
         <image name="Employee Login BG 3.png" width="2048" height="2732"/>

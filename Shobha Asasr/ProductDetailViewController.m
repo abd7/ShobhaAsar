@@ -23,6 +23,8 @@
     NSInteger selectedIndexVal;
     MyCartVC *myCartvc;
     WishListVC *myWishvc;
+    NSMutableArray *optionsArray;
+    NSMutableArray *sizeArray;
     
 }
 
@@ -41,7 +43,21 @@ alpha:1.0]
 {
     [super viewDidLoad];
     
-    app = [[UIApplication sharedApplication] delegate];
+    UITapGestureRecognizer *tapOnce = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapOnce:)];
+    UITapGestureRecognizer *tapTwice = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapTwice:)];
+    tapOnce.numberOfTapsRequired = 1;
+    tapTwice.numberOfTapsRequired = 2;
+    [tapOnce requireGestureRecognizerToFail:tapTwice];
+    
+    [self.view addGestureRecognizer:tapOnce];
+    [self.view addGestureRecognizer:tapTwice];
+     self.sizeListView.hidden = YES;
+     optionsArray = [NSArray arrayWithObjects:@"Size - 45", @"Size - 42", @"Size - 35", @"Size - 25", @"Size - 10", @"Size - 38",  nil];
+    
+    self.sizeListTableView.backgroundColor = [UIColor clearColor];
+
+    
+        app = [[UIApplication sharedApplication] delegate];
     
     NSArray *copy = [app.cartListCount copy];
     
@@ -59,30 +75,30 @@ alpha:1.0]
         
         index--;
     }
-
+    
     
     
     
     [self wishListBadgeCheck];
     [self cartListBadgeValCheck];
     
-   
     
-     collectionviewimgs.backgroundColor = [UIColor clearColor];
+    
+    collectionviewimgs.backgroundColor = [UIColor clearColor];
     
     [product_Scroll setContentSize:CGSizeMake(0, collectionviewimgs.frame.size.height+similaarProductCV.frame.size.height+290+560)];
     
     
     
     
-     arrayforimgs=[[NSMutableArray alloc]init];
-     [ arrayforimgs addObject:[UIImage imageNamed:@"PE818.jpg"]];
-     [arrayforimgs addObject:[UIImage imageNamed:@"BR673.jpg"]];
-     [ arrayforimgs addObject:[UIImage imageNamed:@"ER1782.jpg"]];
-     [arrayforimgs addObject:[UIImage imageNamed:@"BR673.jpg"]];
-     [ arrayforimgs addObject:[UIImage imageNamed:@"ER1782.jpg"]];
+    arrayforimgs=[[NSMutableArray alloc]init];
+    [ arrayforimgs addObject:[UIImage imageNamed:@"PE818.jpg"]];
+    [arrayforimgs addObject:[UIImage imageNamed:@"BR673.jpg"]];
+    [ arrayforimgs addObject:[UIImage imageNamed:@"ER1782.jpg"]];
+    [arrayforimgs addObject:[UIImage imageNamed:@"BR673.jpg"]];
+    [ arrayforimgs addObject:[UIImage imageNamed:@"ER1782.jpg"]];
     
-   
+    
     nameArray=[[NSMutableArray alloc]init];
     purityArray=[[NSMutableArray alloc]init];
     weightArray=[[NSMutableArray alloc]init];
@@ -98,35 +114,36 @@ alpha:1.0]
     
     gemsPieces2Array=[[NSMutableArray alloc]init];
     gemsWeight2Array=[[NSMutableArray alloc]init];
-    
+    sizeArray = [[NSMutableArray alloc]init];
     
     sectionTitlesArray=[[NSMutableArray alloc]initWithObjects:@"Metal",@"Daimond",@"Gemstones",nil];
     
-   
     
     
-        [purityArray addObject:[[app.ProductArray objectAtIndex:_indexVal] valueForKey:@"karat"]];
-        [weightArray addObject:[[app.ProductArray objectAtIndex:_indexVal] valueForKey:@"size"]];
-        
-        [DaiPieceArrOne addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"dia_pcs"]];
-        [DaiWeightArrOne addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"dia_wt"]];
-        
-        [DaiPieceArrTwo addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"dia_pcs"]];
-        [DaiWeightArrTwo addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"dia_wt"]];
-        
-        [gemsPieces1Array addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"pieces"]];
-        [gemsWeight1Array addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"weight"]];
     
-        [gemsPieces2Array addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"pieces"]];
-        [gemsWeight2Array addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"weight"]];
+    [purityArray addObject:[[app.ProductArray objectAtIndex:_indexVal] valueForKey:@"karat"]];
+    [weightArray addObject:[[app.ProductArray objectAtIndex:_indexVal] valueForKey:@"size"]];
     
-        
+    [DaiPieceArrOne addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"dia_pcs"]];
+    [DaiWeightArrOne addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"dia_wt"]];
     
-
+    [DaiPieceArrTwo addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"dia_pcs"]];
+    [DaiWeightArrTwo addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"dia_wt"]];
+    
+    [gemsPieces1Array addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"pieces"]];
+    [gemsWeight1Array addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"weight"]];
+    
+    [gemsPieces2Array addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"pieces"]];
+    [gemsWeight2Array addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"weight"]];
+    [sizeArray addObject:[[app.ProductArray objectAtIndex:_indexVal] objectForKey:@"size"]];
+    
+    
+    
+    
     
     [nameArray addObject:@"Gold"];
     [nameArray addObject:@"Silver"];
-
+    
     
     ornamentLstTable.delegate=self;
     ornamentLstTable.dataSource=self;
@@ -142,7 +159,7 @@ alpha:1.0]
     similaarProductCV.delegate=self;
     similaarProductCV.dataSource=self;
     
-   
+    
     
     [similaarProductCV setShowsHorizontalScrollIndicator:NO];
     [similaarProductCV setShowsVerticalScrollIndicator:NO];
@@ -154,9 +171,9 @@ alpha:1.0]
     [cartItemsCollection setShowsVerticalScrollIndicator:NO];
     
     
-  
+    
     //NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",self.mainImageArray]]];
-   
+    
     proDetails_imageView.image=[UIImage imageWithData:self.imagedata];
     
     styleNoLabel.text=[NSString stringWithFormat:@"Style No. %@",[[app.ProductArray objectAtIndex:_indexVal] valueForKey:@"style_id"]];
@@ -193,8 +210,8 @@ alpha:1.0]
 - (void)viewWillAppear:(BOOL)animated
 {
     [self hideNoCartLabel];
-   
-//[self.navigationController setNavigationBarHidden:YES animated:animated];
+    
+    //[self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
 }
 
@@ -230,18 +247,18 @@ alpha:1.0]
         CartCollectionCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cartCell" forIndexPath:indexPath];
         
         //NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[app.cartListCount objectAtIndex:indexPath.row]]];
-       
+        
         cell.cartImageView.image=[UIImage imageWithData:[[app.cartListCount objectAtIndex:indexPath.row] valueForKey:@"image1"]];
         
-       
-    
+        
+        
         return  cell;
         
     }
     
     else if (collectionView  == similaarProductCV)
     {
-       
+        
         
         SimilarProductCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"similarproduct" forIndexPath:indexPath];
         
@@ -250,12 +267,12 @@ alpha:1.0]
         cell.similarItemView.layer.borderColor=[UIColor colorWithRed:0.91 green:0.82 blue:0.63 alpha:1.0].CGColor;
         cell.similarItemView.layer.borderWidth=1.5;
         return  cell;
-
+        
         
     }
     else
     {
-       
+        
         ProductCollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"imageview" forIndexPath:indexPath];
         
         cell.imgview.image=[UIImage imageWithData:[[app.ProductArray objectAtIndex:indexPath.row] valueForKey:@"image1"]];;
@@ -263,38 +280,42 @@ alpha:1.0]
         cell.cellview.layer.borderColor=[UIColor colorWithRed:0.91 green:0.82 blue:0.63 alpha:1.0].CGColor;
         cell.cellview.layer.borderWidth=1.5;
         
-       
+        
         
         return  cell;
         
     }
     
-   
+    
 }
 
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    if (tableView == self.sizeListTableView) {
+        return sizeArray.count;
+    }else{
+        
+        return 1;
+    }
+    
 }
 
 
 
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, -1, tableView.bounds.size.width, 24)];
     [headerView setBackgroundColor:UIColorFromRGB(0x5e3f1c)];
-    
-    
-    
     UILabel *titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, 2, 100, 17)];
     titleLabel.textColor=UIColorFromRGB(0xe8d0a1);
     [titleLabel setFont:[UIFont fontWithName:@"ZapfHumanist601BT-Roman" size:12]];
     
     [headerView addSubview:titleLabel];
-   
-  
+    
+    
     if (section==0) {
         
         titleLabel.text=@"Metal";
@@ -317,85 +338,115 @@ alpha:1.0]
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (tableView == self.sizeListTableView){
+        static NSString *simpleTableIdentifier = @"Cell";
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        }
     
-    if (indexPath.section==0) {
-        
-        
-        static NSString *simpleTableIdentifier = @"metalCell";
-        
-        MetalCell *cell = (MetalCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-        
-        if (cell == nil)
-        {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MetalCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-        
-        cell.purityOne.text = [purityArray objectAtIndex:indexPath.row];
-        cell.weightOne.text = [weightArray objectAtIndex:indexPath.row];
-        
-        
-        [cell setBackgroundColor:UIColorFromRGB(0x301F0E)];
-        
-        
+        cell.textLabel.text = [sizeArray objectAtIndex:indexPath.row];
         return cell;
-
+        
+    }
+    else{
+        if (indexPath.section==0) {
+            
+            
+            static NSString *simpleTableIdentifier = @"metalCell";
+            
+            MetalCell *cell = (MetalCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+            
+            if (cell == nil)
+            {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MetalCell" owner:self options:nil];
+                cell = [nib objectAtIndex:0];
+            }
+            
+            cell.purityOne.text = [purityArray objectAtIndex:indexPath.row];
+            cell.weightOne.text = [weightArray objectAtIndex:indexPath.row];
+            
+            
+            [cell setBackgroundColor:UIColorFromRGB(0x301F0E)];
+            
+            
+            return cell;
+            
+            
+            
+        }
+        else if (indexPath.section==1)
+        {
+            
+            static NSString *simpleTableIdentifier = @"daimondcell";
+            
+            DiamondCustomCell *cell = (DiamondCustomCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+            if (cell == nil)
+            {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DiamondCustomCell" owner:self options:nil];
+                cell = [nib objectAtIndex:0];
+            }
+            
+            cell.groupR1.text = @"A";
+            cell.groupR2.text= @"B";
+            
+            cell.pieceR1.text = [DaiPieceArrOne objectAtIndex:indexPath.row];
+            cell.pieceR2.text=[DaiWeightArrOne objectAtIndex:indexPath.row];
+            
+            cell.weightR1.text = [DaiPieceArrTwo objectAtIndex:indexPath.row];
+            cell.weightR1.text=[DaiWeightArrTwo objectAtIndex:indexPath.row];
+            
+            [cell setBackgroundColor:UIColorFromRGB(0x301F0E)];
+            
+            
+            
+            return cell;
+            
+            
+        }
+        else
+        {
+            static NSString *simpleTableIdentifier = @"gemstonecell";
+            
+            GemstoneCustomCell *cell = (GemstoneCustomCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+            if (cell == nil)
+            {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"GemstoneCustomCell" owner:self options:nil];
+                cell = [nib objectAtIndex:0];
+            }
+            
+            cell.emeraldPiece.text = [gemsPieces1Array objectAtIndex:indexPath.row];
+            cell.rubyPieces.text=[gemsWeight1Array objectAtIndex:indexPath.row];
+            
+            [cell setBackgroundColor:UIColorFromRGB(0x301F0E)];
+            
+            return cell;
+            
+        }
         
         
     }
-    else if (indexPath.section==1)
-    {
-        
-        static NSString *simpleTableIdentifier = @"daimondcell";
-        
-        DiamondCustomCell *cell = (DiamondCustomCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-        if (cell == nil)
-        {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DiamondCustomCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-        
-        cell.groupR1.text = @"A";
-        cell.groupR2.text= @"B";
-        
-        cell.pieceR1.text = [DaiPieceArrOne objectAtIndex:indexPath.row];
-        cell.pieceR2.text=[DaiWeightArrOne objectAtIndex:indexPath.row];
-        
-        cell.weightR1.text = [DaiPieceArrTwo objectAtIndex:indexPath.row];
-        cell.weightR1.text=[DaiWeightArrTwo objectAtIndex:indexPath.row];
-        
-       [cell setBackgroundColor:UIColorFromRGB(0x301F0E)];
-        
-        
-        
-        return cell;
-
-        
-    }
-    else
-    {
-        static NSString *simpleTableIdentifier = @"gemstonecell";
-        
-        GemstoneCustomCell *cell = (GemstoneCustomCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-        if (cell == nil)
-        {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"GemstoneCustomCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-        
-        cell.emeraldPiece.text = [gemsPieces1Array objectAtIndex:indexPath.row];
-        cell.rubyPieces.text=[gemsWeight1Array objectAtIndex:indexPath.row];
-
-        [cell setBackgroundColor:UIColorFromRGB(0x301F0E)];
-        
-        return cell;
-
-    }
-    
-  
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView == _sizeListView) {
+        self.sizeListTextView.text = [NSString stringWithFormat:@"    %@",self->optionsArray[indexPath.row]];
+        
+        [UIView animateWithDuration:0.6 animations:^{
+            self.sizeListTextView.alpha = 1.0;
+        }];
+        [self hideTable];
+        [self.sizeListTableView setHidden:YES];
+        [UIView animateWithDuration:0.2
+                         animations:^{
+                             self.dropDown.transform = CGAffineTransformMakeRotation(0);
+                         }];
+        [tableView reloadData];
+        
+    }
+}
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -403,7 +454,7 @@ alpha:1.0]
     if (collectionView == cartItemsCollection) {
         
         selectedIndexVal=indexPath.row;
-                
+        
     }
     else if (collectionView== similaarProductCV)
     {
@@ -422,7 +473,7 @@ alpha:1.0]
 {
     if (collectionView == similaarProductCV)
     {
-         return 50.0;
+        return 50.0;
     }
     else if(collectionView == collectionviewimgs)
     {
@@ -432,12 +483,17 @@ alpha:1.0]
     {
         return 20.0;
     }
-   
+    
 }
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
 {
+//    if (tableView == _sizeListTableView) {
+//        return 0;
+//    }else{
+//     return 3;
+//    }
     return 3;
 }
 
@@ -461,24 +517,24 @@ alpha:1.0]
 - (IBAction)onTapMatchingProductNext:(id)sender {
     
     [self snapToCellAtIndex:0 withAnimation:YES];
-   
+    
     
 }
 
 - (IBAction)onTapAddCart_btn:(id)sender {
     
-   
+    
     
     if (![app.cartListCount containsObject:self.mainImageArray])
     {
         
-         [self.cartImageArray addObject:self.mainImageArray];
+        [self.cartImageArray addObject:self.mainImageArray];
         [app.cartListCount addObject:self.mainImageArray];
         [self cartListBadgeValCheck];
         
         [cartItemsCollection reloadData];
         
-         [self hideNoCartLabel];
+        [self hideNoCartLabel];
         NSLog(@"%lu",(unsigned long)self.cartImageArray.count);
         
     }
@@ -528,7 +584,7 @@ alpha:1.0]
 
 -(void)wishListBadgeCheck
 {
-  
+    
     
     if([app.wishListCount count]>0)
     {
@@ -556,7 +612,7 @@ alpha:1.0]
         
         [self wishListBadgeCheck];
         
-       
+        
         //NSLog(@"%lu",(unsigned long)counts);
         
     }
@@ -569,7 +625,7 @@ alpha:1.0]
                                               otherButtonTitles:nil];
         [alert show];
     }
-
+    
     
     
 }
@@ -580,6 +636,67 @@ alpha:1.0]
     
 }
 
+- (void)tapOnce:(UIGestureRecognizer *)gesture
+{
+    self.sizeListView.hidden = NO;
+    [self showTable];
+}
+
+- (void)tapTwice:(UIGestureRecognizer *)gesture{
+    self.view.backgroundColor = [UIColor blackColor];
+    [self hideTable];
+    self.sizeListView.hidden = YES;
+}
+
+- (void)showTable {
+    self.sizeListView.hidden = false;
+    [self.sizeListTableView reloadData];
+    [UIView animateWithDuration:0.2
+                     animations:^{
+                         self.dropDown.transform = CGAffineTransformMakeRotation((180.0 * M_PI)/180.0);
+                     }];
+    [UIView animateWithDuration:0.5
+                          delay:0
+         usingSpringWithDamping:0.5
+          initialSpringVelocity:0.1
+                        options:UIViewAnimationOptionTransitionFlipFromTop
+                     animations:^{
+                         self.sizeListTableView.alpha = 1;
+                     }
+                     completion:^(BOOL finished){
+                         [self.sizeListTableView setHidden:NO];
+                         // self.userInteractionEnabled = true;
+                         
+                     }];
+    
+    [self.sizeListTableView reloadData];
+    
+}
+
+- (void)hideTable {
+    self.sizeListView.hidden = false;
+    [self.sizeListTableView reloadData];
+    [UIView animateWithDuration:0.2
+                     animations:^{
+                         self.dropDown.transform = CGAffineTransformMakeRotation((180.0 * M_PI)/180.0);
+                     }];
+    [UIView animateWithDuration:0.5
+                          delay:0
+         usingSpringWithDamping:0.5
+          initialSpringVelocity:0.1
+                        options:UIViewAnimationOptionTransitionFlipFromBottom
+                     animations:^{
+                         self.sizeListTableView.alpha = 0;
+                         
+                     }
+                     completion:^(BOOL finished){
+                         [self.sizeListTableView setHidden:YES];
+                         
+                         //self.selected = false;
+                     }];
+    [self.sizeListTableView reloadData];
+    
+}
 -(void)onTapWishListView
 {
     myWishvc=[[self storyboard]instantiateViewControllerWithIdentifier:@"wishlistvc"];
@@ -603,10 +720,10 @@ alpha:1.0]
 - (void)snapToCellAtIndex:(NSInteger)index withAnimation:(BOOL) animated
 {
     
-  
+    
     NSIndexPath *IndexPath = [NSIndexPath indexPathForRow:index inSection:0];
     
-  
+    
     [collectionviewimgs scrollToItemAtIndexPath:IndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:animated];
     
 }
@@ -617,7 +734,7 @@ alpha:1.0]
     
     
     [self.cartImageArray removeObjectAtIndex:selectedIndexVal];
-
+    
     [cartItemsCollection reloadData];
     
     [self hideNoCartLabel];
@@ -627,7 +744,7 @@ alpha:1.0]
 - (IBAction)onTapSmilarNext_Btn:(id)sender {
     
     
-     [self onTapBackAndNextButton:4 withAnimation:YES];
+    [self onTapBackAndNextButton:4 withAnimation:YES];
 }
 
 - (IBAction)onTapSimilarPrevious_btn:(id)sender {
@@ -648,10 +765,12 @@ alpha:1.0]
 
 - (void) onTapBackAndNextButton:(NSInteger)index withAnimation:(BOOL) animated
 {
-   NSIndexPath *IndexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    NSIndexPath *IndexPath = [NSIndexPath indexPathForRow:index inSection:0];
     
     [similaarProductCV scrollToItemAtIndexPath:IndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:animated];
     
 }
+
+
 
 @end

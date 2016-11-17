@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "CartCollectionCell.h"
+
+
 @class AppDelegate;
 
-@interface ProductDetailViewController : UIViewController<UINavigationBarDelegate,UINavigationControllerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITabBarDelegate,UITableViewDelegate,UIApplicationDelegate>
+@interface ProductDetailViewController : UIViewController<UINavigationBarDelegate,UINavigationControllerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITabBarDelegate,UITableViewDelegate,UIApplicationDelegate, UIGestureRecognizerDelegate>
 {
    AppDelegate *app;
     IBOutlet UIView *cellfirstview;
    
+   
+ 
+    
     IBOutlet UICollectionView *collectionviewimgs;
     IBOutlet UITableView *ornamentLstTable;
     IBOutlet UILabel *metalName;
@@ -43,6 +48,11 @@
 @property NSString *productTypeName,*productStyleNo;
 @property (strong, nonatomic) IBOutlet UIScrollView *product_Scroll;
 @property NSMutableArray *sectionTitlesArray;
+@property (strong, nonatomic) IBOutlet UITableView *sizeListTableView;
+
+@property (strong, nonatomic) IBOutlet UIView *sizeListView;
+@property (strong, nonatomic) IBOutlet UIButton *dropDown;
+@property (strong, nonatomic) IBOutlet UILabel *sizeListTextView;
 
 - (IBAction)onTapCloseButton:(id)sender;
 - (IBAction)onTapSmilarNext_Btn:(id)sender;
@@ -58,6 +68,7 @@
 
 - (IBAction)onTapCartNotification_btn:(id)sender;
 - (IBAction)onTapWishListNoti_btn:(id)sender;
+- (IBAction)dropDownButton:(id)sender;
 
 
 @end

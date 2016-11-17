@@ -34,7 +34,9 @@
     
     NSMutableArray *collectData;
     NSMutableArray *categoryData;
-    
+    NSMutableArray *categorySortedData;
+    NSMutableArray *collectionSortedData;
+
 }
 
 
@@ -53,11 +55,11 @@ alpha:1.0]
     
     [super viewDidLoad];
     [self tabButton];
-    tab_Btn.hidden=YES;
+       tab_Btn.hidden=YES;
     tab_Btn2.hidden=NO;
     
     [self callWebService];
-    [self getCollectionData];
+    //[self getCollectionData];
     [self getcategoryData];
     
    
@@ -447,27 +449,27 @@ alpha:1.0]
     [categoryFullDataArr removeAllObjects];
     [categoryHalfData removeAllObjects];
     
-    
     ShobhaAsarDataBase * dataBase = [[ShobhaAsarDataBase alloc]init];
     
     [dataBase getCollectionsPageDetails];
-    
-    
-    
     collectData=[[NSUserDefaults standardUserDefaults] valueForKey:@"collectionData"];
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"sequence" ascending:YES];
+    collectionSortedData = [collectData sortedArrayUsingDescriptors:@[sort]];
+
     
-    
-    for (int i=0; i<collectData.count; i++) {
+    for (int i=0; i<collectionSortedData.count; i++) {
         
-        if ([[[collectData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"full"])
+//        if ([[[collectData objectAtIndex:indexPath.row] objectForKey:@"sequesce"] isEqualToString:@"full"]){
+        if ([[[collectionSortedData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"full"])
         {
-            [collectFullDataArr addObject:[collectData objectAtIndex:i]];
+            
+            [collectFullDataArr addObject:[collectionSortedData objectAtIndex:i]];
             
         }
-        else if ([[[collectData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"half"])
+        else if ([[[collectionSortedData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"half"])
         {
             
-            [collectHalfData addObject:[collectData objectAtIndex:i]];
+            [collectHalfData addObject:[collectionSortedData objectAtIndex:i]];
             
         }
         
@@ -541,37 +543,29 @@ alpha:1.0]
 
 - (IBAction)onTapCategoryButton:(id)sender {
     
-    
-    
-    
     [collectData removeAllObjects];
     [collectHalfData removeAllObjects];
     [collectFullDataArr removeAllObjects];
     
-    
-    
-    
-    
-    
     ShobhaAsarDataBase * dataBase = [[ShobhaAsarDataBase alloc]init];
-    
     [dataBase getCategoryPageDetails];
     
-    categoryData=[[NSUserDefaults standardUserDefaults] valueForKey:@"categoryData"];
-   
+    categoryData = [[NSUserDefaults standardUserDefaults] valueForKey:@"categoryData"];
+ 
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"sequence" ascending:YES];
+    categorySortedData = [categoryData sortedArrayUsingDescriptors:@[sort]];
     
-    
-    for (int i=0; i<categoryData.count; i++) {
-        
-        if ([[[categoryData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"full"])
+       for (int i=0; i<categorySortedData.count; i++) {
+
+
+        if ([[[categorySortedData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"full"])
         {
-            [categoryFullDataArr addObject:[categoryData objectAtIndex:i]];
+            [categoryFullDataArr addObject:[categorySortedData objectAtIndex:i]];
             
         }
-        else if ([[[categoryData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"half"])
+        else if ([[[categorySortedData objectAtIndex:i]valueForKey:@"section"]isEqualToString:@"half"])
         {
-            
-            [categoryHalfData addObject:[categoryData objectAtIndex:i]];
+            [categoryHalfData addObject:[categorySortedData objectAtIndex:i]];
             
         }
         
@@ -643,6 +637,6 @@ alpha:1.0]
             
         }
     }
-
+    
 }
 @end
